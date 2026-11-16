@@ -1,0 +1,18 @@
+# Local Python environments and caches
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+# Downloaded datasets and archives
+data/
+datasets/
+*.tar.gz
+*.zip
+# Model weights and bulk inference/training artifacts
+weights/
+*.pt
+*.pth
+runs/
+outputs/pretrained/
+outputs/training/
+# Keep existing selected sample_inspection artifacts tracked
