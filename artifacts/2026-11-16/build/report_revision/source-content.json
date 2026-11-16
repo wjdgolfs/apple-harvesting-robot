@@ -1,0 +1,1123 @@
+[
+  {
+    "slide": 1,
+    "id": "y90nupkv",
+    "shapes": [
+      {
+        "id": "2",
+        "name": "01 / 18",
+        "text": "01 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "3",
+        "name": "사과 수확 로봇을 위한\n영상 인식 기능 개발",
+        "text": "사과 수확 로봇을 위한\n영상 인식 기능 개발",
+        "position": {
+          "left": 64,
+          "top": 115,
+          "width": 675,
+          "height": 210
+        }
+      },
+      {
+        "id": "4",
+        "name": "검출·분할과 익음도·무게 추정\n합성 잎 가림에 따른 성능 비교",
+        "text": "검출·분할과 익음도·무게 추정\n합성 잎 가림에 따른 성능 비교",
+        "position": {
+          "left": 68,
+          "top": 365,
+          "width": 650,
+          "height": 100
+        }
+      },
+      {
+        "id": "5",
+        "name": "Team.D_24\n윤종호 · 정해린\n2026년 11월 16일 진",
+        "text": "Team.D_24\n윤종호 · 정해린\n2026년 11월 16일 진행 보고",
+        "position": {
+          "left": 68,
+          "top": 525,
+          "width": 620,
+          "height": 100
+        }
+      },
+      {
+        "id": "7",
+        "name": "정답 마스크 검수 예시  /  MinneApple",
+        "text": "정답 마스크 검수 예시  /  MinneApple",
+        "position": {
+          "left": 790,
+          "top": 654,
+          "width": 390,
+          "height": 23
+        }
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "id": "6",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "slide": 2,
+    "id": "hwbqtkby",
+    "shapes": [
+      {
+        "id": "6",
+        "name": "프로젝트 범위와 역할 분담",
+        "text": "프로젝트 범위와 역할 분담",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "02 / 18",
+        "text": "02 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "3",
+        "name": "사진 속 사과의 위치와 상태를 분석하는 비전 기능",
+        "text": "사진 속 사과의 위치와 상태를 분석하는 비전 기능",
+        "position": {
+          "left": 68,
+          "top": 150,
+          "width": 1120,
+          "height": 55
+        }
+      },
+      {
+        "id": "5",
+        "name": "현재 개발 범위는 영상 인식이며, 실제 로봇의 수확 동작은 포함",
+        "text": "현재 개발 범위는 영상 인식이며, 실제 로봇의 수확 동작은 포함하지 않음",
+        "position": {
+          "left": 68,
+          "top": 577,
+          "width": 1120,
+          "height": 65
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "4",
+        "rows": 4
+      }
+    ],
+    "images": []
+  },
+  {
+    "slide": 3,
+    "id": "ofy9wn61",
+    "shapes": [
+      {
+        "id": "5",
+        "name": "사용 데이터와 평가 목적",
+        "text": "사용 데이터와 평가 목적",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "03 / 18",
+        "text": "03 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "4",
+        "name": "기능별 자료와 촬영 조건이 달라, 개별 결과와 통합 평가를 구분",
+        "text": "기능별 자료와 촬영 조건이 달라, 개별 결과와 통합 평가를 구분",
+        "position": {
+          "left": 68,
+          "top": 578,
+          "width": 1120,
+          "height": 65
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "3",
+        "rows": 5
+      }
+    ],
+    "images": []
+  },
+  {
+    "slide": 4,
+    "id": "jyx0ra1s",
+    "shapes": [
+      {
+        "id": "7",
+        "name": "검출·분할 데이터 준비",
+        "text": "검출·분할 데이터 준비",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "04 / 18",
+        "text": "04 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "3",
+        "name": "670쌍의 이미지·마스크  /  28,183개 객체 주석",
+        "text": "670쌍의 이미지·마스크  /  28,183개 객체 주석",
+        "position": {
+          "left": 68,
+          "top": 155,
+          "width": 1120,
+          "height": 60
+        }
+      },
+      {
+        "id": "5",
+        "name": "파일 검사  ·  시퀀스 분할  ·  라벨 변환  ·  실제 Y",
+        "text": "파일 검사  ·  시퀀스 분할  ·  라벨 변환  ·  실제 YOLO 로딩 확인",
+        "position": {
+          "left": 68,
+          "top": 512,
+          "width": 1120,
+          "height": 80
+        }
+      },
+      {
+        "id": "6",
+        "name": "검증 자료는 모델 선택용이며 독립 최종 시험 자료와 구분",
+        "text": "검증 자료는 모델 선택용이며 독립 최종 시험 자료와 구분",
+        "position": {
+          "left": 68,
+          "top": 620,
+          "width": 1120,
+          "height": 38
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "4",
+        "rows": 3
+      }
+    ],
+    "images": []
+  },
+  {
+    "slide": 5,
+    "id": "i107q5of",
+    "shapes": [
+      {
+        "id": "6",
+        "name": "개별 사과 마스크와 주석 범위 검수",
+        "text": "개별 사과 마스크와 주석 범위 검수",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "05 / 18",
+        "text": "05 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "4",
+        "name": "떨어진 조각·내부 구멍·작은 윤곽을 포함해 변환 주석 28,18",
+        "text": "떨어진 조각·내부 구멍·작은 윤곽을 포함해 변환 주석 28,183개 유지",
+        "position": {
+          "left": 68,
+          "top": 589,
+          "width": 1120,
+          "height": 42
+        }
+      },
+      {
+        "id": "5",
+        "name": "정답 검수 그림  /  MinneApple은 전경 나무의 사과를",
+        "text": "정답 검수 그림  /  MinneApple은 전경 나무의 사과를 중심으로 주석",
+        "position": {
+          "left": 68,
+          "top": 638,
+          "width": 1120,
+          "height": 25
+        }
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "id": "3",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "slide": 6,
+    "id": "x8f69ofe",
+    "shapes": [
+      {
+        "id": "6",
+        "name": "짧은 학습과 작은 마스크 문제",
+        "text": "짧은 학습과 작은 마스크 문제",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "06 / 18",
+        "text": "06 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "4",
+        "name": "이번 완료의 의미는 학습 동작 확인",
+        "text": "이번 완료의 의미는 학습 동작 확인",
+        "position": {
+          "left": 68,
+          "top": 581,
+          "width": 1120,
+          "height": 44
+        }
+      },
+      {
+        "id": "5",
+        "name": "3 epoch 소량 학습으로 수렴이나 최종 분할 성능을 주장하지",
+        "text": "3 epoch 소량 학습으로 수렴이나 최종 분할 성능을 주장하지 않음",
+        "position": {
+          "left": 68,
+          "top": 634,
+          "width": 1120,
+          "height": 30
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "3",
+        "rows": 6
+      }
+    ],
+    "images": []
+  },
+  {
+    "slide": 7,
+    "id": "gnmp4jqx",
+    "shapes": [
+      {
+        "id": "6",
+        "name": "전체 학습 중단과 Colab 전환",
+        "text": "전체 학습 중단과 Colab 전환",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "07 / 18",
+        "text": "07 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "4",
+        "name": "작은 마스크 보존과 GPU 메모리 사용의 균형이 핵심 과제",
+        "text": "작은 마스크 보존과 GPU 메모리 사용의 균형이 핵심 과제",
+        "position": {
+          "left": 68,
+          "top": 562,
+          "width": 1120,
+          "height": 52
+        }
+      },
+      {
+        "id": "5",
+        "name": "전체 기본 학습과 학습 후 평가는 미완료",
+        "text": "전체 기본 학습과 학습 후 평가는 미완료",
+        "position": {
+          "left": 68,
+          "top": 627,
+          "width": 1120,
+          "height": 30
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "3",
+        "rows": 6
+      }
+    ],
+    "images": []
+  },
+  {
+    "slide": 8,
+    "id": "fu1gfa1s",
+    "shapes": [
+      {
+        "id": "6",
+        "name": "익음도·무게의 ResNet18 전이학습",
+        "text": "익음도·무게의 ResNet18 전이학습",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "08 / 18",
+        "text": "08 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "3",
+        "name": "사전학습 ResNet18 본체 고정  +  512차원 특징  +",
+        "text": "사전학습 ResNet18 본체 고정  +  512차원 특징  +  예측층 학습",
+        "position": {
+          "left": 68,
+          "top": 160,
+          "width": 1120,
+          "height": 80
+        }
+      },
+      {
+        "id": "5",
+        "name": "ResNet18 전체 미세조정은 수행하지 않음",
+        "text": "ResNet18 전체 미세조정은 수행하지 않음",
+        "position": {
+          "left": 68,
+          "top": 622,
+          "width": 1120,
+          "height": 34
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "4",
+        "rows": 5
+      }
+    ],
+    "images": []
+  },
+  {
+    "slide": 9,
+    "id": "udsvah03",
+    "shapes": [
+      {
+        "id": "8",
+        "name": "가림 증강 후 익음 누락 감소",
+        "text": "가림 증강 후 익음 누락 감소",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "09 / 18",
+        "text": "09 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "4",
+        "name": "18 / 20",
+        "text": "18 / 20",
+        "position": {
+          "left": 946,
+          "top": 233,
+          "width": 275,
+          "height": 65
+        }
+      },
+      {
+        "id": "5",
+        "name": "추가 가림 50%에서\n찾아낸 익음 관측",
+        "text": "추가 가림 50%에서\n찾아낸 익음 관측",
+        "position": {
+          "left": 946,
+          "top": 314,
+          "width": 275,
+          "height": 105
+        }
+      },
+      {
+        "id": "6",
+        "name": "평가 202영역\n익음 20 / 미숙 182",
+        "text": "평가 202영역\n익음 20 / 미숙 182",
+        "position": {
+          "left": 946,
+          "top": 464,
+          "width": 275,
+          "height": 85
+        }
+      },
+      {
+        "id": "7",
+        "name": "같은 과실의 반복 관측 포함  /  정답 사과 영역 사용",
+        "text": "같은 과실의 반복 관측 포함  /  정답 사과 영역 사용",
+        "position": {
+          "left": 68,
+          "top": 632,
+          "width": 1120,
+          "height": 30
+        }
+      }
+    ],
+    "tables": [],
+    "images": []
+  },
+  {
+    "slide": 10,
+    "id": "m90b6t0r",
+    "shapes": [
+      {
+        "id": "7",
+        "name": "익음 정밀도와 오선택 문제",
+        "text": "익음 정밀도와 오선택 문제",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "10 / 18",
+        "text": "10 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "3",
+        "name": "35.2%",
+        "text": "35.2%",
+        "position": {
+          "left": 68,
+          "top": 154,
+          "width": 410,
+          "height": 105
+        }
+      },
+      {
+        "id": "4",
+        "name": "익음으로 선택한 54건 중 실제 익음 19건",
+        "text": "익음으로 선택한 54건 중 실제 익음 19건",
+        "position": {
+          "left": 68,
+          "top": 280,
+          "width": 1120,
+          "height": 50
+        }
+      },
+      {
+        "id": "6",
+        "name": "익음 재현율 95%와 함께 오선택 감소가 필요",
+        "text": "익음 재현율 95%와 함께 오선택 감소가 필요",
+        "position": {
+          "left": 68,
+          "top": 616,
+          "width": 1120,
+          "height": 40
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "5",
+        "rows": 3
+      }
+    ],
+    "images": []
+  },
+  {
+    "slide": 11,
+    "id": "jetc3ut0",
+    "shapes": [
+      {
+        "id": "5",
+        "name": "같은 사과의 가림별 익음도 예측",
+        "text": "같은 사과의 가림별 익음도 예측",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "11 / 18",
+        "text": "11 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "4",
+        "name": "예시 관측의 결과이며 전체 조건별 지표와 함께 해석",
+        "text": "예시 관측의 결과이며 전체 조건별 지표와 함께 해석",
+        "position": {
+          "left": 68,
+          "top": 638,
+          "width": 1120,
+          "height": 27
+        }
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "id": "3",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "slide": 12,
+    "id": "8f2psfyx",
+    "shapes": [
+      {
+        "id": "8",
+        "name": "무게 추정에서 가림 증강 효과",
+        "text": "무게 추정에서 가림 증강 효과",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "12 / 18",
+        "text": "12 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "4",
+        "name": "18.48g",
+        "text": "18.48g",
+        "position": {
+          "left": 946,
+          "top": 230,
+          "width": 275,
+          "height": 70
+        }
+      },
+      {
+        "id": "5",
+        "name": "추가 가림 50%의\n증강 모델 MAE",
+        "text": "추가 가림 50%의\n증강 모델 MAE",
+        "position": {
+          "left": 946,
+          "top": 312,
+          "width": 275,
+          "height": 100
+        }
+      },
+      {
+        "id": "6",
+        "name": "학습 48과실\n평가 12과실",
+        "text": "학습 48과실\n평가 12과실",
+        "position": {
+          "left": 946,
+          "top": 463,
+          "width": 275,
+          "height": 75
+        }
+      },
+      {
+        "id": "7",
+        "name": "고정 실험실 촬영 조건의 개별 기능 평가  /  현장 성능은 별",
+        "text": "고정 실험실 촬영 조건의 개별 기능 평가  /  현장 성능은 별도 검증 필요",
+        "position": {
+          "left": 68,
+          "top": 632,
+          "width": 1120,
+          "height": 30
+        }
+      }
+    ],
+    "tables": [],
+    "images": []
+  },
+  {
+    "slide": 13,
+    "id": "hgzapcr6",
+    "shapes": [
+      {
+        "id": "6",
+        "name": "무게 모델의 촬영 조건과 적용 한계",
+        "text": "무게 모델의 촬영 조건과 적용 한계",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "13 / 18",
+        "text": "13 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "4",
+        "name": "새 카메라·새 촬영 조건·과수원에서 별도 검증 필요",
+        "text": "새 카메라·새 촬영 조건·과수원에서 별도 검증 필요",
+        "position": {
+          "left": 68,
+          "top": 527,
+          "width": 1120,
+          "height": 70
+        }
+      },
+      {
+        "id": "5",
+        "name": "현재 결과를 과수원 사과 크롭의 무게 추정 성능으로 일반화하지 ",
+        "text": "현재 결과를 과수원 사과 크롭의 무게 추정 성능으로 일반화하지 않음",
+        "position": {
+          "left": 68,
+          "top": 625,
+          "width": 1120,
+          "height": 35
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "3",
+        "rows": 5
+      }
+    ],
+    "images": []
+  },
+  {
+    "slide": 14,
+    "id": "6lsnupw7",
+    "shapes": [
+      {
+        "id": "9",
+        "name": "자연 가림과 추가 합성 가림",
+        "text": "자연 가림과 추가 합성 가림",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "14 / 18",
+        "text": "14 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "4",
+        "name": "자연 가림",
+        "text": "자연 가림",
+        "position": {
+          "left": 800,
+          "top": 197,
+          "width": 410,
+          "height": 43
+        }
+      },
+      {
+        "id": "5",
+        "name": "보이는 영역과\n추정 전체 윤곽 비교",
+        "text": "보이는 영역과\n추정 전체 윤곽 비교",
+        "position": {
+          "left": 800,
+          "top": 259,
+          "width": 410,
+          "height": 110
+        }
+      },
+      {
+        "id": "6",
+        "name": "추가 합성 가림",
+        "text": "추가 합성 가림",
+        "position": {
+          "left": 800,
+          "top": 410,
+          "width": 410,
+          "height": 43
+        }
+      },
+      {
+        "id": "7",
+        "name": "원래 보이던 픽셀의\n15·30·50%를 추가 덮음",
+        "text": "원래 보이던 픽셀의\n15·30·50%를 추가 덮음",
+        "position": {
+          "left": 800,
+          "top": 472,
+          "width": 410,
+          "height": 115
+        }
+      },
+      {
+        "id": "8",
+        "name": "움직임·실제 풍속 실험은 아직 수행하지 않음",
+        "text": "움직임·실제 풍속 실험은 아직 수행하지 않음",
+        "position": {
+          "left": 800,
+          "top": 616,
+          "width": 410,
+          "height": 48
+        }
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "id": "3",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "slide": 15,
+    "id": "vaxsvy10",
+    "shapes": [
+      {
+        "id": "5",
+        "name": "프로젝트 통합 진행 상황",
+        "text": "프로젝트 통합 진행 상황",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "15 / 18",
+        "text": "15 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "4",
+        "name": "개별 기능의 평가 완료와 전체 시스템 완성을 구분",
+        "text": "개별 기능의 평가 완료와 전체 시스템 완성을 구분",
+        "position": {
+          "left": 68,
+          "top": 620,
+          "width": 1120,
+          "height": 40
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "3",
+        "rows": 6
+      }
+    ],
+    "images": []
+  },
+  {
+    "slide": 16,
+    "id": "gny5sjyp",
+    "shapes": [
+      {
+        "id": "6",
+        "name": "임시 연결을 위한 공통 입력 규격",
+        "text": "임시 연결을 위한 공통 입력 규격",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "16 / 18",
+        "text": "16 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "4",
+        "name": "정답 영역으로 임시 연결 후 저장된 YOLO 예측으로 교체",
+        "text": "정답 영역으로 임시 연결 후 저장된 YOLO 예측으로 교체",
+        "position": {
+          "left": 68,
+          "top": 547,
+          "width": 1120,
+          "height": 65
+        }
+      },
+      {
+        "id": "5",
+        "name": "제안 단계  /  무게 입력 조건 보정과 누락 모델 파일 확보가",
+        "text": "제안 단계  /  무게 입력 조건 보정과 누락 모델 파일 확보가 선행 과제",
+        "position": {
+          "left": 68,
+          "top": 631,
+          "width": 1120,
+          "height": 30
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "3",
+        "rows": 5
+      }
+    ],
+    "images": []
+  },
+  {
+    "slide": 17,
+    "id": "14bup87q",
+    "shapes": [
+      {
+        "id": "6",
+        "name": "다음 작업과 기존 목표 일정",
+        "text": "다음 작업과 기존 목표 일정",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "17 / 18",
+        "text": "17 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "4",
+        "name": "기존 목표  11월 말 통합 / 12월 평가·시연 / 12월 1",
+        "text": "기존 목표  11월 말 통합 / 12월 평가·시연 / 12월 14~15일 제출",
+        "position": {
+          "left": 68,
+          "top": 565,
+          "width": 1120,
+          "height": 62
+        }
+      },
+      {
+        "id": "5",
+        "name": "학습·보정 진행에 따라 조정 가능  /  움직임·깊이의 구현 범",
+        "text": "학습·보정 진행에 따라 조정 가능  /  움직임·깊이의 구현 범위는 추가 협의",
+        "position": {
+          "left": 68,
+          "top": 636,
+          "width": 1120,
+          "height": 30
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "3",
+        "rows": 6
+      }
+    ],
+    "images": []
+  },
+  {
+    "slide": 18,
+    "id": "y5wne50z",
+    "shapes": [
+      {
+        "id": "8",
+        "name": "현재 성과와 다음 확인 과제",
+        "text": "현재 성과와 다음 확인 과제",
+        "position": {
+          "left": 64,
+          "top": 45,
+          "width": 1152,
+          "height": 95
+        }
+      },
+      {
+        "id": "2",
+        "name": "18 / 18",
+        "text": "18 / 18",
+        "position": {
+          "left": 1140,
+          "top": 677,
+          "width": 90,
+          "height": 22
+        }
+      },
+      {
+        "id": "3",
+        "name": "확보한 결과",
+        "text": "확보한 결과",
+        "position": {
+          "left": 68,
+          "top": 170,
+          "width": 1100,
+          "height": 45
+        }
+      },
+      {
+        "id": "4",
+        "name": "670쌍·28,183개 주석 준비와 짧은 학습\n익음도·무게 전이",
+        "text": "670쌍·28,183개 주석 준비와 짧은 학습\n익음도·무게 전이학습 및 합성 가림 비교",
+        "position": {
+          "left": 68,
+          "top": 228,
+          "width": 1100,
+          "height": 92
+        }
+      },
+      {
+        "id": "5",
+        "name": "다음 확인",
+        "text": "다음 확인",
+        "position": {
+          "left": 68,
+          "top": 395,
+          "width": 1100,
+          "height": 45
+        }
+      },
+      {
+        "id": "6",
+        "name": "전체 기본 학습, 익음 오선택, 무게 촬영 조건\n임시 연결 후 ",
+        "text": "전체 기본 학습, 익음 오선택, 무게 촬영 조건\n임시 연결 후 실제 예측을 포함한 통합 평가",
+        "position": {
+          "left": 68,
+          "top": 453,
+          "width": 1100,
+          "height": 92
+        }
+      },
+      {
+        "id": "7",
+        "name": "질의응답",
+        "text": "질의응답",
+        "position": {
+          "left": 68,
+          "top": 624,
+          "width": 1000,
+          "height": 45
+        }
+      }
+    ],
+    "tables": [],
+    "images": []
+  }
+]

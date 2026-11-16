@@ -1,0 +1,2 @@
+try { await import('./revise_presentation.mjs'); }
+catch(e) { console.error(e.message);console.error(e.stack?.split('\n').filter(x=>x.includes('report_revision')||x.includes('artifact_tool_utils')).join('\n'));process.exitCode=1; }

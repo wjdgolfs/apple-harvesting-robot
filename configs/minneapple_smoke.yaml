@@ -1,0 +1,6 @@
+# Diagnostic subset only; never use smoke results as final accuracy.
+path: C:/26_2/컴퓨터비전/팀플/minneapple_yolo_v1
+train: C:/Users/YJH/apple-harvesting-robot/splits/minneapple_smoke_v1/train_images.txt
+val: C:/Users/YJH/apple-harvesting-robot/splits/minneapple_smoke_v1/val_images.txt
+names:
+  0: apple

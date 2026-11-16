@@ -1,0 +1,8 @@
+C:/26_2/컴퓨터비전/팀플/minneapple_yolo_v1/images/val/20150919_174730_image1.png
+C:/26_2/컴퓨터비전/팀플/minneapple_yolo_v1/images/val/20150919_174730_image166.png
+C:/26_2/컴퓨터비전/팀플/minneapple_yolo_v1/images/val/20150919_174730_image386.png
+C:/26_2/컴퓨터비전/팀플/minneapple_yolo_v1/images/val/20150919_174730_image1331.png
+C:/26_2/컴퓨터비전/팀플/minneapple_yolo_v1/images/val/20150921_131625_image1.png
+C:/26_2/컴퓨터비전/팀플/minneapple_yolo_v1/images/val/20150921_131625_image501.png
+C:/26_2/컴퓨터비전/팀플/minneapple_yolo_v1/images/val/20150921_131625_image706.png
+C:/26_2/컴퓨터비전/팀플/minneapple_yolo_v1/images/val/20150921_131625_image1111.png

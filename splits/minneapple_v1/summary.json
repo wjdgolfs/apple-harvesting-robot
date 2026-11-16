@@ -1,0 +1,64 @@
+{
+  "version": "minneapple_v1",
+  "root_at_creation": "C:\\26_2\\컴퓨터비전\\팀플\\detection\\train",
+  "config_sha256": "bbaf13df7067aed95c732d3f79a27a2378f910c8549897aeee3da678c0410ad2",
+  "total_pairs": 670,
+  "split_stats": {
+    "train": {
+      "images": 518,
+      "image_ratio": 0.7731343283582089,
+      "annotation_ids": 22082,
+      "sequences": [
+        "20150919_174151",
+        "20150921_131234",
+        "20150921_131346",
+        "20150921_131453",
+        "20150921_131729",
+        "20150921_131833",
+        "20150921_132038",
+        "20150921_132245"
+      ],
+      "dates": {
+        "20150919": 66,
+        "20150921": 452
+      }
+    },
+    "val": {
+      "images": 152,
+      "image_ratio": 0.22686567164179106,
+      "annotation_ids": 6101,
+      "sequences": [
+        "20150919_174730",
+        "20150921_131625"
+      ],
+      "dates": {
+        "20150919": 100,
+        "20150921": 52
+      }
+    }
+  },
+  "group_counts": {
+    "20150919_174151": 66,
+    "20150919_174730": 100,
+    "20150921_131234": 59,
+    "20150921_131346": 88,
+    "20150921_131453": 81,
+    "20150921_131625": 52,
+    "20150921_131729": 34,
+    "20150921_131833": 84,
+    "20150921_132038": 83,
+    "20150921_132245": 23
+  },
+  "sequence_overlap": [],
+  "cross_split_exact_image_hash_overlap": 0,
+  "nearest_cross_split_dhash_distance": 14,
+  "dhash_pairs_distance_le_6": 0,
+  "policy": "Fixed filename-prefix groups; target roughly 80/20, both dates in both splits; selected by image-count and annotation-count balance only, without model predictions or validation metrics. No random frame split.",
+  "limitations": [
+    "파일명 접두사를 촬영 시퀀스 그룹으로 사용했다. 서로 다른 그룹에 같은 나무·과수원 배경이 포함될 수 있다.",
+    "전경 나무의 사과만 주석하는 데이터 정책을 따른다. 화면 전체의 모든 사과 검출을 평가하는 분할은 아니다.",
+    "검증 자료는 학습 중 모델 선택용이다. 독립적인 최종 시험 성능으로 표현하지 않는다.",
+    "이미 살펴본 샘플이 일부 포함된다. 완전히 보지 않은 평가 자료라고 주장하지 않는다.",
+    "가중치 학습이나 예측 성능을 이용해 분할을 선택하지 않았다. 이후 검증 결과에 맞춰 분할을 변경하지 않는다."
+  ]
+}

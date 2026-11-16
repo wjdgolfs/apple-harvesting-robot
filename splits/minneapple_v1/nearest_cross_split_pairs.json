@@ -1,0 +1,102 @@
+[
+  {
+    "val": "20150919_174730_image276.png",
+    "train": "20150919_174151_image86.png",
+    "hamming_distance": 14
+  },
+  {
+    "val": "20150919_174730_image1.png",
+    "train": "20150921_132245_image1001.png",
+    "hamming_distance": 15
+  },
+  {
+    "val": "20150921_131625_image1.png",
+    "train": "20150921_131346_image596.png",
+    "hamming_distance": 15
+  },
+  {
+    "val": "20150921_131625_image301.png",
+    "train": "20150921_131346_image621.png",
+    "hamming_distance": 15
+  },
+  {
+    "val": "20150919_174730_image596.png",
+    "train": "20150921_131346_image876.png",
+    "hamming_distance": 16
+  },
+  {
+    "val": "20150919_174730_image811.png",
+    "train": "20150919_174151_image471.png",
+    "hamming_distance": 16
+  },
+  {
+    "val": "20150919_174730_image1146.png",
+    "train": "20150921_131833_image86.png",
+    "hamming_distance": 17
+  },
+  {
+    "val": "20150919_174730_image176.png",
+    "train": "20150921_131346_image601.png",
+    "hamming_distance": 17
+  },
+  {
+    "val": "20150919_174730_image231.png",
+    "train": "20150921_131234_image361.png",
+    "hamming_distance": 17
+  },
+  {
+    "val": "20150919_174730_image31.png",
+    "train": "20150921_131453_image936.png",
+    "hamming_distance": 17
+  },
+  {
+    "val": "20150919_174730_image376.png",
+    "train": "20150921_132038_image906.png",
+    "hamming_distance": 17
+  },
+  {
+    "val": "20150919_174730_image666.png",
+    "train": "20150921_131833_image311.png",
+    "hamming_distance": 17
+  },
+  {
+    "val": "20150919_174730_image786.png",
+    "train": "20150921_131234_image36.png",
+    "hamming_distance": 17
+  },
+  {
+    "val": "20150921_131625_image306.png",
+    "train": "20150919_174151_image226.png",
+    "hamming_distance": 17
+  },
+  {
+    "val": "20150921_131625_image441.png",
+    "train": "20150921_131346_image41.png",
+    "hamming_distance": 17
+  },
+  {
+    "val": "20150921_131625_image471.png",
+    "train": "20150921_132038_image261.png",
+    "hamming_distance": 17
+  },
+  {
+    "val": "20150921_131625_image91.png",
+    "train": "20150919_174151_image151.png",
+    "hamming_distance": 17
+  },
+  {
+    "val": "20150919_174730_image1046.png",
+    "train": "20150921_131833_image346.png",
+    "hamming_distance": 18
+  },
+  {
+    "val": "20150919_174730_image11.png",
+    "train": "20150921_132038_image171.png",
+    "hamming_distance": 18
+  },
+  {
+    "val": "20150919_174730_image156.png",
+    "train": "20150919_174151_image56.png",
+    "hamming_distance": 18
+  }
+]

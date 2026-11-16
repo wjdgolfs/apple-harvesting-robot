@@ -16,3 +16,11 @@ runs/
 outputs/pretrained/
 outputs/training/
 # Keep existing selected sample_inspection artifacts tracked
+# Reproducible dataset audit artifacts
+outputs/data_audit/
+
+# Ultralytics dataset cache files
+*.cache
+
+# Local Colab transfer bundles and manifests
+outputs/colab_transfer*/

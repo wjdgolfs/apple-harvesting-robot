@@ -1,0 +1,115 @@
+preflight train: Fast image access ✅ (ping: 0.0±0.0 ms, read: 3325.8±1791.5 MB/s, size: 1644.7 KB)
+preflight train: New cache created: /content/apple_baseline_bundle/labels/train.cache
+preflight val: Fast image access ✅ (ping: 0.0±0.0 ms, read: 4241.1±1675.5 MB/s, size: 2075.1 KB)
+preflight val: New cache created: /content/apple_baseline_bundle/labels/val.cache
+Ultralytics 8.4.215 🚀 Python-3.13.16 torch-2.14.1+cu130 CUDA:0 (Tesla T4, 14913MiB)
+[34m[1mengine/trainer: [0magnostic_nms=False, amp=True, angle=1.0, augment=False, auto_augment=randaugment, batch=1, bgr=0.0, box=7.5, cache=False, cfg=None, channels_last=None, classes=None, close_mosaic=0, cls=0.5, cls_pw=0.0, cls_remap=True, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=False, cutmix=0.0, data=/content/apple_baseline_bundle/dataset.yaml, degrees=0.0, deterministic=True, device=0, dfl=1.5, dgrad=0.5, dis=6.0, distill_model=None, dlam=1.0, dlog=1.0, dnn=False, dropout=0.0, dynamic=False, embed=None, epochs=50, erasing=0.4, exist_ok=True, fliplr=0.0, flipud=0.0, format=torchscript, fraction=1.0, freeze=None, hsv_h=0.0, hsv_s=0.0, hsv_v=0.0, imgsz=640, iou=None, kobj=1.0, line_width=None, lr0=0.001, lrf=0.01, mask_ratio=1, max_det=300, mixup=0.0, mode=train, model=/content/apple_baseline_bundle/weights/yolov8n-seg.pt, momentum=0.937, mosaic=0.0, multi_scale=0.0, name=baseline_colab_20261116T134014519362Z, nbs=64, nms=None, opset=None, optimize=False, optimizer=AdamW, overlap_mask=True, patience=10, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=/content/runs, quantize=None, rect=False, resume=False, retina_masks=False, rle=1.0, save=True, save_conf=False, save_crop=False, save_dir=/content/runs/baseline_colab_20261116T134014519362Z, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.0, seed=42, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=segment, tile=False, time=None, tracker=tracktrack.yaml, translate=0.0, val=True, verbose=True, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, workers=0, workspace=None
+Overriding model.yaml nc=80 with nc=1
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]                 
+  1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]                
+  2                  -1  1      7360  ultralytics.nn.modules.block.C2f             [32, 32, 1, True]             
+  3                  -1  1     18560  ultralytics.nn.modules.conv.Conv             [32, 64, 3, 2]                
+  4                  -1  2     49664  ultralytics.nn.modules.block.C2f             [64, 64, 2, True]             
+  5                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+  6                  -1  2    197632  ultralytics.nn.modules.block.C2f             [128, 128, 2, True]           
+  7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]              
+  8                  -1  1    460288  ultralytics.nn.modules.block.C2f             [256, 256, 1, True]           
+  9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5]                 
+ 10                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 11             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 12                  -1  1    148224  ultralytics.nn.modules.block.C2f             [384, 128, 1]                 
+ 13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 14             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 15                  -1  1     37248  ultralytics.nn.modules.block.C2f             [192, 64, 1]                  
+ 16                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]                
+ 17            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 18                  -1  1    123648  ultralytics.nn.modules.block.C2f             [192, 128, 1]                 
+ 19                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+ 20             [-1, 9]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 21                  -1  1    493056  ultralytics.nn.modules.block.C2f             [384, 256, 1]                 
+ 22        [15, 18, 21]  1   1004275  ultralytics.nn.modules.head.Segment          [1, 32, 64, 16, None, [64, 128, 256]]
+YOLOv8n-seg summary: 151 layers, 3,263,811 parameters, 3,263,795 gradients, 11.5 GFLOPs
+
+Remapped 1/1 cls head rows from pretrained weights by class name
+Transferred 417/417 items from pretrained weights
+Freezing layer 'model.22.dfl.conv.weight'
+[34m[1mAMP: [0mrunning Automatic Mixed Precision (AMP) checks...
+[34m[1mAMP: [0mchecks passed ✅
+[34m[1mtrain: [0mFast image access ✅ (ping: 0.0±0.0 ms, read: 3744.9±2149.4 MB/s, size: 1777.8 KB)
+[34m[1malbumentations: [0mBlur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, method='weighted_average', num_output_channels=3), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))
+[34m[1mval: [0mFast image access ✅ (ping: 0.0±0.0 ms, read: 4232.4±1023.1 MB/s, size: 2095.4 KB)
+[34m[1moptimizer:[0m AdamW(lr=0.001, momentum=0.937) with parameter groups 66 weight(decay=0.0), 77 weight(decay=0.0005), 76 bias(decay=0.0)
+Plotting labels to /content/runs/baseline_colab_20261116T134014519362Z/labels.jpg... 
+Using 518 train, 152 val images for fraction=1.0 at imgsz=640
+Using 0 dataloader workers
+Logging results to [1m/content/runs/baseline_colab_20261116T134014519362Z[0m
+Starting training for 50 epochs...
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.664      0.558      0.619      0.269      0.625      0.525      0.564      0.211
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.709      0.626      0.685      0.294      0.645      0.548      0.577       0.19
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.721      0.629      0.695      0.305      0.664      0.547      0.589      0.203
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.769      0.626      0.703      0.312      0.717      0.557       0.61      0.217
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.762      0.604        0.7      0.311      0.679      0.531      0.589      0.198
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.766      0.662      0.739      0.329      0.685      0.568      0.605        0.2
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.757      0.622        0.7      0.313      0.715      0.528      0.587      0.205
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.759      0.672       0.73       0.33      0.671      0.588       0.61      0.206
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.744       0.65       0.72      0.323      0.671      0.556      0.593      0.202
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.773      0.624      0.714      0.323      0.697      0.545      0.598      0.206
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.751      0.646      0.713      0.321       0.68      0.567      0.604      0.206
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.754      0.639      0.712      0.315       0.68      0.562        0.6      0.202
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.756      0.644      0.713      0.319       0.69      0.557        0.6      0.209
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.745      0.637      0.703      0.314      0.674      0.543      0.578      0.194
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.748       0.64      0.705      0.312      0.717      0.544      0.593      0.202
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.742      0.614      0.682      0.296      0.672      0.526      0.563      0.187
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.751      0.659      0.716      0.317      0.673      0.564      0.587      0.197
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+                   all        152       6101      0.761      0.651      0.718      0.315      0.693      0.577      0.609      0.207
+[34m[1mEarlyStopping: [0mTraining stopped early as no improvement observed in last 10 epochs. Best results observed at epoch 8, best model saved as best.pt.
+To update EarlyStopping(patience=10) pass a new patience value, i.e. `patience=300` or use `patience=0` to disable EarlyStopping.
+
+18 epochs completed in 0.586 hours.
+Optimizer stripped from /content/runs/baseline_colab_20261116T134014519362Z/weights/last.pt, 7.0MB
+Optimizer stripped from /content/runs/baseline_colab_20261116T134014519362Z/weights/best.pt, 7.0MB
+
+Validating /content/runs/baseline_colab_20261116T134014519362Z/weights/best.pt...
+Ultralytics 8.4.215 🚀 Python-3.13.16 torch-2.14.1+cu130 CUDA:0 (Tesla T4, 14913MiB)
+YOLOv8n-seg summary (fused): 86 layers, 3,385,123 parameters, 0 gradients, 11.9 GFLOPs
+                   all        152       6101      0.758      0.671      0.729       0.33      0.679      0.595      0.618      0.215
+Speed: 0.3ms preprocess, 5.8ms inference, 0.0ms loss, 2.8ms postprocess per image
+Results saved to [1m/content/runs/baseline_colab_20261116T134014519362Z[0m

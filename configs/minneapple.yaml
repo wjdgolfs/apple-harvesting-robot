@@ -1,0 +1,6 @@
+# MinneApple fixed sequence split v1. Official test set intentionally omitted.
+path: C:/26_2/컴퓨터비전/팀플/minneapple_yolo_v1
+train: images/train
+val: images/val
+names:
+  0: apple
