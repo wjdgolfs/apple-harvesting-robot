@@ -1,0 +1,71 @@
+{
+  "model": "TorchVision frozen ResNet18 IMAGENET1K_V1, 512 raw pooled features + ridge",
+  "weights_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+  "train_fruit": 48,
+  "test_fruit": 12,
+  "input": "Full oriented RGB, 320 maximum side then centered 224x224 letterbox, Lanczos, fill 124/116/104",
+  "train_views": {
+    "clean": 48,
+    "aug": 192
+  },
+  "fixed_lambda": 0.1,
+  "selection": "Preset regularization, no validation or test-based model selection.",
+  "mask_seed": 20261116,
+  "device": "cuda",
+  "torch": "2.12.0+cu130",
+  "global_train_mean_g": 209.66333333333333,
+  "by_level": {
+    "clean": [
+      {
+        "target_fraction": 0,
+        "n": 12,
+        "mae_g": 14.261607801703716,
+        "mean_abs_change_g": 0.0
+      },
+      {
+        "target_fraction": 0.15,
+        "n": 12,
+        "mae_g": 30.30039243512663,
+        "mean_abs_change_g": 20.619646519381668
+      },
+      {
+        "target_fraction": 0.3,
+        "n": 12,
+        "mae_g": 38.25657600893638,
+        "mean_abs_change_g": 33.530105338638656
+      },
+      {
+        "target_fraction": 0.5,
+        "n": 12,
+        "mae_g": 49.95563546869826,
+        "mean_abs_change_g": 43.21099980326026
+      }
+    ],
+    "aug": [
+      {
+        "target_fraction": 0,
+        "n": 12,
+        "mae_g": 13.409703502343119,
+        "mean_abs_change_g": 0.0
+      },
+      {
+        "target_fraction": 0.15,
+        "n": 12,
+        "mae_g": 14.52187444616258,
+        "mean_abs_change_g": 12.900467650945062
+      },
+      {
+        "target_fraction": 0.3,
+        "n": 12,
+        "mae_g": 16.17460424296816,
+        "mean_abs_change_g": 15.659621030192035
+      },
+      {
+        "target_fraction": 0.5,
+        "n": 12,
+        "mae_g": 18.483595854583275,
+        "mean_abs_change_g": 14.372301963792063
+      }
+    ]
+  }
+}
