@@ -1,0 +1,160 @@
+{
+  "pillow_version": "12.3.0",
+  "source_audit": {
+    "train": {
+      "images": 2385,
+      "annotations": 2385,
+      "objects": 11094,
+      "depth_files": 2385,
+      "rgb_without_depth": [],
+      "depth_without_rgb": [],
+      "labels": {
+        "unripe": 9361,
+        "ripe": 1733
+      },
+      "shapes": {
+        "polygon": 8579,
+        "rect": 2515
+      },
+      "image_headers": {
+        "PNG RGB 1300x1300": 2304,
+        "PNG RGB 1920x1080": 81
+      },
+      "images_without_annotations_entry": [],
+      "annotations_without_image": [],
+      "images_with_zero_regions": 14,
+      "diameter_minus_one": 1781,
+      "groups": 391
+    },
+    "val": {
+      "images": 824,
+      "annotations": 824,
+      "objects": 3745,
+      "depth_files": 824,
+      "rgb_without_depth": [],
+      "depth_without_rgb": [],
+      "labels": {
+        "unripe": 3289,
+        "ripe": 456
+      },
+      "shapes": {
+        "rect": 310,
+        "polygon": 3435
+      },
+      "image_headers": {
+        "PNG RGB 1920x1080": 10,
+        "PNG RGB 1300x1300": 814
+      },
+      "images_without_annotations_entry": [],
+      "annotations_without_image": [],
+      "images_with_zero_regions": 13,
+      "diameter_minus_one": 227,
+      "groups": 290
+    },
+    "test": {
+      "images": 818,
+      "annotations": 818,
+      "objects": 3623,
+      "depth_files": 818,
+      "rgb_without_depth": [],
+      "depth_without_rgb": [],
+      "labels": {
+        "unripe": 3238,
+        "ripe": 385
+      },
+      "shapes": {
+        "rect": 337,
+        "polygon": 3286
+      },
+      "image_headers": {
+        "PNG RGB 1920x1080": 11,
+        "PNG RGB 1300x1300": 807
+      },
+      "images_without_annotations_entry": [],
+      "annotations_without_image": [],
+      "images_with_zero_regions": 9,
+      "diameter_minus_one": 232,
+      "groups": 281
+    }
+  },
+  "official_group_overlap": {
+    "train-val": 7,
+    "train-test": 8,
+    "val-test": 238
+  },
+  "threshold": 0.05157623539264961,
+  "training_majority_label": "unripe",
+  "pilot": {
+    "train": {
+      "images": 390,
+      "groups": 390,
+      "objects": 1817,
+      "confusion_true_then_predicted": {
+        "ripe": {
+          "ripe": 300,
+          "unripe": 24
+        },
+        "unripe": {
+          "ripe": 250,
+          "unripe": 1243
+        }
+      },
+      "accuracy": 0.8492019812878371,
+      "recall": {
+        "ripe": 0.9259259259259259,
+        "unripe": 0.8325519089082385
+      },
+      "balanced_accuracy": 0.8792389174170823,
+      "train_majority_accuracy": 0.82168409466153
+    },
+    "val": {
+      "images": 169,
+      "groups": 169,
+      "objects": 669,
+      "confusion_true_then_predicted": {
+        "ripe": {
+          "ripe": 41,
+          "unripe": 5
+        },
+        "unripe": {
+          "ripe": 104,
+          "unripe": 519
+        }
+      },
+      "accuracy": 0.8370702541106129,
+      "recall": {
+        "ripe": 0.8913043478260869,
+        "unripe": 0.8330658105939005
+      },
+      "balanced_accuracy": 0.8621850792099937,
+      "train_majority_accuracy": 0.9312406576980568
+    },
+    "test": {
+      "images": 148,
+      "groups": 148,
+      "objects": 512,
+      "confusion_true_then_predicted": {
+        "ripe": {
+          "ripe": 41,
+          "unripe": 4
+        },
+        "unripe": {
+          "ripe": 100,
+          "unripe": 367
+        }
+      },
+      "accuracy": 0.796875,
+      "recall": {
+        "ripe": 0.9111111111111111,
+        "unripe": 0.7858672376873662
+      },
+      "balanced_accuracy": 0.8484891743992387,
+      "train_majority_accuracy": 0.912109375
+    }
+  },
+  "pilot_group_overlap": {
+    "train-val": 0,
+    "train-test": 0,
+    "val-test": 0
+  }
+}

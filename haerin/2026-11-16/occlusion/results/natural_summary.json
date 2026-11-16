@@ -1,0 +1,90 @@
+{
+  "data": "https://doi.org/10.34810/data916",
+  "data_license": "CC BY 4.0 (archive README)",
+  "splits": {
+    "train": {
+      "images": 2304,
+      "paired_instances": 8579,
+      "unique_label_ids": 487,
+      "image_sizes": {
+        "(1300, 1300)": 2304
+      }
+    },
+    "val": {
+      "images": 814,
+      "paired_instances": 3449,
+      "unique_label_ids": 408,
+      "image_sizes": {
+        "(1300, 1300)": 814
+      }
+    },
+    "test": {
+      "images": 807,
+      "paired_instances": 3307,
+      "unique_label_ids": 387,
+      "image_sizes": {
+        "(1300, 1300)": 807
+      }
+    }
+  },
+  "all_pairs": 15335,
+  "image_size_rng": "individual PNG headers checked",
+  "apple_ids_overlap_train_test": 291,
+  "apple_ids_overlap_val_test": 350,
+  "eligible_rule": "Amodal polygon strictly inside inner unpadded frame (100 px per side) and at most 10% of visible pixels outside amodal",
+  "edge_or_pad": 4162,
+  "coordinates_clipped_to_canvas": 60,
+  "outside_visible_over_10pct": 0,
+  "raw_negative": 69,
+  "eligible_pairs": 11173,
+  "eligible_unique_ids": 587,
+  "eligible_occlusion_median": 0.4592555831265509,
+  "eligible_occlusion_quartiles": [
+    0.22016530797101452,
+    0.4592555831265509,
+    0.6668569797316586
+  ],
+  "eligible_occlusion_bins": {
+    "0-.15": 1876,
+    ".15-.30": 1794,
+    ".30-.50": 2452,
+    ".50-1": 5051
+  },
+  "seed": 20261116,
+  "examples": [
+    {
+      "split": "test",
+      "filename": "_MG_2778_21.png",
+      "apple_id": "0296",
+      "visible_px": 22025,
+      "amodal_px": 23238,
+      "intersection_px": 21857,
+      "outside_visible_fraction": 0.007627695800227041,
+      "raw_occlusion_fraction": 0.052198984422067274,
+      "occlusion_fraction": 0.05942852224804196,
+      "outside_canvas": 0,
+      "interior": 1,
+      "eligible": 1
+    },
+    {
+      "split": "test",
+      "filename": "_MG_2740_08.png",
+      "apple_id": "0152",
+      "visible_px": 6458,
+      "amodal_px": 17038,
+      "intersection_px": 6421,
+      "outside_visible_fraction": 0.005729327965314335,
+      "raw_occlusion_fraction": 0.6209649019838009,
+      "occlusion_fraction": 0.6231365183707007,
+      "outside_canvas": 0,
+      "interior": 1,
+      "eligible": 1
+    }
+  ],
+  "synthetic_measured": [
+    0.0,
+    0.15001135073779795,
+    0.3000681044267877,
+    0.49993189557321227
+  ]
+}

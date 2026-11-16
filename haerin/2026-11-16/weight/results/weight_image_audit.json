@@ -1,0 +1,12 @@
+{
+  "decoded": 4320,
+  "original_frame_sizes": {
+    "(4032, 3024)": 3959,
+    "(2944, 2208)": 360,
+    "(3024, 3024)": 1
+  },
+  "decoded_content_duplicate_sets": 0,
+  "duplicate_sets_crossing_fruit": 0,
+  "duplicate_sets_crossing_split": 0,
+  "duplicates": []
+}

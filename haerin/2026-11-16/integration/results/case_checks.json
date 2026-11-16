@@ -1,0 +1,47 @@
+{
+  "linked_distinct_id_strings": 594,
+  "id_strings_with_both_labels": 139,
+  "examples": [
+    {
+      "filename": "_MG_2902_21.png",
+      "region_index": 0,
+      "apple_id": "0190",
+      "diameter_mm": 51.4,
+      "label": "ripe"
+    },
+    {
+      "filename": "_MG_6876_18.png",
+      "region_index": 6,
+      "apple_id": "1262",
+      "diameter_mm": 51.4,
+      "label": "unripe"
+    }
+  ],
+  "natural_occlusion_on_test": {
+    "0–<15%": {
+      "n": 19,
+      "correct": 13,
+      "ripe": 2,
+      "ripe_correct": 2
+    },
+    "15–<30%": {
+      "n": 32,
+      "correct": 26,
+      "ripe": 3,
+      "ripe_correct": 3
+    },
+    "30–<50%": {
+      "n": 37,
+      "correct": 31,
+      "ripe": 5,
+      "ripe_correct": 4
+    },
+    "50–100%": {
+      "n": 64,
+      "correct": 59,
+      "ripe": 6,
+      "ripe_correct": 4
+    }
+  },
+  "test_excluded_by_natural_mask_qc": 50
+}

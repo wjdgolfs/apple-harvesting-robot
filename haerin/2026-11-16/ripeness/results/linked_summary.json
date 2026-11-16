@@ -1,0 +1,97 @@
+{
+  "threshold": 0.04857078072965915,
+  "training_majority_label": "unripe",
+  "matched_before_id_filter": {
+    "train": 1243,
+    "val": 669,
+    "test": 510
+  },
+  "pilot": {
+    "train": {
+      "images": 308,
+      "groups": 308,
+      "objects": 895,
+      "confusion_true_then_predicted": {
+        "ripe": {
+          "ripe": 79,
+          "unripe": 11
+        },
+        "unripe": {
+          "ripe": 141,
+          "unripe": 664
+        }
+      },
+      "accuracy": 0.8301675977653631,
+      "recall": {
+        "ripe": 0.8777777777777778,
+        "unripe": 0.8248447204968944
+      },
+      "balanced_accuracy": 0.851311249137336,
+      "train_majority_accuracy": 0.8994413407821229,
+      "apple_ids": 271
+    },
+    "val": {
+      "images": 138,
+      "groups": 138,
+      "objects": 338,
+      "confusion_true_then_predicted": {
+        "ripe": {
+          "ripe": 21,
+          "unripe": 1
+        },
+        "unripe": {
+          "ripe": 49,
+          "unripe": 267
+        }
+      },
+      "accuracy": 0.8520710059171598,
+      "recall": {
+        "ripe": 0.9545454545454546,
+        "unripe": 0.8449367088607594
+      },
+      "balanced_accuracy": 0.8997410817031071,
+      "train_majority_accuracy": 0.9349112426035503,
+      "apple_ids": 134
+    },
+    "test": {
+      "images": 97,
+      "groups": 97,
+      "objects": 202,
+      "confusion_true_then_predicted": {
+        "ripe": {
+          "ripe": 17,
+          "unripe": 3
+        },
+        "unripe": {
+          "ripe": 30,
+          "unripe": 152
+        }
+      },
+      "accuracy": 0.8366336633663366,
+      "recall": {
+        "ripe": 0.85,
+        "unripe": 0.8351648351648352
+      },
+      "balanced_accuracy": 0.8425824175824176,
+      "train_majority_accuracy": 0.900990099009901,
+      "apple_ids": 115
+    }
+  },
+  "overlap": {
+    "train-val": {
+      "group": 0,
+      "apple_id": 0,
+      "filename": 0
+    },
+    "train-test": {
+      "group": 0,
+      "apple_id": 0,
+      "filename": 0
+    },
+    "val-test": {
+      "group": 0,
+      "apple_id": 0,
+      "filename": 0
+    }
+  }
+}

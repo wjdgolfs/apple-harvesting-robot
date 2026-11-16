@@ -1,0 +1,42 @@
+{
+  "counts": {
+    "ripeness_images": 4027,
+    "amodal_images": 3925,
+    "same_name": 3925,
+    "same_name_size_crc32": 3925,
+    "unique_matched_contours": 15271,
+    "ambiguous_or_missing_contour": 64
+  },
+  "split_pairs": {
+    "train/train": 2304,
+    "val/val": 814,
+    "test/test": 807
+  },
+  "sha256_spot_checks": [
+    {
+      "split": "train",
+      "filename": "_MG_2821_04.png",
+      "sha256": "d64b80cb404ce8eb0a412a44b3eb7d26fdf9c0fe8910479140c38e0dad406c0e"
+    },
+    {
+      "split": "val",
+      "filename": "_MG_2640_17.png",
+      "sha256": "f63b4b9ef23e6ce4d52a4ec967a4e09f563c2a57e0a71bfcd753be4d1a4fbf74"
+    },
+    {
+      "split": "test",
+      "filename": "_MG_2640_16.png",
+      "sha256": "bd3ef4ff04fd1cff19c56e14d99caf8b80bb14f15e883d6aa33e2b80a3f6e307"
+    }
+  ],
+  "distinct_apple_ids": {
+    "train": 487,
+    "val": 408,
+    "test": 387
+  },
+  "shared_id_strings": {
+    "train/val": 309,
+    "train/test": 291,
+    "val/test": 350
+  }
+}

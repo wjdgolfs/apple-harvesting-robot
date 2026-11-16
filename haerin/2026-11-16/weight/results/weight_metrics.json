@@ -1,0 +1,213 @@
+{
+  "global_mean_mae_g": 46.77,
+  "area_only_mae_g": 36.5197892270665,
+  "camera_mean_mae_g": 12.922083333333342,
+  "pooled_area_coefficients": {
+    "slope": 1609.2957251483672,
+    "intercept": 154.41516082525973
+  },
+  "coefficients": {
+    "clean": {
+      "LM-X430": {
+        "slope": 32.18680748502888,
+        "intercept": 284.09513896004404
+      },
+      "iPhone 11": {
+        "slope": 1327.6830473255739,
+        "intercept": 120.34250609261325
+      },
+      "iPhone 8": {
+        "slope": -78.70149055908153,
+        "intercept": 208.50606986950217
+      }
+    },
+    "aug": {
+      "LM-X430": {
+        "slope": 19.234703630259514,
+        "intercept": 285.0093136460358
+      },
+      "iPhone 11": {
+        "slope": 445.72567286256407,
+        "intercept": 134.06548149498275
+      },
+      "iPhone 8": {
+        "slope": -78.96362476631795,
+        "intercept": 207.46510459617363
+      }
+    },
+    "pooled_clean": {
+      "all": {
+        "slope": 1609.2957251483672,
+        "intercept": 154.41516082525973
+      }
+    },
+    "pooled_aug": {
+      "all": {
+        "slope": 1678.499217421214,
+        "intercept": 170.4385605956811
+      }
+    }
+  },
+  "by_level": {
+    "clean": [
+      {
+        "target": 0.0,
+        "n": 12,
+        "mae_g": 12.45986402161306,
+        "mean_abs_change_g": 0.0,
+        "actual_coverage": 0.0
+      },
+      {
+        "target": 0.15,
+        "n": 12,
+        "mae_g": 12.516835021922704,
+        "mean_abs_change_g": 1.6968541800513464,
+        "actual_coverage": 0.15006925444078847
+      },
+      {
+        "target": 0.3,
+        "n": 12,
+        "mae_g": 13.16571100175993,
+        "mean_abs_change_g": 3.2482476509643425,
+        "actual_coverage": 0.30007531581483016
+      },
+      {
+        "target": 0.5,
+        "n": 12,
+        "mae_g": 13.924094506427544,
+        "mean_abs_change_g": 5.066063049791912,
+        "actual_coverage": 0.4999572186495532
+      }
+    ],
+    "aug": [
+      {
+        "target": 0.0,
+        "n": 12,
+        "mae_g": 13.10682465531458,
+        "mean_abs_change_g": 0.0,
+        "actual_coverage": 0.0
+      },
+      {
+        "target": 0.15,
+        "n": 12,
+        "mae_g": 13.021954537866842,
+        "mean_abs_change_g": 0.7503999290198848,
+        "actual_coverage": 0.15006925444078847
+      },
+      {
+        "target": 0.3,
+        "n": 12,
+        "mae_g": 12.943635435808025,
+        "mean_abs_change_g": 1.4367141633340192,
+        "actual_coverage": 0.30007531581483016
+      },
+      {
+        "target": 0.5,
+        "n": 12,
+        "mae_g": 12.852405141658236,
+        "mean_abs_change_g": 2.2408286251338154,
+        "actual_coverage": 0.4999572186495532
+      }
+    ],
+    "pooled_clean": [
+      {
+        "target": 0.0,
+        "n": 12,
+        "mae_g": 36.5197892270665,
+        "mean_abs_change_g": 0.0,
+        "actual_coverage": 0.0
+      },
+      {
+        "target": 0.15,
+        "n": 12,
+        "mae_g": 39.154008012350644,
+        "mean_abs_change_g": 11.039748860333026,
+        "actual_coverage": 0.15006925444078847
+      },
+      {
+        "target": 0.3,
+        "n": 12,
+        "mae_g": 42.15452919834124,
+        "mean_abs_change_g": 21.147564402175878,
+        "actual_coverage": 0.30007531581483016
+      },
+      {
+        "target": 0.5,
+        "n": 12,
+        "mae_g": 48.65993196762446,
+        "mean_abs_change_g": 32.98084621499556,
+        "actual_coverage": 0.4999572186495532
+      }
+    ],
+    "pooled_aug": [
+      {
+        "target": 0.0,
+        "n": 12,
+        "mae_g": 41.36745690511595,
+        "mean_abs_change_g": 0.0,
+        "actual_coverage": 0.0
+      },
+      {
+        "target": 0.15,
+        "n": 12,
+        "mae_g": 39.40082628160147,
+        "mean_abs_change_g": 11.514483965268324,
+        "actual_coverage": 0.15006925444078847
+      },
+      {
+        "target": 0.3,
+        "n": 12,
+        "mae_g": 39.21444856088474,
+        "mean_abs_change_g": 22.056959292639892,
+        "actual_coverage": 0.30007531581483016
+      },
+      {
+        "target": 0.5,
+        "n": 12,
+        "mae_g": 42.776108478671894,
+        "mean_abs_change_g": 34.39909998931723,
+        "actual_coverage": 0.4999572186495532
+      }
+    ]
+  },
+  "images_indexed": 4320,
+  "fruit_groups": 60,
+  "groups_with_all_72_conditions": 60,
+  "train_fruit": 48,
+  "test_fruit": 12,
+  "min_g": 108.63,
+  "max_g": 320.09,
+  "fixed_condition": [
+    "spb",
+    "int",
+    "me",
+    "ver"
+  ],
+  "camera_fruit_counts": {
+    "iPhone 11": 20,
+    "iPhone 8": 20,
+    "LM-X430": 20
+  },
+  "camera_mass_ranges_g": {
+    "LM-X430": [
+      248.73,
+      320.09
+    ],
+    "iPhone 11": [
+      108.63,
+      157.36
+    ],
+    "iPhone 8": [
+      196.38,
+      221.75
+    ]
+  },
+  "camera_test_counts": {
+    "iPhone 11": 4,
+    "iPhone 8": 4,
+    "LM-X430": 4
+  },
+  "split_seed": 20261116,
+  "python": "3.11.9",
+  "pillow": "12.3.0"
+}

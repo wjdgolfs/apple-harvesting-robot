@@ -1,0 +1,241 @@
+path,group,weight_g,site,variety,support,location,distance,angle,camera,split,target_fraction,measured_fraction,feature
+"Fuji_1/146.54/Rio_M_Fuji_146,54_Spb_int_me_ver.JPG",Fuji_1/146.54,146.54,rio,fuji,spb,int,me,ver,iPhone 11,test,0.0,0.0,0.017268761518292024
+"Fuji_1/146.54/Rio_M_Fuji_146,54_Spb_int_me_ver.JPG",Fuji_1/146.54,146.54,rio,fuji,spb,int,me,ver,iPhone 11,test,0.15,0.15026310660689923,0.013526576837231265
+"Fuji_1/146.54/Rio_M_Fuji_146,54_Spb_int_me_ver.JPG",Fuji_1/146.54,146.54,rio,fuji,spb,int,me,ver,iPhone 11,test,0.3,0.2999415318651335,0.010114924884184166
+"Fuji_1/146.54/Rio_M_Fuji_146,54_Spb_int_me_ver.JPG",Fuji_1/146.54,146.54,rio,fuji,spb,int,me,ver,iPhone 11,test,0.5,0.5000974468914442,0.0061036444078210435
+"Fuji_1/199.97/Rio_M_Fuji_199,97_Spb_int_me_ver.JPG",Fuji_1/199.97,199.97,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.01703705815486081
+"Fuji_1/199.97/Rio_M_Fuji_199,97_Spb_int_me_ver.JPG",Fuji_1/199.97,199.97,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.1502458210422812,0.01334549138956087
+"Fuji_1/199.97/Rio_M_Fuji_199,97_Spb_int_me_ver.JPG",Fuji_1/199.97,199.97,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.2999016715830875,0.009980060336510239
+"Fuji_1/199.97/Rio_M_Fuji_199,97_Spb_int_me_ver.JPG",Fuji_1/199.97,199.97,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.5000983284169125,0.006021732917233731
+"Fuji_1/206.85/Rio_M_Fuji_206,85_Spb_int_me_ver.JPG",Fuji_1/206.85,206.85,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.08157075634636395
+"Fuji_1/206.85/Rio_M_Fuji_206,85_Spb_int_me_ver.JPG",Fuji_1/206.85,206.85,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.15022499134648667,0.06389846436656484
+"Fuji_1/206.85/Rio_M_Fuji_206,85_Spb_int_me_ver.JPG",Fuji_1/206.85,206.85,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.3000346140533056,0.047769350404727164
+"Fuji_1/206.85/Rio_M_Fuji_206,85_Spb_int_me_ver.JPG",Fuji_1/206.85,206.85,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.4999653859466944,0.02884261229951496
+"Fuji_1/208.02/Rio_M_Fuji_208,02_Spb_int_me_ver.JPG",Fuji_1/208.02,208.02,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.06565549379986498
+"Fuji_1/208.02/Rio_M_Fuji_208,02_Spb_int_me_ver.JPG",Fuji_1/208.02,208.02,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.15025202016161293,0.0514287872421307
+"Fuji_1/208.02/Rio_M_Fuji_208,02_Spb_int_me_ver.JPG",Fuji_1/208.02,208.02,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.29954396351708135,0.03848951118251982
+"Fuji_1/208.02/Rio_M_Fuji_208,02_Spb_int_me_ver.JPG",Fuji_1/208.02,208.02,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.5003600288023042,0.02318765521185583
+Fuji_1/210.58/Rio_M_Fuji_210.58_Spb_int_me_ver.JPG,Fuji_1/210.58,210.58,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.0414812947012428
+Fuji_1/210.58/Rio_M_Fuji_210.58_Spb_int_me_ver.JPG,Fuji_1/210.58,210.58,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.15027708355970879,0.032491390631212695
+Fuji_1/210.58/Rio_M_Fuji_210.58_Spb_int_me_ver.JPG,Fuji_1/210.58,210.58,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.300119526241443,0.02428779668322465
+Fuji_1/210.58/Rio_M_Fuji_210.58_Spb_int_me_ver.JPG,Fuji_1/210.58,210.58,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.5004889709877214,0.014644344119443006
+"Fuji_1/211.04/Rio_M_Fuji_211,04_Spb_int_me_ver.JPG",Fuji_1/211.04,211.04,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.04029705737214312
+"Fuji_1/211.04/Rio_M_Fuji_211,04_Spb_int_me_ver.JPG",Fuji_1/211.04,211.04,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.14977290351168715,0.031591900010759205
+"Fuji_1/211.04/Rio_M_Fuji_211,04_Spb_int_me_ver.JPG",Fuji_1/211.04,211.04,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.3000997008973081,0.023595414028475984
+"Fuji_1/211.04/Rio_M_Fuji_211,04_Spb_int_me_ver.JPG",Fuji_1/211.04,211.04,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.4997230530630331,0.014259000026847395
+"Fuji_1/211.76/Rio_M_Fuji_211,76_Spb_int_me_ver.JPG",Fuji_1/211.76,211.76,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.0072580618921757436
+"Fuji_1/211.76/Rio_M_Fuji_211,76_Spb_int_me_ver.JPG",Fuji_1/211.76,211.76,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.1503994442514762,0.005683853152427917
+"Fuji_1/211.76/Rio_M_Fuji_211,76_Spb_int_me_ver.JPG",Fuji_1/211.76,211.76,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.3001042028482112,0.004249822051607173
+"Fuji_1/211.76/Rio_M_Fuji_211,76_Spb_int_me_ver.JPG",Fuji_1/211.76,211.76,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.5005210142410559,0.00256210249287563
+"Fuji_1/211.87/Rio_M_Fuji_211,87_Spb_int_me_ver.JPG",Fuji_1/211.87,211.87,rio,fuji,spb,int,me,ver,iPhone 8,test,0.0,0.0,0.036554151494794254
+"Fuji_1/211.87/Rio_M_Fuji_211,87_Spb_int_me_ver.JPG",Fuji_1/211.87,211.87,rio,fuji,spb,int,me,ver,iPhone 8,test,0.15,0.1498995153091382,0.028651152949951242
+"Fuji_1/211.87/Rio_M_Fuji_211,87_Spb_int_me_ver.JPG",Fuji_1/211.87,211.87,rio,fuji,spb,int,me,ver,iPhone 8,test,0.3,0.2999172479016432,0.021412174524348886
+"Fuji_1/211.87/Rio_M_Fuji_211,87_Spb_int_me_ver.JPG",Fuji_1/211.87,211.87,rio,fuji,spb,int,me,ver,iPhone 8,test,0.5,0.49982267407494974,0.012930720008668654
+"Fuji_1/215.90/Rio_M_Fuji_215,90_Spb_int_me_ver.JPG",Fuji_1/215.90,215.9,rio,fuji,spb,int,me,ver,iPhone 8,test,0.0,0.0,0.07652502819783143
+"Fuji_1/215.90/Rio_M_Fuji_215,90_Spb_int_me_ver.JPG",Fuji_1/215.90,215.9,rio,fuji,spb,int,me,ver,iPhone 8,test,0.15,0.1498952539189482,0.059980786965527375
+"Fuji_1/215.90/Rio_M_Fuji_215,90_Spb_int_me_ver.JPG",Fuji_1/215.90,215.9,rio,fuji,spb,int,me,ver,iPhone 8,test,0.3,0.3001517012208336,0.04480323417080502
+"Fuji_1/215.90/Rio_M_Fuji_215,90_Spb_int_me_ver.JPG",Fuji_1/215.90,215.9,rio,fuji,spb,int,me,ver,iPhone 8,test,0.5,0.5000361193382937,0.027052751537414224
+"Fuji_1/221.75/Rio_M_Fuji_221,75_Spb_int_me_ver.JPG",Fuji_1/221.75,221.75,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.009879308662840295
+"Fuji_1/221.75/Rio_M_Fuji_221,75_Spb_int_me_ver.JPG",Fuji_1/221.75,221.75,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.1504524886877828,0.007735850398451103
+"Fuji_1/221.75/Rio_M_Fuji_221,75_Spb_int_me_ver.JPG",Fuji_1/221.75,221.75,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.29949095022624433,0.005792248420900715
+"Fuji_1/221.75/Rio_M_Fuji_221,75_Spb_int_me_ver.JPG",Fuji_1/221.75,221.75,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.5,0.003492863074464688
+"Fuji_1/248.73/Rio_M_Fuji_248,73_Spb_int_me_ver.jpg",Fuji_1/248.73,248.73,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.03518861404081688
+"Fuji_1/248.73/Rio_M_Fuji_248,73_Spb_int_me_ver.jpg",Fuji_1/248.73,248.73,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.15023644961804292,0.027564448627262615
+"Fuji_1/248.73/Rio_M_Fuji_248,73_Spb_int_me_ver.jpg",Fuji_1/248.73,248.73,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.2996241057354189,0.020625236960268977
+"Fuji_1/248.73/Rio_M_Fuji_248,73_Spb_int_me_ver.jpg",Fuji_1/248.73,248.73,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.4994543470352856,0.012461424853322352
+"Fuji_1/253.17/Rio_M_Fuji_253,17_Spb_int_me_ver.jpg",Fuji_1/253.17,253.17,rio,fuji,spb,int,me,ver,LM-X430,test,0.0,0.0,0.04922231307804257
+"Fuji_1/253.17/Rio_M_Fuji_253,17_Spb_int_me_ver.jpg",Fuji_1/253.17,253.17,rio,fuji,spb,int,me,ver,LM-X430,test,0.15,0.14997576345128455,0.03857527063585724
+"Fuji_1/253.17/Rio_M_Fuji_253,17_Spb_int_me_ver.jpg",Fuji_1/253.17,253.17,rio,fuji,spb,int,me,ver,LM-X430,test,0.3,0.3003393116820165,0.028806681301932653
+"Fuji_1/253.17/Rio_M_Fuji_253,17_Spb_int_me_ver.jpg",Fuji_1/253.17,253.17,rio,fuji,spb,int,me,ver,LM-X430,test,0.5,0.49956374212312166,0.017425496864400546
+"Fuji_1/265.14/Rio_M_Fuji_265,14_Spb_int_me_ver.jpg",Fuji_1/265.14,265.14,rio,fuji,spb,int,me,ver,LM-X430,test,0.0,0.0,0.048003403531194574
+"Fuji_1/265.14/Rio_M_Fuji_265,14_Spb_int_me_ver.jpg",Fuji_1/265.14,265.14,rio,fuji,spb,int,me,ver,LM-X430,test,0.15,0.14994085173501578,0.03762233525249574
+"Fuji_1/265.14/Rio_M_Fuji_265,14_Spb_int_me_ver.jpg",Fuji_1/265.14,265.14,rio,fuji,spb,int,me,ver,LM-X430,test,0.3,0.3001774447949527,0.028103080940428064
+"Fuji_1/265.14/Rio_M_Fuji_265,14_Spb_int_me_ver.jpg",Fuji_1/265.14,265.14,rio,fuji,spb,int,me,ver,LM-X430,test,0.5,0.5,0.016971766078470972
+"Fuji_1/265.43/Rio_M_Fuji_265,43_Spb_int_me_ver.jpg",Fuji_1/265.43,265.43,rio,fuji,spb,int,me,ver,LM-X430,test,0.0,0.0,0.0420708940133175
+"Fuji_1/265.43/Rio_M_Fuji_265,43_Spb_int_me_ver.jpg",Fuji_1/265.43,265.43,rio,fuji,spb,int,me,ver,LM-X430,test,0.15,0.15005382131324005,0.03296619926818154
+"Fuji_1/265.43/Rio_M_Fuji_265,43_Spb_int_me_ver.jpg",Fuji_1/265.43,265.43,rio,fuji,spb,int,me,ver,LM-X430,test,0.3,0.29989235737351994,0.02464500830444518
+"Fuji_1/265.43/Rio_M_Fuji_265,43_Spb_int_me_ver.jpg",Fuji_1/265.43,265.43,rio,fuji,spb,int,me,ver,LM-X430,test,0.5,0.49978471474703984,0.014883914914690042
+"Fuji_1/268.98/Rio_M_Fuji_268,98_Spb_int_me_ver.jpg",Fuji_1/268.98,268.98,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.03671632113600778
+"Fuji_1/268.98/Rio_M_Fuji_268,98_Spb_int_me_ver.jpg",Fuji_1/268.98,268.98,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.1498114097123998,0.028782735599206112
+"Fuji_1/268.98/Rio_M_Fuji_268,98_Spb_int_me_ver.jpg",Fuji_1/268.98,268.98,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.29985855728429983,0.021509872565111447
+"Fuji_1/268.98/Rio_M_Fuji_268,98_Spb_int_me_ver.jpg",Fuji_1/268.98,268.98,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.49988213107024987,0.012985770331578916
+"Fuji_1/269.93/Rio_M_Fuji_269,93_Spb_int_me_ver.jpg",Fuji_1/269.93,269.93,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.032535026940253564
+"Fuji_1/269.93/Rio_M_Fuji_269,93_Spb_int_me_ver.jpg",Fuji_1/269.93,269.93,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.14986584898428518,0.02550247701133228
+"Fuji_1/269.93/Rio_M_Fuji_269,93_Spb_int_me_ver.jpg",Fuji_1/269.93,269.93,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.2998594608406797,0.019060268213550096
+"Fuji_1/269.93/Rio_M_Fuji_269,93_Spb_int_me_ver.jpg",Fuji_1/269.93,269.93,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.5003194071802735,0.011491848551316871
+"Fuji_1/271.68/Rio_M_Fuji_271,68_Spb_int_me_ver.jpg",Fuji_1/271.68,271.68,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.05140699897365647
+"Fuji_1/271.68/Rio_M_Fuji_271,68_Spb_int_me_ver.jpg",Fuji_1/271.68,271.68,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.14993407421359956,0.040290361469627854
+"Fuji_1/271.68/Rio_M_Fuji_271,68_Spb_int_me_ver.jpg",Fuji_1/271.68,271.68,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.2998681484271991,0.030115633628331764
+"Fuji_1/271.68/Rio_M_Fuji_271,68_Spb_int_me_ver.jpg",Fuji_1/271.68,271.68,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.5001883593897156,0.018164849391833184
+"Fuji_1/273.78/Rio_M_Fuji_273,78_Spb_int_me_ver.jpg",Fuji_1/273.78,273.78,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.0665716087686064
+"Fuji_1/273.78/Rio_M_Fuji_273,78_Spb_int_me_ver.jpg",Fuji_1/273.78,273.78,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.15005945303210463,0.052164118676628846
+"Fuji_1/273.78/Rio_M_Fuji_273,78_Spb_int_me_ver.jpg",Fuji_1/273.78,273.78,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.30043598890210066,0.03895204300694012
+"Fuji_1/273.78/Rio_M_Fuji_273,78_Spb_int_me_ver.jpg",Fuji_1/273.78,273.78,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.4998810939357907,0.02354501443636661
+"Fuji_1/278.45/Rio_M_Fuji_278,45_Spb_int_me_ver.jpg",Fuji_1/278.45,278.45,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.05103706966863679
+"Fuji_1/278.45/Rio_M_Fuji_278,45_Spb_int_me_ver.jpg",Fuji_1/278.45,278.45,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.1499952682880666,0.03999610925467923
+"Fuji_1/278.45/Rio_M_Fuji_278,45_Spb_int_me_ver.jpg",Fuji_1/278.45,278.45,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.2995173653827955,0.029921391808784552
+"Fuji_1/278.45/Rio_M_Fuji_278,45_Spb_int_me_ver.jpg",Fuji_1/278.45,278.45,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.4998580486419987,0.01805201382368974
+"Fuji_1/280.70/Rio_M_Fuji_280,70_Spb_int_me_ver.jpg",Fuji_1/280.70,280.7,rio,fuji,spb,int,me,ver,LM-X430,test,0.0,0.0,0.018484098573666407
+"Fuji_1/280.70/Rio_M_Fuji_280,70_Spb_int_me_ver.jpg",Fuji_1/280.70,280.7,rio,fuji,spb,int,me,ver,LM-X430,test,0.15,0.14993481095176012,0.014486938737386974
+"Fuji_1/280.70/Rio_M_Fuji_280,70_Spb_int_me_ver.jpg",Fuji_1/280.70,280.7,rio,fuji,spb,int,me,ver,LM-X430,test,0.3,0.30005587632706276,0.010824138324786037
+"Fuji_1/280.70/Rio_M_Fuji_280,70_Spb_int_me_ver.jpg",Fuji_1/280.70,280.7,rio,fuji,spb,int,me,ver,LM-X430,test,0.5,0.5000931272117712,0.006533290016480524
+"Fuji_1/282.83/Rio_M_Fuji_282,83_Spb_int_me_ver.jpg",Fuji_1/282.83,282.83,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.07726421003289981
+"Fuji_1/282.83/Rio_M_Fuji_282,83_Spb_int_me_ver.jpg",Fuji_1/282.83,282.83,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.14972724662647144,0.06057811598734474
+"Fuji_1/282.83/Rio_M_Fuji_282,83_Spb_int_me_ver.jpg",Fuji_1/282.83,282.83,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.2998133792707436,0.04526881024834667
+"Fuji_1/282.83/Rio_M_Fuji_282,83_Spb_int_me_ver.jpg",Fuji_1/282.83,282.83,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.4997128911857594,0.027340555680608575
+"Fuji_1/285.75/Rio_M_Fuji_285,75_Spb_int_me_ver.jpg",Fuji_1/285.75,285.75,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.053203818760093044
+"Fuji_1/285.75/Rio_M_Fuji_285,75_Spb_int_me_ver.jpg",Fuji_1/285.75,285.75,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.14994477172312223,0.041697836260808474
+"Fuji_1/285.75/Rio_M_Fuji_285,75_Spb_int_me_ver.jpg",Fuji_1/285.75,285.75,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.30007363770250367,0.031154539211448673
+"Fuji_1/285.75/Rio_M_Fuji_285,75_Spb_int_me_ver.jpg",Fuji_1/285.75,285.75,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.4998159057437408,0.01882078012588356
+"Fuji_1/286.43/Rio_M_Fuji_286,43_Spb_int_me_ver.jpg",Fuji_1/286.43,286.43,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.03683972999952696
+"Fuji_1/286.43/Rio_M_Fuji_286,43_Spb_int_me_ver.jpg",Fuji_1/286.43,286.43,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.1504174997059861,0.028848602250484173
+"Fuji_1/286.43/Rio_M_Fuji_286,43_Spb_int_me_ver.jpg",Fuji_1/286.43,286.43,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.3000117605550982,0.021575086905966333
+"Fuji_1/286.43/Rio_M_Fuji_286,43_Spb_int_me_ver.jpg",Fuji_1/286.43,286.43,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.49970598612254497,0.013036301564538843
+"Fuji_1/287.19/Rio_M_Fuji_287,19_Spb_int_me_ver.jpg",Fuji_1/287.19,287.19,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.03175256801999352
+"Fuji_1/287.19/Rio_M_Fuji_287,19_Spb_int_me_ver.jpg",Fuji_1/287.19,287.19,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.14998052201012854,0.024884113377172244
+"Fuji_1/287.19/Rio_M_Fuji_287,19_Spb_int_me_ver.jpg",Fuji_1/287.19,287.19,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.2991819244253993,0.018628882225950605
+"Fuji_1/287.19/Rio_M_Fuji_287,19_Spb_int_me_ver.jpg",Fuji_1/287.19,287.19,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.5004544864303337,0.011210925057355431
+"Fuji_1/290.25/Rio_M_Fuji_290,25_Spb_int_me_ver.jpg",Fuji_1/290.25,290.25,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.038680908035933895
+"Fuji_1/290.25/Rio_M_Fuji_290,25_Spb_int_me_ver.jpg",Fuji_1/290.25,290.25,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.14993169398907105,0.030316383829736452
+"Fuji_1/290.25/Rio_M_Fuji_290,25_Spb_int_me_ver.jpg",Fuji_1/290.25,290.25,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.2998633879781421,0.02266057071921595
+"Fuji_1/290.25/Rio_M_Fuji_290,25_Spb_int_me_ver.jpg",Fuji_1/290.25,290.25,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.5,0.013675766187331037
+"Fuji_1/296.05/Rio_M_Fuji_296,05_Spb_int_me_ver.jpg",Fuji_1/296.05,296.05,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.060869836421006546
+"Fuji_1/296.05/Rio_M_Fuji_296,05_Spb_int_me_ver.jpg",Fuji_1/296.05,296.05,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.1498653651969034,0.04771266770251533
+"Fuji_1/296.05/Rio_M_Fuji_296,05_Spb_int_me_ver.jpg",Fuji_1/296.05,296.05,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.30015146415348365,0.035637581390538325
+"Fuji_1/296.05/Rio_M_Fuji_296,05_Spb_int_me_ver.jpg",Fuji_1/296.05,296.05,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.49991585324806465,0.021526169980436854
+"Fuji_1/296.26/Rio_M_Fuji_296,26_Spb_int_me_ver.jpg",Fuji_1/296.26,296.26,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.07406732908633351
+"Fuji_1/296.26/Rio_M_Fuji_296,26_Spb_int_me_ver.jpg",Fuji_1/296.26,296.26,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.15016611295681062,0.058026683706293644
+"Fuji_1/296.26/Rio_M_Fuji_296,26_Spb_int_me_ver.jpg",Fuji_1/296.26,296.26,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.29996308600959765,0.043381852802527
+"Fuji_1/296.26/Rio_M_Fuji_296,26_Spb_int_me_ver.jpg",Fuji_1/296.26,296.26,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.5001107419712071,0.026178055893687373
+"Fuji_1/306.67/Rio_M_Fuji_306,67_Spb_int_me_ver.jpg",Fuji_1/306.67,306.67,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.04519226234845822
+"Fuji_1/306.67/Rio_M_Fuji_306,67_Spb_int_me_ver.jpg",Fuji_1/306.67,306.67,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.15004105090311987,0.03541286054641786
+"Fuji_1/306.67/Rio_M_Fuji_306,67_Spb_int_me_ver.jpg",Fuji_1/306.67,306.67,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.3001847290640394,0.026456915218290893
+"Fuji_1/306.67/Rio_M_Fuji_306,67_Spb_int_me_ver.jpg",Fuji_1/306.67,306.67,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.4998973727422003,0.015982797131581572
+"Fuji_1/307.11/Rio_M_Fuji_307,11_Spb_int_me_ver.jpg",Fuji_1/307.11,307.11,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.04524096965212562
+"Fuji_1/307.11/Rio_M_Fuji_307,11_Spb_int_me_ver.jpg",Fuji_1/307.11,307.11,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.1504461080914778,0.035425688968925124
+"Fuji_1/307.11/Rio_M_Fuji_307,11_Spb_int_me_ver.jpg",Fuji_1/307.11,307.11,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.2999692339247257,0.026497664432315028
+"Fuji_1/307.11/Rio_M_Fuji_307,11_Spb_int_me_ver.jpg",Fuji_1/307.11,307.11,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.5003589375448672,0.015977877581878148
+"Fuji_1/320.09/Rio_M_Fuji_320,09_Spb_int_me_ver.jpg",Fuji_1/320.09,320.09,rio,fuji,spb,int,me,ver,LM-X430,train,0.0,0.0,0.029516057466172953
+"Fuji_1/320.09/Rio_M_Fuji_320,09_Spb_int_me_ver.jpg",Fuji_1/320.09,320.09,rio,fuji,spb,int,me,ver,LM-X430,train,0.15,0.15010224948875256,0.023126417776412306
+"Fuji_1/320.09/Rio_M_Fuji_320,09_Spb_int_me_ver.jpg",Fuji_1/320.09,320.09,rio,fuji,spb,int,me,ver,LM-X430,train,0.3,0.3002044989775051,0.017278859224896654
+"Fuji_1/320.09/Rio_M_Fuji_320,09_Spb_int_me_ver.jpg",Fuji_1/320.09,320.09,rio,fuji,spb,int,me,ver,LM-X430,train,0.5,0.5002044989775051,0.010429100700187066
+"Fuji_2/108.63/Rio_M_Fuji_108,63_Spb_int_me_ver.JPG",Fuji_2/108.63,108.63,rio,fuji,spb,int,me,ver,iPhone 11,test,0.0,0.0,0.010106478183092316
+"Fuji_2/108.63/Rio_M_Fuji_108,63_Spb_int_me_ver.JPG",Fuji_2/108.63,108.63,rio,fuji,spb,int,me,ver,iPhone 11,test,0.15,0.15041782729805014,0.007914216543594348
+"Fuji_2/108.63/Rio_M_Fuji_108,63_Spb_int_me_ver.JPG",Fuji_2/108.63,108.63,rio,fuji,spb,int,me,ver,iPhone 11,test,0.3,0.29972144846796656,0.005922513781395044
+"Fuji_2/108.63/Rio_M_Fuji_108,63_Spb_int_me_ver.JPG",Fuji_2/108.63,108.63,rio,fuji,spb,int,me,ver,iPhone 11,test,0.5,0.49972144846796657,0.003576165988399589
+"Fuji_2/109.11/Rio_M_Fuji_109,11_Spb_int_me_ver.JPG",Fuji_2/109.11,109.11,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.008485246508186507
+"Fuji_2/109.11/Rio_M_Fuji_109,11_Spb_int_me_ver.JPG",Fuji_2/109.11,109.11,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.15023474178403756,0.006646804739074536
+"Fuji_2/109.11/Rio_M_Fuji_109,11_Spb_int_me_ver.JPG",Fuji_2/109.11,109.11,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.3001564945226917,0.004967820196726904
+"Fuji_2/109.11/Rio_M_Fuji_109,11_Spb_int_me_ver.JPG",Fuji_2/109.11,109.11,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.49921752738654146,0.0030070326520293005
+"Fuji_2/129.11/Rio_M_Fuji_129,11_Spb_int_me_ver.JPG",Fuji_2/129.11,129.11,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.009883499842327195
+"Fuji_2/129.11/Rio_M_Fuji_129,11_Spb_int_me_ver.JPG",Fuji_2/129.11,129.11,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.15012722646310434,0.007743577233851124
+"Fuji_2/129.11/Rio_M_Fuji_129,11_Spb_int_me_ver.JPG",Fuji_2/129.11,129.11,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.2999717274526435,0.005788741155794721
+"Fuji_2/129.11/Rio_M_Fuji_129,11_Spb_int_me_ver.JPG",Fuji_2/129.11,129.11,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.5001413627367826,0.003492863074464688
+"Fuji_2/129.84/Rio_M_Fuji_129,84_Spb_int_me_ver.JPG",Fuji_2/129.84,129.84,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.014055830690075667
+"Fuji_2/129.84/Rio_M_Fuji_129,84_Spb_int_me_ver.JPG",Fuji_2/129.84,129.84,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.14978761457634698,0.01101913891371991
+"Fuji_2/129.84/Rio_M_Fuji_129,84_Spb_int_me_ver.JPG",Fuji_2/129.84,129.84,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.29979879275653926,0.008235515710910774
+"Fuji_2/129.84/Rio_M_Fuji_129,84_Spb_int_me_ver.JPG",Fuji_2/129.84,129.84,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.500335345405768,0.00496448795295281
+"Fuji_2/131.07/Rio_M_Fuji_131,07_Spb_int_me_ver.JPG",Fuji_2/131.07,131.07,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.01419274519764879
+"Fuji_2/131.07/Rio_M_Fuji_131,07_Spb_int_me_ver.JPG",Fuji_2/131.07,131.07,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.1499333629498001,0.01112361280305102
+"Fuji_2/131.07/Rio_M_Fuji_131,07_Spb_int_me_ver.JPG",Fuji_2/131.07,131.07,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.30008884940026653,0.008310569288130008
+"Fuji_2/131.07/Rio_M_Fuji_131,07_Spb_int_me_ver.JPG",Fuji_2/131.07,131.07,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.5006663705019991,0.005007865201483537
+"Fuji_2/132.58/Rio_M_Fuji_132,58_Spb_int_me_ver.JPG",Fuji_2/132.58,132.58,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.014749595606837543
+"Fuji_2/132.58/Rio_M_Fuji_132,58_Spb_int_me_ver.JPG",Fuji_2/132.58,132.58,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.14981597748430397,0.011562440792138348
+"Fuji_2/132.58/Rio_M_Fuji_132,58_Spb_int_me_ver.JPG",Fuji_2/132.58,132.58,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.3000649491231868,0.008637075717183963
+"Fuji_2/132.58/Rio_M_Fuji_132,58_Spb_int_me_ver.JPG",Fuji_2/132.58,132.58,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.4998917514613553,0.005216463101876923
+"Fuji_2/132.80/Rio_M_Fuji_132,80_Spb_int_me_ver.JPG",Fuji_2/132.80,132.8,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.016402798641958524
+"Fuji_2/132.80/Rio_M_Fuji_132,80_Spb_int_me_ver.JPG",Fuji_2/132.80,132.8,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.1498588140379185,0.012857440949051658
+"Fuji_2/132.80/Rio_M_Fuji_132,80_Spb_int_me_ver.JPG",Fuji_2/132.80,132.8,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.299919322307382,0.009608156989214384
+"Fuji_2/132.80/Rio_M_Fuji_132,80_Spb_int_me_ver.JPG",Fuji_2/132.80,132.8,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.499798305768455,0.005802774463873982
+"Fuji_2/134.15/Rio_M_Fuji_134,15_Spb_int_me_ver.JPG",Fuji_2/134.15,134.15,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.01516827012471815
+"Fuji_2/134.15/Rio_M_Fuji_134,15_Spb_int_me_ver.JPG",Fuji_2/134.15,134.15,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.15002124946876327,0.011886340223636419
+"Fuji_2/134.15/Rio_M_Fuji_134,15_Spb_int_me_ver.JPG",Fuji_2/134.15,134.15,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.30004249893752655,0.0088826707008337
+"Fuji_2/134.15/Rio_M_Fuji_134,15_Spb_int_me_ver.JPG",Fuji_2/134.15,134.15,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.5002124946876328,0.0053593749999999996
+"Fuji_2/135.44/Rio_M_Fuji_135,44_Spb_int_me_ver.JPG",Fuji_2/135.44,135.44,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.014244793905815524
+"Fuji_2/135.44/Rio_M_Fuji_135,44_Spb_int_me_ver.JPG",Fuji_2/135.44,135.44,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.15001107910480832,0.011162875156506795
+"Fuji_2/135.44/Rio_M_Fuji_135,44_Spb_int_me_ver.JPG",Fuji_2/135.44,135.44,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.29980057611345,0.008346200122625075
+"Fuji_2/135.44/Rio_M_Fuji_135,44_Spb_int_me_ver.JPG",Fuji_2/135.44,135.44,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.49966762685575006,0.005041317805961478
+"Fuji_2/136.37/Rio_M_Fuji_136,37_Spb_int_me_ver.JPG",Fuji_2/136.37,136.37,rio,fuji,spb,int,me,ver,iPhone 11,test,0.0,0.0,0.015013820940738906
+"Fuji_2/136.37/Rio_M_Fuji_136,37_Spb_int_me_ver.JPG",Fuji_2/136.37,136.37,rio,fuji,spb,int,me,ver,iPhone 11,test,0.15,0.14997860504920837,0.011766194347193977
+"Fuji_2/136.37/Rio_M_Fuji_136,37_Spb_int_me_ver.JPG",Fuji_2/136.37,136.37,rio,fuji,spb,int,me,ver,iPhone 11,test,0.3,0.30038510911424904,0.008785769375463333
+"Fuji_2/136.37/Rio_M_Fuji_136,37_Spb_int_me_ver.JPG",Fuji_2/136.37,136.37,rio,fuji,spb,int,me,ver,iPhone 11,test,0.5,0.5002139495079161,0.005304780611671228
+"Fuji_2/141.14/Rio_M_Fuji_141,14_Spb_int_me_ver.JPG",Fuji_2/141.14,141.14,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.011469818044714192
+"Fuji_2/141.14/Rio_M_Fuji_141,14_Spb_int_me_ver.JPG",Fuji_2/141.14,141.14,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.15002560163850487,0.008988046187843714
+"Fuji_2/141.14/Rio_M_Fuji_141,14_Spb_int_me_ver.JPG",Fuji_2/141.14,141.14,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.30030721966205837,0.006713014998295197
+"Fuji_2/141.14/Rio_M_Fuji_141,14_Spb_int_me_ver.JPG",Fuji_2/141.14,141.14,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.49974398361495137,0.004058308045458398
+"Fuji_2/141.99/Rio_M_Fuji_141,99_Spb_int_me_ver.JPG",Fuji_2/141.99,141.99,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.014183288621365052
+"Fuji_2/141.99/Rio_M_Fuji_141,99_Spb_int_me_ver.JPG",Fuji_2/141.99,141.99,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.15,0.011114894099599773
+"Fuji_2/141.99/Rio_M_Fuji_141,99_Spb_int_me_ver.JPG",Fuji_2/141.99,141.99,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.3,0.008306613444004216
+"Fuji_2/141.99/Rio_M_Fuji_141,99_Spb_int_me_ver.JPG",Fuji_2/141.99,141.99,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.5002222222222222,0.005011207120134368
+"Fuji_2/142.70/Rio_M_Fuji_142,70_Spb_int_me_ver.JPG",Fuji_2/142.70,142.7,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.01419274519764879
+"Fuji_2/142.70/Rio_M_Fuji_142,70_Spb_int_me_ver.JPG",Fuji_2/142.70,142.7,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.15037760995113283,0.011114894099599773
+"Fuji_2/142.70/Rio_M_Fuji_142,70_Spb_int_me_ver.JPG",Fuji_2/142.70,142.7,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.2996446023989338,0.008318482859568916
+"Fuji_2/142.70/Rio_M_Fuji_142,70_Spb_int_me_ver.JPG",Fuji_2/142.70,142.7,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.49977787649933364,0.005021237333794893
+"Fuji_2/143.54/Rio_M_Fuji_143,54_Spb_int_me_ver.JPG",Fuji_2/143.54,143.54,rio,fuji,spb,int,me,ver,iPhone 11,test,0.0,0.0,0.01480711132052593
+"Fuji_2/143.54/Rio_M_Fuji_143,54_Spb_int_me_ver.JPG",Fuji_2/143.54,143.54,rio,fuji,spb,int,me,ver,iPhone 11,test,0.15,0.15007557762902182,0.011602212208238564
+"Fuji_2/143.54/Rio_M_Fuji_143,54_Spb_int_me_ver.JPG",Fuji_2/143.54,143.54,rio,fuji,spb,int,me,ver,iPhone 11,test,0.3,0.30036709134096307,0.00866514202303095
+"Fuji_2/143.54/Rio_M_Fuji_143,54_Spb_int_me_ver.JPG",Fuji_2/143.54,143.54,rio,fuji,spb,int,me,ver,iPhone 11,test,0.5,0.49989203195854026,0.005236800175710571
+"Fuji_2/144.23/Rio_M_Fuji_144,23_Spb_int_me_ver.JPG",Fuji_2/144.23,144.23,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.011386230751332282
+"Fuji_2/144.23/Rio_M_Fuji_144,23_Spb_int_me_ver.JPG",Fuji_2/144.23,144.23,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.14998713660921018,0.008923150704690894
+"Fuji_2/144.23/Rio_M_Fuji_144,23_Spb_int_me_ver.JPG",Fuji_2/144.23,144.23,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.29997427321842035,0.006668850514727865
+"Fuji_2/144.23/Rio_M_Fuji_144,23_Spb_int_me_ver.JPG",Fuji_2/144.23,144.23,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.49987136609210187,0.00402719408972651
+"Fuji_2/145.59/Rio_M_Fuji_145,59_Spb_int_me_ver.JPG",Fuji_2/145.59,145.59,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.01764368399189822
+"Fuji_2/145.59/Rio_M_Fuji_145,59_Spb_int_me_ver.JPG",Fuji_2/145.59,145.59,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.1500480307396734,0.013825500027126408
+"Fuji_2/145.59/Rio_M_Fuji_145,59_Spb_int_me_ver.JPG",Fuji_2/145.59,145.59,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.3004803073967339,0.010322602128879295
+"Fuji_2/145.59/Rio_M_Fuji_145,59_Spb_int_me_ver.JPG",Fuji_2/145.59,145.59,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.5002881844380404,0.006232592005067794
+"Fuji_2/150.25/Rio_M_Fuji_150,25_Spb_int_me_ver.JPG",Fuji_2/150.25,150.25,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.01148303465774287
+"Fuji_2/150.25/Rio_M_Fuji_150,25_Spb_int_me_ver.JPG",Fuji_2/150.25,150.25,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.15016628293681247,0.008996169139355808
+"Fuji_2/150.25/Rio_M_Fuji_150,25_Spb_int_me_ver.JPG",Fuji_2/150.25,150.25,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.2998209260680481,0.006727758073333839
+"Fuji_2/150.25/Rio_M_Fuji_150,25_Spb_int_me_ver.JPG",Fuji_2/150.25,150.25,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.4991046303402405,0.0040707759602812855
+"Fuji_2/152.73/Rio_M_Fuji_152,73_Spb_int_me_ver.JPG",Fuji_2/152.73,152.73,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.009812330442035862
+"Fuji_2/152.73/Rio_M_Fuji_152,73_Spb_int_me_ver.JPG",Fuji_2/152.73,152.73,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.15,0.00768954342289983
+"Fuji_2/152.73/Rio_M_Fuji_152,73_Spb_int_me_ver.JPG",Fuji_2/152.73,152.73,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.3,0.005746709253596389
+"Fuji_2/152.73/Rio_M_Fuji_152,73_Spb_int_me_ver.JPG",Fuji_2/152.73,152.73,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.5002840909090909,0.0034662264276285786
+"Fuji_2/157.36/Rio_M_Fuji_157,36_Spb_int_me_ver.JPG",Fuji_2/157.36,157.36,rio,fuji,spb,int,me,ver,iPhone 11,train,0.0,0.0,0.017011935928605837
+"Fuji_2/157.36/Rio_M_Fuji_157,36_Spb_int_me_ver.JPG",Fuji_2/157.36,157.36,rio,fuji,spb,int,me,ver,iPhone 11,train,0.15,0.15,0.013331595465863972
+"Fuji_2/157.36/Rio_M_Fuji_157,36_Spb_int_me_ver.JPG",Fuji_2/157.36,157.36,rio,fuji,spb,int,me,ver,iPhone 11,train,0.3,0.2998031496062992,0.009967447749782312
+"Fuji_2/157.36/Rio_M_Fuji_157,36_Spb_int_me_ver.JPG",Fuji_2/157.36,157.36,rio,fuji,spb,int,me,ver,iPhone 11,train,0.5,0.49980314960629924,0.006018179923141795
+"Fuji_2/196.38/Rio_M_Fuji_196,38_Spb_int_me_ver.JPG",Fuji_2/196.38,196.38,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.02531299607414823
+"Fuji_2/196.38/Rio_M_Fuji_196,38_Spb_int_me_ver.JPG",Fuji_2/196.38,196.38,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.14982631022504153,0.019842895395349735
+"Fuji_2/196.38/Rio_M_Fuji_196,38_Spb_int_me_ver.JPG",Fuji_2/196.38,196.38,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.29995468962392385,0.014826299800227942
+"Fuji_2/196.38/Rio_M_Fuji_196,38_Spb_int_me_ver.JPG",Fuji_2/196.38,196.38,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.4999244827065398,0.00895152318969795
+"Fuji_2/197.79/Rio_M_Fuji_197,79_Spb_int_me_ver.JPG",Fuji_2/197.79,197.79,rio,fuji,spb,int,me,ver,iPhone 8,test,0.0,0.0,0.028507837636847166
+"Fuji_2/197.79/Rio_M_Fuji_197,79_Spb_int_me_ver.JPG",Fuji_2/197.79,197.79,rio,fuji,spb,int,me,ver,iPhone 8,test,0.15,0.15041160876238316,0.022324263039999227
+"Fuji_2/197.79/Rio_M_Fuji_197,79_Spb_int_me_ver.JPG",Fuji_2/197.79,197.79,rio,fuji,spb,int,me,ver,iPhone 8,test,0.3,0.2999860471605972,0.016696456929524022
+"Fuji_2/197.79/Rio_M_Fuji_197,79_Spb_int_me_ver.JPG",Fuji_2/197.79,197.79,rio,fuji,spb,int,me,ver,iPhone 8,test,0.5,0.4997907074089577,0.010085371724045462
+"Fuji_2/198.10/Rio_M_Fuji_198,10_Spb_int_me_ver.JPG",Fuji_2/198.10,198.1,rio,fuji,spb,int,me,ver,iPhone 8,test,0.0,0.0,0.02390981735876324
+"Fuji_2/198.10/Rio_M_Fuji_198,10_Spb_int_me_ver.JPG",Fuji_2/198.10,198.1,rio,fuji,spb,int,me,ver,iPhone 8,test,0.15,0.1499843112645121,0.018737716809444166
+"Fuji_2/198.10/Rio_M_Fuji_198,10_Spb_int_me_ver.JPG",Fuji_2/198.10,198.1,rio,fuji,spb,int,me,ver,iPhone 8,test,0.3,0.2999686225290242,0.014004013439292197
+"Fuji_2/198.10/Rio_M_Fuji_198,10_Spb_int_me_ver.JPG",Fuji_2/198.10,198.1,rio,fuji,spb,int,me,ver,iPhone 8,test,0.5,0.5004706620646376,0.00844146372517796
+"Fuji_2/198.24/Rio_M_Fuji_198,24_Spb_int_me_ver.JPG",Fuji_2/198.24,198.24,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.06029452162889601
+"Fuji_2/198.24/Rio_M_Fuji_198,24_Spb_int_me_ver.JPG",Fuji_2/198.24,198.24,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.150224405114743,0.0472317715462711
+"Fuji_2/198.24/Rio_M_Fuji_198,24_Spb_int_me_ver.JPG",Fuji_2/198.24,198.24,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.2999407231772377,0.03531669676041048
+"Fuji_2/198.24/Rio_M_Fuji_198,24_Spb_int_me_ver.JPG",Fuji_2/198.24,198.24,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.5000423405876874,0.0213146248482556
+"Fuji_2/198.80/Rio_M_Fuji_198,80_Spb_int_me_ver.JPG",Fuji_2/198.80,198.8,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.06264544865835067
+"Fuji_2/198.80/Rio_M_Fuji_198,80_Spb_int_me_ver.JPG",Fuji_2/198.80,198.8,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.14982664685487865,0.049107831518038506
+"Fuji_2/198.80/Rio_M_Fuji_198,80_Spb_int_me_ver.JPG",Fuji_2/198.80,198.8,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.30039623576027735,0.03665791250119065
+"Fuji_2/198.80/Rio_M_Fuji_198,80_Spb_int_me_ver.JPG",Fuji_2/198.80,198.8,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.49991745088327555,0.02215399602478683
+"Fuji_2/201.03/Rio_M_Fuji_201,03_Spb_int_me_ver.JPG",Fuji_2/201.03,201.03,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.034665099696367434
+"Fuji_2/201.03/Rio_M_Fuji_201,03_Spb_int_me_ver.JPG",Fuji_2/201.03,201.03,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.1497856705450092,0.027175971847113647
+"Fuji_2/201.03/Rio_M_Fuji_201,03_Spb_int_me_ver.JPG",Fuji_2/201.03,201.03,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.3005511328842621,0.02027806030169884
+"Fuji_2/201.03/Rio_M_Fuji_201,03_Spb_int_me_ver.JPG",Fuji_2/201.03,201.03,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.500796080832823,0.012226704973756847
+"Fuji_2/201.13/Rio_M_Fuji_201,13_Spb_int_me_ver.JPG",Fuji_2/201.13,201.13,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.09583160522979506
+"Fuji_2/201.13/Rio_M_Fuji_201,13_Spb_int_me_ver.JPG",Fuji_2/201.13,201.13,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.1501585525088603,0.0750785065544984
+"Fuji_2/201.13/Rio_M_Fuji_201,13_Spb_int_me_ver.JPG",Fuji_2/201.13,201.13,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.30006839519990053,0.05611670582891524
+"Fuji_2/201.13/Rio_M_Fuji_201,13_Spb_int_me_ver.JPG",Fuji_2/201.13,201.13,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.5000310887272275,0.03387842899767978
+"Fuji_2/202.21/Rio_M_Fuji_202,21_Spb_int_me_ver.JPG",Fuji_2/202.21,202.21,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.03756344983256473
+"Fuji_2/202.21/Rio_M_Fuji_202,21_Spb_int_me_ver.JPG",Fuji_2/202.21,202.21,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.14998839099140934,0.029437624197725873
+"Fuji_2/202.21/Rio_M_Fuji_202,21_Spb_int_me_ver.JPG",Fuji_2/202.21,202.21,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.2997446018110053,0.022011526870630863
+"Fuji_2/202.21/Rio_M_Fuji_202,21_Spb_int_me_ver.JPG",Fuji_2/202.21,202.21,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.5001160900859066,0.013276060051562549
+"Fuji_2/204.75/Rio_M_Fuji_204,75_Spb_int_me_ver.JPG",Fuji_2/204.75,204.75,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.013004137756090486
+"Fuji_2/204.75/Rio_M_Fuji_204,75_Spb_int_me_ver.JPG",Fuji_2/204.75,204.75,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.14998822698375325,0.010191050949240273
+"Fuji_2/204.75/Rio_M_Fuji_204,75_Spb_int_me_ver.JPG",Fuji_2/204.75,204.75,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.2999764539675065,0.007616413844018027
+"Fuji_2/204.75/Rio_M_Fuji_204,75_Spb_int_me_ver.JPG",Fuji_2/204.75,204.75,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.5001177301624676,0.004596033242284418
+"Fuji_2/205.23/Rio_M_Fuji_205,23_Spb_int_me_ver.JPG",Fuji_2/205.23,205.23,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.047302389687305386
+"Fuji_2/205.23/Rio_M_Fuji_205,23_Spb_int_me_ver.JPG",Fuji_2/205.23,205.23,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.14982578397212543,0.03708044829081638
+"Fuji_2/205.23/Rio_M_Fuji_205,23_Spb_int_me_ver.JPG",Fuji_2/205.23,205.23,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.29995022399203586,0.027706167984489768
+"Fuji_2/205.23/Rio_M_Fuji_205,23_Spb_int_me_ver.JPG",Fuji_2/205.23,205.23,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.5004479840716775,0.01670144914266812
+"Fuji_2/205.83/Rio_M_Fuji_205,83_Spb_int_me_ver.JPG",Fuji_2/205.83,205.83,rio,fuji,spb,int,me,ver,iPhone 8,train,0.0,0.0,0.02762346891728388
+"Fuji_2/205.83/Rio_M_Fuji_205,83_Spb_int_me_ver.JPG",Fuji_2/205.83,205.83,rio,fuji,spb,int,me,ver,iPhone 8,train,0.15,0.15018523795953262,0.021640367020263968
+"Fuji_2/205.83/Rio_M_Fuji_205,83_Spb_int_me_ver.JPG",Fuji_2/205.83,205.83,rio,fuji,spb,int,me,ver,iPhone 8,train,0.3,0.3002279851809632,0.016170113606749796
+"Fuji_2/205.83/Rio_M_Fuji_205,83_Spb_int_me_ver.JPG",Fuji_2/205.83,205.83,rio,fuji,spb,int,me,ver,iPhone 8,train,0.5,0.5,0.009766371095653623
