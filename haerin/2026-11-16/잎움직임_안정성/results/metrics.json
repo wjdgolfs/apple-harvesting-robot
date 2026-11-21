@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-17",
+  "case_count": 8,
+  "unique_apple_ids": 5,
+  "selection": "All held-out-test IDs with usable original geometry in five pre-existing demo images",
+  "conditions": {
+    "stationary": {
+      "apples": 8,
+      "frames": 96,
+      "ripeness_transitions": 0,
+      "ripeness_hold_frames": 72,
+      "geometry_hold_frames": 84,
+      "geometry_hold_transitions": 0
+    },
+    "weak": {
+      "apples": 8,
+      "frames": 96,
+      "ripeness_transitions": 6,
+      "ripeness_hold_frames": 65,
+      "geometry_hold_frames": 84,
+      "geometry_hold_transitions": 0
+    },
+    "strong": {
+      "apples": 8,
+      "frames": 96,
+      "ripeness_transitions": 9,
+      "ripeness_hold_frames": 59,
+      "geometry_hold_frames": 81,
+      "geometry_hold_transitions": 2
+    }
+  },
+  "settings": {
+    "fill_threshold": 0.8,
+    "min_depth_valid": 0.5,
+    "ripeness_model": "finetuned",
+    "ripeness_label": "익음도: ResNet18 미세조정, 익음 ≥ 1.27 · 미숙 < -3.20 · 사이는 보류",
+    "ripeness_ripe_threshold": 1.265625,
+    "ripeness_unripe_threshold": -3.203125,
+    "weight_a": 0.0036986932463824425,
+    "weight_b": 2.5245038454742397,
+    "weight_lab_range_mm": [
+      59.18007874275852,
+      93.28264134617092
+    ],
+    "weight_cv_mae_g": 14.19873490449341,
+    "mask_source": "데이터셋의 보이는 사과 윤곽(검출기 대신)"
+  },
+  "method": "One initial 15% added leaf, fixed/5%/20% fruit-width displacement; updated RGB, visible binary mask, and depth under leaf; GT visible masks simulate ideal segmentation",
+  "numeric_settings": "cuDNN deterministic, benchmark false, TF32 false",
+  "weight_interpretation": "Changes in diameter-based expected grams; orchard ground-truth grams unavailable",
+  "source_files": {
+    "통합데모\\demo.py": "7507bd566385cd782c29d3ee19356888a0980cf4a5690a18ecdf6eefdbf18718",
+    "익음도보강\\weights\\ripeness_finetuned.pt": "20162b7c3cdc6cf398fef3fb8f710671b07725f439fa72848c6a499672269369",
+    "익음도보강\\results\\apple_splits.csv": "78237fc09068a014f75cc33f40db6c98bc46da9bb6982f50c462aa316fa9f470",
+    "지름추정\\measure_instances.py": "505fae65430c2dba85c0bc1b2048b84aa7a7a817cf00b0ab80242f162fbc3204",
+    "지름추정\\results\\metrics.json": "513b2f7b1f872cca0e1356e0e5b77d1ce934f5c8b75735003416f4420c7f68d7",
+    "무게추정\\results\\metrics.json": "416937e43691b0c38931b0cddd1e65d26cef394a2be03cdf27f11abd6d389a80"
+  },
+  "decision_counts": {
+    "ripe": 54,
+    "hold": 196,
+    "unripe": 38
+  }
+}

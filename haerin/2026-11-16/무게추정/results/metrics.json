@@ -1,0 +1,164 @@
+{
+  "measurement": {
+    "views": [
+      "spm_int_al_ver",
+      "spm_int_me_ver",
+      "spm_int_ce_ver"
+    ],
+    "dropped_as_coin_failure": {
+      "spm_int_al_ver": 2,
+      "spm_int_ce_ver": 4
+    },
+    "camera_height_median_mm": {
+      "spm_int_al_ver": 260.64027956996205,
+      "spm_int_me_ver": 212.85465453375826,
+      "spm_int_ce_ver": 154.21302641760886
+    },
+    "near_minus_far_diameter_median_mm": {
+      "before_correction": 11.345534346149847,
+      "after_correction": -0.06956666163807768
+    },
+    "diameter_range_mm": [
+      59.18007874275852,
+      93.28264134617092
+    ],
+    "diameter_weight_rank_corr_within_batch": {
+      "LM-X430": 0.26766917293233083,
+      "iPhone 11": 0.7293233082706766,
+      "iPhone 8": 0.18496240601503755
+    }
+  },
+  "settings": {
+    "folds": 5,
+    "repeats": 20,
+    "seed": 20261116,
+    "valid_range_mm": [
+      55.0,
+      130.0
+    ],
+    "coin_mm": 23.25
+  },
+  "cross_validation": {
+    "global_mean": {
+      "apples": 60,
+      "mae_g": 50.26114305555555,
+      "mae_repeat_range_g": [
+        50.14559027777779,
+        50.52333333333333
+      ],
+      "mape_pct": 27.294683175270823,
+      "within_batch_rank_corr": {
+        "LM-X430": -0.8887218045112781,
+        "iPhone 11": -0.5413533834586466,
+        "iPhone 8": -0.6015037593984961
+      },
+      "within_batch_rank_corr_mean": -0.6771929824561402
+    },
+    "batch_mean_reference": {
+      "apples": 60,
+      "mae_g": 10.266274999999998,
+      "mae_repeat_range_g": [
+        9.871666666666666,
+        10.904645833333328
+      ],
+      "mape_pct": 5.253546878893744,
+      "within_batch_rank_corr": {
+        "LM-X430": -0.9398496240601503,
+        "iPhone 11": -0.9097744360902256,
+        "iPhone 8": -0.8857142857142858
+      },
+      "within_batch_rank_corr_mean": -0.9117794486215538
+    },
+    "power_me_view": {
+      "apples": 60,
+      "mae_g": 16.346445852437878,
+      "mae_repeat_range_g": [
+        15.845090129277596,
+        16.752115243529623
+      ],
+      "mape_pct": 7.844678655339357,
+      "within_batch_rank_corr": {
+        "LM-X430": 0.3157894736842105,
+        "iPhone 11": 0.6451127819548872,
+        "iPhone 8": 0.15939849624060148
+      },
+      "within_batch_rank_corr_mean": 0.37343358395989973
+    },
+    "power_three_views": {
+      "apples": 60,
+      "mae_g": 14.19873490449341,
+      "mae_repeat_range_g": [
+        13.838637705141739,
+        14.71743298577122
+      ],
+      "mape_pct": 6.560669211593649,
+      "within_batch_rank_corr": {
+        "LM-X430": 0.24511278195488717,
+        "iPhone 11": 0.7112781954887217,
+        "iPhone 8": 0.17593984962406017
+      },
+      "within_batch_rank_corr_mean": 0.37744360902255636
+    },
+    "cube_three_views": {
+      "apples": 60,
+      "mae_g": 17.026857910728225,
+      "mae_repeat_range_g": [
+        16.702356892128133,
+        17.5244807846964
+      ],
+      "mape_pct": 7.880417040369274,
+      "within_batch_rank_corr": {
+        "LM-X430": 0.2571428571428572,
+        "iPhone 11": 0.724812030075188,
+        "iPhone 8": 0.18496240601503755
+      },
+      "within_batch_rank_corr_mean": 0.3889724310776943
+    }
+  },
+  "paired_differences": {
+    "three_views_minus_global_mean": {
+      "difference_g": -36.06240815106215,
+      "ci95_g": [
+        -40.463789387215364,
+        -31.75590985950457
+      ]
+    },
+    "three_views_minus_batch_mean": {
+      "difference_g": 3.932459904493409,
+      "ci95_g": [
+        -0.27019384248751593,
+        8.201114295691182
+      ]
+    }
+  },
+  "formula_all_60": {
+    "power": {
+      "a": 0.0036986932463824425,
+      "b": 2.5245038454742397,
+      "text": "weight_g = 3.699e-03 * D_mm^2.525"
+    },
+    "cube": {
+      "k": 0.000458557308343978,
+      "text": "weight_g = 4.5856e-04 * D_mm^3"
+    },
+    "cube_density_times_shape_g_per_cm3": 0.8757799477663024
+  },
+  "orchard_propagation": {
+    "apples": 175,
+    "inside_lab_diameter_range": 87,
+    "weight_from_calliper_diameter_g": {
+      "median": 112.59065423257063,
+      "range": [
+        50.92584701590513,
+        356.0798592153477
+      ]
+    },
+    "weight_change_from_diameter_error_g": {
+      "mae": 30.562760083565205,
+      "median": 13.736899671909583,
+      "bias": -23.18965798618757,
+      "mae_inside_range": 48.766369210562026
+    },
+    "note": "No orchard apple was weighed: this is the extra error caused by the diameter estimate, on top of the formula error measured in the lab."
+  }
+}

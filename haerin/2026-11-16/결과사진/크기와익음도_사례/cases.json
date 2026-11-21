@@ -1,0 +1,24 @@
+[
+  {
+    "split": "train",
+    "filename": "_MG_2902_21.png",
+    "region_index": 0,
+    "apple_id": "0190",
+    "label": "ripe",
+    "diameter_mm": 51.4,
+    "weight_g": null,
+    "model_prediction": "ripe",
+    "model_logit": 1.448020339012146
+  },
+  {
+    "split": "test",
+    "filename": "_MG_2714_21.png",
+    "region_index": 2,
+    "apple_id": "0083",
+    "label": "unripe",
+    "diameter_mm": 86.2,
+    "weight_g": null,
+    "model_prediction": "unripe",
+    "model_logit": -5.908431529998779
+  }
+]

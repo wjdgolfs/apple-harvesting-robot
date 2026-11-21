@@ -1,0 +1,45 @@
+Fine-tuning seed 0
+  seed 0 epoch 1/12  loss 1.0157  val AP 0.799
+  seed 0 epoch 2/12  loss 0.6735  val AP 0.778
+  seed 0 epoch 3/12  loss 0.5820  val AP 0.837
+  seed 0 epoch 4/12  loss 0.4905  val AP 0.824
+  seed 0 epoch 5/12  loss 0.4062  val AP 0.850
+  seed 0 epoch 6/12  loss 0.3750  val AP 0.841
+  seed 0 epoch 7/12  loss 0.3317  val AP 0.859
+  seed 0 epoch 8/12  loss 0.3212  val AP 0.857
+  seed 0 epoch 9/12  loss 0.2471  val AP 0.859
+  seed 0 epoch 10/12  loss 0.2235  val AP 0.848
+  seed 0 epoch 11/12  loss 0.2196  val AP 0.852
+  seed 0 epoch 12/12  loss 0.2096  val AP 0.851
+Fine-tuning seed 1
+  seed 1 epoch 1/12  loss 0.9948  val AP 0.838
+  seed 1 epoch 2/12  loss 0.6541  val AP 0.839
+  seed 1 epoch 3/12  loss 0.5827  val AP 0.841
+  seed 1 epoch 4/12  loss 0.4896  val AP 0.861
+  seed 1 epoch 5/12  loss 0.4491  val AP 0.854
+  seed 1 epoch 6/12  loss 0.4121  val AP 0.878
+  seed 1 epoch 7/12  loss 0.3605  val AP 0.867
+  seed 1 epoch 8/12  loss 0.3231  val AP 0.866
+  seed 1 epoch 9/12  loss 0.2767  val AP 0.880
+  seed 1 epoch 10/12  loss 0.2423  val AP 0.882
+  seed 1 epoch 11/12  loss 0.2244  val AP 0.876
+  seed 1 epoch 12/12  loss 0.2208  val AP 0.876
+Fine-tuning seed 2
+  seed 2 epoch 1/12  loss 0.9872  val AP 0.819
+  seed 2 epoch 2/12  loss 0.6727  val AP 0.655
+  seed 2 epoch 3/12  loss 0.6059  val AP 0.836
+  seed 2 epoch 4/12  loss 0.4768  val AP 0.850
+  seed 2 epoch 5/12  loss 0.4187  val AP 0.844
+  seed 2 epoch 6/12  loss 0.3895  val AP 0.861
+  seed 2 epoch 7/12  loss 0.3283  val AP 0.864
+  seed 2 epoch 8/12  loss 0.2599  val AP 0.874
+  seed 2 epoch 9/12  loss 0.2606  val AP 0.849
+  seed 2 epoch 10/12  loss 0.2296  val AP 0.868
+  seed 2 epoch 11/12  loss 0.2339  val AP 0.867
+  seed 2 epoch 12/12  loss 0.2281  val AP 0.869
+earlier_clean        val AP 0.831 | test AP 0.655 AUC 0.897 | earlier-202 AP 0.555
+earlier_aug          val AP 0.839 | test AP 0.656 AUC 0.903 | earlier-202 AP 0.667
+expanded_probe_aug   val AP 0.751 | test AP 0.683 AUC 0.923 | earlier-202 AP 0.666
+finetune_seed0       val AP 0.859 | test AP 0.679 AUC 0.925 | earlier-202 AP 0.673
+finetune_seed1       val AP 0.882 | test AP 0.673 AUC 0.922 | earlier-202 AP 0.672
+finetune_seed2       val AP 0.874 | test AP 0.692 AUC 0.930 | earlier-202 AP 0.657
