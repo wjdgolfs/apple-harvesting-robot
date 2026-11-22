@@ -1,0 +1,31 @@
+{
+  "method": "Causal median of last up to three frame logits, current thresholds retained",
+  "status": "Exploratory analysis on these synthetic sequences; no independent video accuracy validation",
+  "latency": "Uses only current and up to two previous frames; can delay a genuine change",
+  "conditions": {
+    "stationary": {
+      "sequences": 5,
+      "frames": 60,
+      "raw_transitions": 0,
+      "median3_transitions": 0,
+      "raw_hold_frames": 48,
+      "median3_hold_frames": 48
+    },
+    "weak": {
+      "sequences": 5,
+      "frames": 60,
+      "raw_transitions": 4,
+      "median3_transitions": 4,
+      "raw_hold_frames": 38,
+      "median3_hold_frames": 36
+    },
+    "strong": {
+      "sequences": 5,
+      "frames": 60,
+      "raw_transitions": 6,
+      "median3_transitions": 6,
+      "raw_hold_frames": 33,
+      "median3_hold_frames": 31
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "images": [
+    {
+      "image": "_MG_2669_18.png",
+      "per_image_s": 0.023692700022365898,
+      "apples": 8,
+      "device": "cuda"
+    },
+    {
+      "image": "_MG_2724_16.png",
+      "per_image_s": 0.03015639999648556,
+      "apples": 6,
+      "device": "cuda"
+    },
+    {
+      "image": "_MG_2756_08.png",
+      "per_image_s": 0.031648000003769994,
+      "apples": 7,
+      "device": "cuda"
+    },
+    {
+      "image": "_MG_2765_14.png",
+      "per_image_s": 0.016529300017282367,
+      "apples": 4,
+      "device": "cuda"
+    },
+    {
+      "image": "_MG_2800_19.png",
+      "per_image_s": 0.021374800009652972,
+      "apples": 6,
+      "device": "cuda"
+    }
+  ],
+  "mean_s": 0.02468024000991136,
+  "apples": 31,
+  "device": "cuda",
+  "note": "Model loading and file reading excluded; RGB+depth already in memory"
+}

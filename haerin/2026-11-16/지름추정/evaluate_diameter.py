@@ -3,8 +3,9 @@
 D [mm] = w [px] * Z [m] / f [px] * 1000                  (presentation slide 9)
 D [mm] = w * Z / (f - w / 3) * 1000                       (same, with the visible-surface depth moved to the sphere centre)
 
-Everything chosen from data (depth statistic, centre correction, hold threshold) is chosen on train+val and
-reported on test. The amodal masks were generated from the calliper diameter, so the amodal-width estimate is a
+Depth statistic, centre correction and hold threshold are computed on train+val and reported on test. This test
+split is NOT independent: most of its apples are also in train/val and it was inspected while the method was
+designed. See grouped_cv.py for the apple-separated score. The amodal masks were generated from the calliper diameter, so the amodal-width estimate is a
 reference for depth error only, not a method that could run on new images.
 """
 

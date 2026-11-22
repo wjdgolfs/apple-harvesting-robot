@@ -15,7 +15,8 @@ from synthetic_leaf import apply_leaf
 
 
 ROOT = "02-annotated_data_fuji"
-PADDING = 100
+# The 1300 px PNG holds a 1024 px photo at 137..1160 (black padding of 137 px left/top, 139 px right/bottom).
+INNER_MIN, INNER_MAX = 137, 1160
 FIELDS = ("split", "filename", "apple_id", "visible_px", "amodal_px", "intersection_px",
           "outside_visible_fraction", "raw_occlusion_fraction", "occlusion_fraction",
           "outside_canvas", "interior", "eligible")
@@ -53,8 +54,7 @@ def measure(modal, amodal, size):
     full = render_mask((width, height), amodal, (left, top))
     v, a = vis.histogram()[255], full.histogram()[255]
     common = ImageChops.darker(vis, full).histogram()[255]
-    interior = all(PADDING < x < size[0] - 1 - PADDING and PADDING < y < size[1] - 1 - PADDING
-                   for x, y in amodal)
+    interior = all(INNER_MIN < x < INNER_MAX and INNER_MIN < y < INNER_MAX for x, y in amodal)
     outside = 1 - common / v
     return dict(visible_px=v, amodal_px=a, intersection_px=common, outside_visible_fraction=outside,
                 raw_occlusion_fraction=1 - v / a, occlusion_fraction=1 - common / a,
@@ -77,8 +77,8 @@ def make_figure(archive, pairs, output, seed):
         ymin, ymax = min(y for x, y in whole), max(y for x, y in whole)
         side = round(1.6 * max(xmax - xmin, ymax - ymin))
         left, top = (xmin + xmax - side) // 2, (ymin + ymax - side) // 2
-        left = max(PADDING, min(left, image.width - PADDING - side))
-        top = max(PADDING, min(top, image.height - PADDING - side))
+        left = max(INNER_MIN, min(left, INNER_MAX + 1 - side))
+        top = max(INNER_MIN, min(top, INNER_MAX + 1 - side))
         crop = image.crop((left, top, left + side, top + side))
         contour = crop.copy()
         for points, color in ((whole, "#ffc439"), (visible, "#36eff7")):
@@ -171,7 +171,7 @@ def main():
         "image_size_rng": "individual PNG headers checked",
         "apple_ids_overlap_train_test": len(ids_by_split["train"] & ids_by_split["test"]),
         "apple_ids_overlap_val_test": len(ids_by_split["val"] & ids_by_split["test"]),
-        "eligible_rule": "Amodal polygon strictly inside inner unpadded frame (100 px per side) and at most 10% of visible pixels outside amodal",
+        "eligible_rule": "Amodal polygon strictly inside 1024 px photo (pixels 137..1160 of the padded PNG) and at most 10% of visible pixels outside amodal",
         "edge_or_pad": sum(not r["interior"] for r in rows),
         "coordinates_clipped_to_canvas": sum(r["outside_canvas"] for r in rows),
         "outside_visible_over_10pct": sum(r["outside_visible_fraction"] > .10 for r in rows),

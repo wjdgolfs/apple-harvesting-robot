@@ -1,0 +1,35 @@
+{
+  "ap": {
+    "0": {
+      "red_share": 0.7152413322676868,
+      "red_share_mask": 0.7152413322676868,
+      "red_share_box": 0.683835449083975
+    },
+    "15": {
+      "red_share": 0.7146650238111747,
+      "red_share_mask": 0.7146540494794041,
+      "red_share_box": 0.6852054817263741
+    },
+    "30": {
+      "red_share": 0.7017345801892727,
+      "red_share_mask": 0.701705481569159,
+      "red_share_box": 0.6762179030061172
+    },
+    "50": {
+      "red_share": 0.6721224230528831,
+      "red_share_mask": 0.6720575183895284,
+      "red_share_box": 0.6529148621054377
+    }
+  },
+  "label_conflicts": {
+    "unit": "same apple in the same raw frame, two or more overlapping tiles, at least one labelled ripe",
+    "all_tiles": {
+      "groups": 510,
+      "conflicting": 207
+    },
+    "uncut_tiles_only": {
+      "groups": 54,
+      "conflicting": 7
+    }
+  }
+}

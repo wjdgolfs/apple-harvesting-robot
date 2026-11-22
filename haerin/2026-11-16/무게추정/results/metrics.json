@@ -144,20 +144,20 @@
     "cube_density_times_shape_g_per_cm3": 0.8757799477663024
   },
   "orchard_propagation": {
-    "apples": 175,
-    "inside_lab_diameter_range": 87,
+    "apples": 195,
+    "inside_lab_diameter_range": 99,
     "weight_from_calliper_diameter_g": {
-      "median": 112.59065423257063,
+      "median": 113.06736873655258,
       "range": [
         50.92584701590513,
         356.0798592153477
       ]
     },
     "weight_change_from_diameter_error_g": {
-      "mae": 30.562760083565205,
-      "median": 13.736899671909583,
-      "bias": -23.18965798618757,
-      "mae_inside_range": 48.766369210562026
+      "mae": 28.4440544600081,
+      "median": 14.548727905496072,
+      "bias": -20.448664760836795,
+      "mae_inside_range": 42.89426489373612
     },
     "note": "No orchard apple was weighed: this is the extra error caused by the diameter estimate, on top of the formula error measured in the lab."
   }

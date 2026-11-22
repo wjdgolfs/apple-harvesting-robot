@@ -53,9 +53,9 @@ def main():
     bx.set_xlabel("실측 무게 (g)")
     bx.set_ylabel("교차검증 예측 무게 (g)")
     bx.set_title("학습에 안 쓴 사과의 무게 예측", loc="left", fontsize=12, pad=8)
-    fig.suptitle("동전으로 잰 지름에서 무게를 추정한다: 카메라가 아니라 크기를 본다", x=0.02, ha="left", fontsize=14,
+    fig.suptitle("동전 기준 지름으로 무게를 추정 (실험실 사과 60개, 묶음 안 구분은 약함)", x=0.02, ha="left", fontsize=14,
                  fontweight="bold")
-    fig.text(0.02, 0.885, "IntegrALIMENTA 후지 60개, 모두 iPhone 8로 찍은 하트 무늬 실내 위에서 본 사진 3장. 5겹 교차검증 20회 반복.",
+    fig.text(0.02, 0.885, "IntegrALIMENTA 후지 60개, 모두 iPhone 8로 찍은 하트 무늬 실내 위에서 본 사진 최대 3장. 5겹 교차검증 20회 반복.",
              fontsize=9.5, color=INK2)
     fig.tight_layout(rect=(0, 0, 1, 0.87))
     (HERE / "figures").mkdir(exist_ok=True)

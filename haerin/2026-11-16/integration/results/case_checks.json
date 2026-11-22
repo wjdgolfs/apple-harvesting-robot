@@ -19,29 +19,29 @@
   ],
   "natural_occlusion_on_test": {
     "0–<15%": {
-      "n": 19,
-      "correct": 13,
-      "ripe": 2,
-      "ripe_correct": 2
+      "n": 16,
+      "correct": 12,
+      "ripe": 1,
+      "ripe_correct": 1
     },
     "15–<30%": {
-      "n": 32,
-      "correct": 26,
-      "ripe": 3,
-      "ripe_correct": 3
+      "n": 25,
+      "correct": 20,
+      "ripe": 1,
+      "ripe_correct": 1
     },
     "30–<50%": {
-      "n": 37,
-      "correct": 31,
+      "n": 33,
+      "correct": 27,
       "ripe": 5,
       "ripe_correct": 4
     },
     "50–100%": {
-      "n": 64,
-      "correct": 59,
-      "ripe": 6,
-      "ripe_correct": 4
+      "n": 51,
+      "correct": 46,
+      "ripe": 5,
+      "ripe_correct": 3
     }
   },
-  "test_excluded_by_natural_mask_qc": 50
+  "test_excluded_by_natural_mask_qc": 77
 }

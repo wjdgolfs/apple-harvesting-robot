@@ -1,4 +1,5 @@
-"""Chart: per-view ripeness AP and precision under added leaf occlusion, earlier head vs expanded data vs fine-tuning."""
+"""Chart: per-view ripeness AP and precision under added leaf occlusion, earlier head vs expanded data vs fine-tuning,
+with the no-training red-pixel baseline from baseline.py."""
 
 import json
 from pathlib import Path
@@ -28,6 +29,11 @@ def main():
               ("균형 문턱에서 '익음' 판정의 정밀도", lambda e, lv: e["test"][lv]["at_balanced_threshold"]["precision"])]
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.6))
     xs = [int(v) for v in LEVELS]
+    base = json.loads((HERE / "results/baseline.json").read_text(encoding="utf-8"))["ap"]
+    for key, label, style in (("red_share", "빨간 비율 (정확한 윤곽, 잎 제외)", "-"),
+                              ("red_share_box", "빨간 비율 (신경망과 같은 박스 입력)", (0, (4, 2)))):
+        axes[0].plot(xs, [base[lv][key] for lv in LEVELS], color="#1baf7a", linestyle=style, linewidth=2, marker="o",
+                     markersize=5, label=label)
     for ax, (title, get) in zip(axes, panels):
         for side in ("top", "right"):
             ax.spines[side].set_visible(False)
@@ -48,9 +54,9 @@ def main():
         ax.set_xlim(-3, 58)
         ax.set_ylim(0, 1)
     axes[0].legend(frameon=False, fontsize=9.5, loc="lower left")
-    fig.suptitle("미세조정은 가림에 강해졌지만, 가림 없는 사진의 구분력은 거의 그대로다", x=0.02, ha="left",
+    fig.suptitle("신경망이 학습 없는 빨간 픽셀 비율보다 낫다는 근거를 찾지 못했다", x=0.02, ha="left",
                  fontsize=14, fontweight="bold")
-    fig.text(0.02, 0.885, "평가 사과 115개의 사진 3,023장(익음 460). 학습·검증과 사과 ID·사진이 겹치지 않음. 문턱은 검증 자료에서만 정함.",
+    fig.text(0.02, 0.885, "평가 사과 115개의 사진 3,023장(익음 460). 사과 ID와 사진 조각은 학습과 겹치지 않지만, 원본 프레임의 67%는 학습과 공유.",
              fontsize=9.5, color=INK2)
     fig.tight_layout(rect=(0, 0, 1, 0.87))
     (HERE / "figures").mkdir(exist_ok=True)

@@ -1,0 +1,549 @@
+{
+  "yolo_train": {
+    "rows": 18,
+    "best": 8,
+    "b50": [
+      0.61949,
+      0.68539,
+      0.69496,
+      0.70307,
+      0.6999,
+      0.73892,
+      0.69989,
+      0.73026,
+      0.71987,
+      0.71424,
+      0.7133,
+      0.71233,
+      0.71332,
+      0.70253,
+      0.70454,
+      0.68207,
+      0.71575,
+      0.71784
+    ],
+    "m50": [
+      0.56401,
+      0.57724,
+      0.58899,
+      0.61041,
+      0.58856,
+      0.60541,
+      0.587,
+      0.61016,
+      0.59304,
+      0.59831,
+      0.60379,
+      0.60024,
+      0.60001,
+      0.57774,
+      0.59327,
+      0.56294,
+      0.58688,
+      0.60941
+    ]
+  },
+  "ripe_clean": {
+    "earlier_aug": [
+      0.656,
+      0.513,
+      0.379
+    ],
+    "expanded_probe_aug": [
+      0.683,
+      0.591,
+      0.442
+    ],
+    "finetune_seed0": [
+      0.679,
+      0.602,
+      0.443
+    ],
+    "finetune_seed1": [
+      0.673,
+      0.594,
+      0.452
+    ],
+    "finetune_seed2": [
+      0.692,
+      0.603,
+      0.495
+    ],
+    "red_share": [
+      0.715,
+      0.609,
+      0.47
+    ]
+  },
+  "ripe_leaf50": {
+    "earlier_aug": [
+      0.531,
+      0.412
+    ],
+    "expanded_probe_aug": [
+      0.567,
+      0.458
+    ],
+    "finetune_seed0": [
+      0.635,
+      0.545
+    ],
+    "finetune_seed1": [
+      0.642,
+      0.546
+    ],
+    "finetune_seed2": [
+      0.653,
+      0.558
+    ]
+  },
+  "ripe_diff": {
+    "expanded_probe_aug-earlier_aug": {
+      "ap": [
+        0.027,
+        -0.017,
+        0.092
+      ],
+      "p73": [
+        0.078,
+        0.012,
+        0.143
+      ]
+    },
+    "finetune_seed1-expanded_probe_aug": {
+      "ap": [
+        -0.01,
+        -0.086,
+        0.074
+      ],
+      "p73": [
+        0.003,
+        -0.099,
+        0.086
+      ]
+    },
+    "finetune_seed1-earlier_aug": {
+      "ap": [
+        0.017,
+        -0.061,
+        0.12
+      ],
+      "p73": [
+        0.081,
+        -0.042,
+        0.172
+      ]
+    },
+    "expanded_probe_aug-red_share": {
+      "ap": [
+        -0.032,
+        -0.163,
+        0.143
+      ],
+      "p73": [
+        -0.018,
+        -0.152,
+        0.117
+      ]
+    },
+    "earlier_aug-red_share": {
+      "ap": [
+        -0.059,
+        -0.191,
+        0.123
+      ],
+      "p73": [
+        -0.096,
+        -0.218,
+        0.042
+      ]
+    }
+  },
+  "ripe_diff50": {
+    "expanded_probe_aug-earlier_aug": [
+      0.036,
+      -0.005,
+      0.072
+    ],
+    "finetune_seed1-expanded_probe_aug": [
+      0.075,
+      -0.016,
+      0.174
+    ],
+    "finetune_seed1-earlier_aug": [
+      0.111,
+      0.019,
+      0.198
+    ]
+  },
+  "ripe_unseen_frames": {
+    "n": 422,
+    "ripe": 50,
+    "apples": 95,
+    "m": {
+      "earlier_aug": [
+        0.591,
+        0.43
+      ],
+      "expanded_probe_aug": [
+        0.657,
+        0.521
+      ],
+      "finetune_seed0": [
+        0.639,
+        0.536
+      ],
+      "finetune_seed1": [
+        0.663,
+        0.607
+      ],
+      "finetune_seed2": [
+        0.695,
+        0.607
+      ],
+      "red_share": [
+        0.749,
+        0.544
+      ]
+    }
+  },
+  "three_way": {
+    "prec": 0.668,
+    "found": 0.604,
+    "hold": 0.209
+  },
+  "labels": {
+    "ids": 594,
+    "ids_in_both_years": 0,
+    "mixed_ids": 139,
+    "same_photo_groups": 2816,
+    "same_photo_conflict": 207,
+    "same_photo_groups_with_ripe": 510
+  },
+  "multi": {
+    "apples": 62,
+    "positives": 8,
+    "k": {
+      "1": {
+        "earlier_aug": 0.582,
+        "expanded_probe_aug": 0.609,
+        "finetune_seed1": 0.626,
+        "red_share": 0.681,
+        "agree": 0.682
+      },
+      "3": {
+        "earlier_aug": 0.673,
+        "expanded_probe_aug": 0.749,
+        "finetune_seed1": 0.77,
+        "red_share": 0.752,
+        "agree": 0.774
+      },
+      "5": {
+        "earlier_aug": 0.709,
+        "expanded_probe_aug": 0.801,
+        "finetune_seed1": 0.814,
+        "red_share": 0.77,
+        "agree": 0.814
+      },
+      "10": {
+        "earlier_aug": 0.731,
+        "expanded_probe_aug": 0.843,
+        "finetune_seed1": 0.862,
+        "red_share": 0.783,
+        "agree": 0.871
+      }
+    }
+  },
+  "light": {
+    "원본": [
+      0.674,
+      0.0
+    ],
+    "어둡게 0.6배": [
+      0.67,
+      0.1
+    ],
+    "어둡게 0.8배": [
+      0.667,
+      0.047
+    ],
+    "밝게 1.25배": [
+      0.657,
+      0.081
+    ],
+    "밝게 1.5배": [
+      0.637,
+      0.157
+    ],
+    "대비 70%": [
+      0.651,
+      0.109
+    ],
+    "따뜻한 색온도": [
+      0.655,
+      0.127
+    ],
+    "차가운 색온도": [
+      0.67,
+      0.085
+    ]
+  },
+  "diam_test": {
+    "n": 2068,
+    "longer": 8.276334941814941,
+    "horizontal": 12.935764859242056,
+    "amodal_reference": 1.7427331596322266,
+    "bins": {
+      "0.00-0.15": [
+        346,
+        2.664832699086736,
+        3.08996994451347
+      ],
+      "0.15-0.30": [
+        332,
+        2.981177902837919,
+        5.15698842715856
+      ],
+      "0.30-0.50": [
+        455,
+        4.802863412721035,
+        9.09283685182448
+      ],
+      "0.50-1.00": [
+        935,
+        13.923395325410723,
+        21.21141305103116
+      ]
+    }
+  },
+  "diam_grouped_cv": {
+    "cohort": "visible outline away from the photo edge (137..1160 px, 10 px margin)",
+    "thresholds": [
+      0.8,
+      0.75,
+      0.75,
+      0.8,
+      0.75
+    ],
+    "scales": [
+      1.0365359418230833,
+      1.0414669196385722,
+      1.042732913669825,
+      1.0339764853879012,
+      1.0456574141885648
+    ],
+    "used": 3597,
+    "of": 15335,
+    "apples": 418,
+    "share": 0.2345614607107923,
+    "mae_raw": 4.791461023639155,
+    "mae_cal": 4.449153457736772,
+    "bias_raw": -3.4856092874314335,
+    "bias_cal": -0.9759999709816203
+  },
+  "weight_cv": {
+    "mean": 50.261,
+    "batch": 10.266,
+    "power": 14.199,
+    "cube": 17.027,
+    "one_view": 16.346,
+    "camera_height_only": 51.686,
+    "pixels_only": 24.694
+  },
+  "weight_leave_batch_out": {
+    "LM-X430": {
+      "power": 22.647,
+      "cube": 34.381,
+      "mean_of_others": 110.421,
+      "rho": 0.268,
+      "p": 0.25
+    },
+    "iPhone 11": {
+      "power": 24.294,
+      "cube": 10.302,
+      "mean_of_others": 106.288,
+      "rho": 0.729,
+      "p": 0.00026
+    },
+    "iPhone 8": {
+      "power": 11.566,
+      "cube": 15.937,
+      "mean_of_others": 6.726,
+      "rho": 0.185,
+      "p": 0.43
+    }
+  },
+  "weight_formula": [
+    0.0036986932463824425,
+    2.5245038454742397,
+    59.18007874275852,
+    93.28264134617092
+  ],
+  "confound": {
+    "global_mean": 50.261,
+    "camera_mean": 10.266,
+    "area_pooled": 41.787,
+    "area_by_camera": 10.658,
+    "resnet_full": 16.904,
+    "resnet_fruit_erased": 15.212,
+    "resnet_corners_only": 18.832
+  },
+  "single_cam": 54,
+  "baseline": {
+    "ap": {
+      "0": {
+        "red_share": 0.7152413322676868,
+        "red_share_mask": 0.7152413322676868,
+        "red_share_box": 0.683835449083975
+      },
+      "15": {
+        "red_share": 0.7146650238111747,
+        "red_share_mask": 0.7146540494794041,
+        "red_share_box": 0.6852054817263741
+      },
+      "30": {
+        "red_share": 0.7017345801892727,
+        "red_share_mask": 0.701705481569159,
+        "red_share_box": 0.6762179030061172
+      },
+      "50": {
+        "red_share": 0.6721224230528831,
+        "red_share_mask": 0.6720575183895284,
+        "red_share_box": 0.6529148621054377
+      }
+    },
+    "label_conflicts": {
+      "unit": "same apple in the same raw frame, two or more overlapping tiles, at least one labelled ripe",
+      "all_tiles": {
+        "groups": 510,
+        "conflicting": 207
+      },
+      "uncut_tiles_only": {
+        "groups": 54,
+        "conflicting": 7
+      }
+    }
+  },
+  "motion": {
+    "raw": {
+      "stationary": {
+        "apples": 5,
+        "frames": 60,
+        "ripeness_transitions": 0,
+        "ripeness_hold_frames": 48,
+        "geometry_hold_frames": 48,
+        "geometry_hold_transitions": 0
+      },
+      "weak": {
+        "apples": 5,
+        "frames": 60,
+        "ripeness_transitions": 4,
+        "ripeness_hold_frames": 38,
+        "geometry_hold_frames": 43,
+        "geometry_hold_transitions": 2
+      },
+      "strong": {
+        "apples": 5,
+        "frames": 60,
+        "ripeness_transitions": 6,
+        "ripeness_hold_frames": 33,
+        "geometry_hold_frames": 43,
+        "geometry_hold_transitions": 2
+      }
+    },
+    "median3": {
+      "stationary": {
+        "sequences": 5,
+        "frames": 60,
+        "raw_transitions": 0,
+        "median3_transitions": 0,
+        "raw_hold_frames": 48,
+        "median3_hold_frames": 48
+      },
+      "weak": {
+        "sequences": 5,
+        "frames": 60,
+        "raw_transitions": 4,
+        "median3_transitions": 4,
+        "raw_hold_frames": 38,
+        "median3_hold_frames": 36
+      },
+      "strong": {
+        "sequences": 5,
+        "frames": 60,
+        "raw_transitions": 6,
+        "median3_transitions": 6,
+        "raw_hold_frames": 33,
+        "median3_hold_frames": 31
+      }
+    }
+  },
+  "yolo_coco_x": {
+    "iou_threshold": 0.5,
+    "images": [
+      {
+        "image": "_MG_2669_18.png",
+        "gt": 10,
+        "detections": 8,
+        "matched": 8,
+        "missed": 2,
+        "unmatched_detections": 0,
+        "mean_iou": 0.812802236912494
+      },
+      {
+        "image": "_MG_2724_16.png",
+        "gt": 8,
+        "detections": 6,
+        "matched": 6,
+        "missed": 2,
+        "unmatched_detections": 0,
+        "mean_iou": 0.8186944959054072
+      },
+      {
+        "image": "_MG_2756_08.png",
+        "gt": 7,
+        "detections": 7,
+        "matched": 7,
+        "missed": 0,
+        "unmatched_detections": 0,
+        "mean_iou": 0.7945843250635525
+      },
+      {
+        "image": "_MG_2765_14.png",
+        "gt": 5,
+        "detections": 4,
+        "matched": 3,
+        "missed": 2,
+        "unmatched_detections": 1,
+        "mean_iou": 0.7408139808882908
+      },
+      {
+        "image": "_MG_2800_19.png",
+        "gt": 6,
+        "detections": 6,
+        "matched": 5,
+        "missed": 1,
+        "unmatched_detections": 1,
+        "mean_iou": 0.8141621015007072
+      }
+    ],
+    "total": {
+      "gt": 36,
+      "detections": 31,
+      "matched": 29,
+      "missed": 7,
+      "unmatched_detections": 2
+    },
+    "recall": 0.8055555555555556,
+    "precision": 0.9354838709677419,
+    "matched_mean_iou": 0.8024112964257127,
+    "ripeness_decision_changed": 3,
+    "diameter_used_with_gt_mask": 7,
+    "diameter_used_with_detector_mask": 11,
+    "diameter_change_mm": {
+      "n": 7,
+      "mean_abs": 4.63236743221906,
+      "mean": 4.63236743221906
+    }
+  }
+}

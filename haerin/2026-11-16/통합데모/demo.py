@@ -5,7 +5,7 @@ named <image stem>.json. Without them, the demo uses the dataset's own visible-a
 
     <stem>.json = {"image": "<file name>", "instances": [{"id": "<str>", "polygon": [[x, y], ...], "score": <float>}]}
 
-Coordinates are pixels of the original PNG (1300 x 1300 including the dataset's 100 px black border).
+Coordinates are pixels of the original PNG (1300 x 1300; the 1024 x 1024 photo occupies pixels 137..1160).
 Ripeness uses the fine-tuned ResNet18 of 익음도보강 with a three-way decision (ripe / unripe / hold), or the
 earlier frozen-feature head with --ripeness-model linear. Diameter uses the pinhole rule and hold settings
 chosen in 지름추정; weight uses the diameter formula of 무게추정.
@@ -34,7 +34,10 @@ sys.path.insert(0, str(BASE / "전이학습"))
 from imagenet_encoder import build_encoder, encode_batch  # noqa: E402
 
 ZIP_ROOT = "02-annotated_data_fuji"
-PADDING = 100
+PADDED_SHAPE, INNER_MIN, INNER_MAX = (1300, 1300), 137, 1160
+# A visible outline this close to the photo edge is treated as cut by it. Outlines stop a few pixels inside the
+# edge; 10 px had the best F1 (0.93) against 'full outline leaves the photo' on train+val.
+EDGE_MARGIN_PX = 10
 FONT = "C:/Windows/Fonts/malgun.ttf"
 RIPE, UNRIPE, HOLD = "#e34948", "#0ca30c", "#8a8984"
 KO = {"ripe": "익음", "unripe": "미숙", "hold": "보류"}
@@ -119,6 +122,15 @@ def dataset_detections(archive, name):
     raise KeyError(f"No visible-apple polygons for {name}")
 
 
+def touches_edge(left, top, right, bottom, shape):
+    """Whether an inclusive pixel box reaches the edge of the photo inside the PNG."""
+    padded = tuple(shape) == PADDED_SHAPE
+    low = INNER_MIN if padded else 0
+    high_x, high_y = (INNER_MAX, INNER_MAX) if padded else (shape[1] - 1, shape[0] - 1)
+    m = EDGE_MARGIN_PX
+    return bool(left <= low + m or top <= low + m or right >= high_x - m or bottom >= high_y - m)
+
+
 def diameter_of(polygon, depth, focal, settings):
     """Same measurement and hold rule as 지름추정, from one visible mask."""
     mask, (left, top) = measure.rasterize([tuple(p) for p in polygon], depth.shape)
@@ -131,8 +143,7 @@ def diameter_of(polygon, depth, focal, settings):
     valid_fraction = float((inside > 0).mean())
     core = z[ndimage.binary_erosion(mask, iterations=measure.EROSION_PX)]
     core = core[core > 0]
-    touches = (left + xs.min() <= PADDING or top + ys.min() <= PADDING or
-               left + xs.max() >= depth.shape[1] - 1 - PADDING or top + ys.max() >= depth.shape[0] - 1 - PADDING)
+    touches = touches_edge(left + xs.min(), top + ys.min(), left + xs.max(), top + ys.max(), depth.shape)
     out = dict(longer_side_px=int(side), fill_ratio=float(fill), depth_valid_fraction=valid_fraction,
                depth_m=float(np.median(core)) if core.size else None, diameter_mm=None, hold_reason="")
     if touches:
@@ -142,10 +153,26 @@ def diameter_of(polygon, depth, focal, settings):
     elif fill < settings["fill_threshold"]:
         out["hold_reason"] = f"가림 의심 (채움 {fill:.2f})"
     if out["depth_m"] is not None:
-        out["diameter_estimate_mm"] = float(1000 * side * out["depth_m"] / focal)
+        out["diameter_uncorrected_mm"] = float(1000 * side * out["depth_m"] / focal)
+        out["diameter_estimate_mm"] = out["diameter_uncorrected_mm"] * settings["diameter_scale"]
         if not out["hold_reason"]:
             out["diameter_mm"] = out["diameter_estimate_mm"]
     return out
+
+
+def draw_input(rgb, name, path):
+    """Same layout as the result screen, photo only: the first frame of each demo-video segment."""
+    box = Image.eval(rgb, lambda v: 255 if v > 0 else 0).convert("L").getbbox() or (0, 0, *rgb.size)
+    photo = rgb.crop(box)
+    scale = 860 / max(photo.size)
+    photo = photo.resize((round(photo.width * scale), round(photo.height * scale)), Image.Resampling.LANCZOS)
+    title, body = (ImageFont.truetype(FONT, s) for s in (28, 18))
+    canvas = Image.new("RGB", (photo.width + 640, 84 + max(photo.height, 860) + 52), "#fcfcfb")
+    canvas.paste(photo, (24, 84))
+    draw = ImageDraw.Draw(canvas)
+    draw.text((24, 22), "입력: 과수원 RGB-D 사진", font=title, fill="#0b0b0b")
+    draw.text((photo.width + 56, 90), f"{name}\n\n분석 중…\n· 사과 윤곽\n· 익음도\n· 지름(깊이)\n· 예상 무게", font=body, fill="#52514e")
+    canvas.save(path, optimize=True)
 
 
 def draw_screen(rgb, results, settings, timing, path):
@@ -199,7 +226,8 @@ def draw_screen(rgb, results, settings, timing, path):
             y += 26
     y += 18
     notes = [settings["ripeness_label"],
-             f"지름: 긴 변 × 깊이 ÷ 초점거리, 채움 비율 < {settings['fill_threshold']:.2f} 이면 보류",
+             f"지름: 긴 변 × 깊이 ÷ 초점거리 × {settings['diameter_scale']:.3f}(편향 보정), 채움 비율 < "
+             f"{settings['fill_threshold']:.2f} 이면 보류",
              f"무게: {settings['weight_a']:.4f} × 지름^{settings['weight_b']:.2f} (실험실 후지 60개, 교차검증 오차 "
              f"{settings['weight_cv_mae_g']:.0f} g)",
              f"* 지름이 식을 맞춘 범위({settings['weight_lab_range_mm'][0]:.0f}~{settings['weight_lab_range_mm'][1]:.0f} mm) 밖",
@@ -211,6 +239,24 @@ def draw_screen(rgb, results, settings, timing, path):
     draw.text((24, canvas.height - 34), "이미지·깊이  Gené-Mola et al., AmodalAppleSize_RGB-D (CC BY 4.0) · 크기 조정, 윤곽·결과 표시",
               font=small, fill="#52514e")
     canvas.save(path, optimize=True)
+
+
+def load_settings():
+    """Diameter, bias-correction and weight settings chosen in 지름추정 and 무게추정."""
+    diameter_metrics = json.loads((BASE / "지름추정/results/metrics.json").read_text(encoding="utf-8"))
+    chosen_depth = diameter_metrics["depth_choice_on_train_val_amodal_width"]["chosen"]
+    if chosen_depth != "depth_eroded_median_m|centre=False":
+        raise ValueError(f"Demo implements the eroded-median depth rule, metrics chose {chosen_depth}")
+    calibration = json.loads((BASE / "지름추정/results/bias_calibration.json").read_text(encoding="utf-8"))
+    if calibration["chosen"] != "scale":
+        raise ValueError(f"Demo implements the constant-scale correction, calibration chose {calibration['chosen']}")
+    weight_metrics = json.loads((BASE / "무게추정/results/metrics.json").read_text(encoding="utf-8"))
+    power = weight_metrics["formula_all_60"]["power"]
+    return dict(fill_threshold=diameter_metrics["hold_rule"]["chosen_threshold"], min_depth_valid=0.5,
+                diameter_scale=calibration["params_train_val"]["s"],
+                weight_a=power["a"], weight_b=power["b"],
+                weight_lab_range_mm=weight_metrics["measurement"]["diameter_range_mm"],
+                weight_cv_mae_g=weight_metrics["cross_validation"]["power_three_views"]["mae_g"])
 
 
 def main():
@@ -230,19 +276,9 @@ def main():
     args.out.mkdir(parents=True, exist_ok=True)
     torch.set_num_threads(2)
 
-    diameter_metrics = json.loads((BASE / "지름추정/results/metrics.json").read_text(encoding="utf-8"))
-    chosen_depth = diameter_metrics["depth_choice_on_train_val_amodal_width"]["chosen"]
-    if chosen_depth != "depth_eroded_median_m|centre=False":
-        raise ValueError(f"Demo implements the eroded-median depth rule, metrics chose {chosen_depth}")
     ripeness = Ripeness(args.ripeness_model, args.device, args.weights, args.head)
-    weight_metrics = json.loads((BASE / "무게추정/results/metrics.json").read_text(encoding="utf-8"))
-    power = weight_metrics["formula_all_60"]["power"]
-    settings = dict(fill_threshold=diameter_metrics["hold_rule"]["chosen_threshold"], min_depth_valid=0.5,
-                    ripeness_model=args.ripeness_model, ripeness_label=ripeness.label,
+    settings = dict(load_settings(), ripeness_model=args.ripeness_model, ripeness_label=ripeness.label,
                     ripeness_ripe_threshold=ripeness.t_ripe, ripeness_unripe_threshold=ripeness.t_unripe,
-                    weight_a=power["a"], weight_b=power["b"],
-                    weight_lab_range_mm=weight_metrics["measurement"]["diameter_range_mm"],
-                    weight_cv_mae_g=weight_metrics["cross_validation"]["power_three_views"]["mae_g"],
                     mask_source="검출 JSON" if args.detections_dir else "데이터셋의 보이는 사과 윤곽(검출기 대신)")
 
     summary = []
@@ -303,6 +339,7 @@ def run_one(args, archive, focal_table, name, ripeness, settings):
 
     stem = Path(name).stem
     draw_screen(rgb, results, settings, timing, args.out / f"{stem}_결과화면.png")
+    draw_input(rgb, name, args.out / f"{stem}_입력화면.png")
     payload = dict(image=name, focal_px=focal, settings=settings, timing=timing,
                    apples=[{k: v for k, v in r.items() if k != "polygon"} for r in results])
     (args.out / f"{stem}_결과.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")

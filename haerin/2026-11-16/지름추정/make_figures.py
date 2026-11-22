@@ -77,9 +77,9 @@ def worked_example(zip_path, results, metrics, out):
             ys = [y for _, y in poly["amodal"]]
             side = round(1.7 * max(max(xs) - min(xs), max(ys) - min(ys)))
             left, top = (min(xs) + max(xs) - side) // 2, (min(ys) + max(ys) - side) // 2
-            # Stay inside the unpadded 1100 x 1100 photo (100 px black padding on each side).
-            left = max(100, min(left, image.width - 100 - side))
-            top = max(100, min(top, image.height - 100 - side))
+            # Stay inside the 1024 x 1024 photo at pixels 137..1160 of the padded PNG.
+            left = max(137, min(left, 1161 - side))
+            top = max(137, min(top, 1161 - side))
             crop = image.crop((left, top, left + side, top + side))
             pen = ImageDraw.Draw(crop)
             for points, color in ((poly["amodal"], "#ffc439"), (poly["modal"], "#36eff7")):
@@ -152,8 +152,8 @@ def charts(results, metrics, out):
     bx.set_ylabel("사용한 사진의 평균 절대오차 (mm)")
     bx.set_title("판단 보류를 늘리면 남은 사과의 오차가 줄어든다", loc="left", fontsize=12.5, pad=10)
     bx.legend(frameon=False, fontsize=9.5, loc="upper left")
-    fig.suptitle("RGB-D 지름 추정: 식은 정확하고, 오차는 가림에서 나온다", x=0.02, ha="left", fontsize=14, fontweight="bold")
-    fig.text(0.02, 0.885, "AmodalAppleSize 후지 평가 분할, 화면 경계에 닿지 않은 사과 사진 2,419장. 깊이는 보이는 영역 가운데의 중앙값.",
+    fig.suptitle("RGB-D 지름 추정: 가림이 클수록 오차가 커진다", x=0.02, ha="left", fontsize=14, fontweight="bold")
+    fig.text(0.02, 0.885, "AmodalAppleSize 후지 평가 분할, 전체 윤곽이 사진 안에 들어온 관측 {:,}건.".format(sum(v['n'] for v in (b['vis_max'] for b in metrics['test']['by_natural_occlusion'].values()))) + " 깊이는 보이는 영역 가운데의 중앙값.",
              fontsize=9.5, color=INK2)
     fig.tight_layout(rect=(0, 0, 1, 0.87))
     fig.savefig(out / "가림별_지름오차.png", dpi=160)

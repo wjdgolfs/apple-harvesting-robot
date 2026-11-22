@@ -1,0 +1,99 @@
+{
+  "model": "finetune_seed1",
+  "thresholds": {
+    "balanced": -0.0361328125,
+    "ripe": 1.265625,
+    "unripe": -3.203125
+  },
+  "test_apples": 115,
+  "photos": 3023,
+  "draws": 1000,
+  "seed": 20261122,
+  "cohort": {
+    "min_photos": 20,
+    "apples": 62,
+    "majority_ripe_apples": 8
+  },
+  "by_k": {
+    "finetune_seed1": {
+      "1": {
+        "rank_corr_with_ripe_share": 0.621238684242925,
+        "ap_majority_ripe": 0.6258494001898053,
+        "decision_same_in_two_draws": 0.6822903225806453,
+        "hold_rate": 0.23416129032258062
+      },
+      "3": {
+        "rank_corr_with_ripe_share": 0.7179915595708681,
+        "ap_majority_ripe": 0.7708655261258585,
+        "decision_same_in_two_draws": 0.774241935483871,
+        "hold_rate": 0.2595
+      },
+      "5": {
+        "rank_corr_with_ripe_share": 0.744452803499714,
+        "ap_majority_ripe": 0.8159027185065872,
+        "decision_same_in_two_draws": 0.8166935483870967,
+        "hold_rate": 0.2605806451612903
+      },
+      "10": {
+        "rank_corr_with_ripe_share": 0.76589012704565,
+        "ap_majority_ripe": 0.8600914816067656,
+        "decision_same_in_two_draws": 0.869274193548387,
+        "hold_rate": 0.2559354838709677
+      }
+    },
+    "expanded_probe_aug": {
+      "1": {
+        "rank_corr_with_ripe_share": 0.6542810367173645,
+        "ap_majority_ripe": 0.6092551733122177
+      },
+      "3": {
+        "rank_corr_with_ripe_share": 0.7476595683032502,
+        "ap_majority_ripe": 0.7533337150144198
+      },
+      "5": {
+        "rank_corr_with_ripe_share": 0.7715800150521734,
+        "ap_majority_ripe": 0.8015099709687724
+      },
+      "10": {
+        "rank_corr_with_ripe_share": 0.7917255013436265,
+        "ap_majority_ripe": 0.8377219607603995
+      }
+    },
+    "earlier_aug": {
+      "1": {
+        "rank_corr_with_ripe_share": 0.6021854327829892,
+        "ap_majority_ripe": 0.5818185513954187
+      },
+      "3": {
+        "rank_corr_with_ripe_share": 0.7045976830459948,
+        "ap_majority_ripe": 0.6805136618058241
+      },
+      "5": {
+        "rank_corr_with_ripe_share": 0.7319579919144659,
+        "ap_majority_ripe": 0.7109107560389386
+      },
+      "10": {
+        "rank_corr_with_ripe_share": 0.755907992606939,
+        "ap_majority_ripe": 0.7313862212714325
+      }
+    },
+    "red_share": {
+      "1": {
+        "rank_corr_with_ripe_share": 0.7031816825880289,
+        "ap_majority_ripe": 0.6808972808745484
+      },
+      "3": {
+        "rank_corr_with_ripe_share": 0.7902457343757137,
+        "ap_majority_ripe": 0.7537545556016005
+      },
+      "5": {
+        "rank_corr_with_ripe_share": 0.8045457084260064,
+        "ap_majority_ripe": 0.7704373775368938
+      },
+      "10": {
+        "rank_corr_with_ripe_share": 0.8149481788343874,
+        "ap_majority_ripe": 0.7831857929243958
+      }
+    }
+  }
+}

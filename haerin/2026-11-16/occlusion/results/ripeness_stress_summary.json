@@ -191,21 +191,21 @@
   "interior_natural_under_15pct": {
     "clean_fit": {
       "0.0": {
-        "n_instances": 19,
-        "n_fruit_ids": 18,
+        "n_instances": 16,
+        "n_fruit_ids": 16,
         "labels": {
-          "ripe": 2,
-          "unripe": 17
+          "ripe": 1,
+          "unripe": 15
         },
         "correct_by_label": {
-          "ripe": 2,
+          "ripe": 1,
           "unripe": 11
         },
-        "accuracy": 0.6842105263157895,
-        "balanced_accuracy": 0.8235294117647058,
+        "accuracy": 0.75,
+        "balanced_accuracy": 0.8666666666666667,
         "recall": {
           "ripe": 1.0,
-          "unripe": 0.6470588235294118
+          "unripe": 0.7333333333333333
         },
         "changed_prediction": 0,
         "changed_fraction": 0.0,
@@ -213,89 +213,89 @@
         "largest_abs_target_error": 0.0
       },
       "0.15": {
-        "n_instances": 19,
-        "n_fruit_ids": 18,
+        "n_instances": 16,
+        "n_fruit_ids": 16,
         "labels": {
-          "ripe": 2,
-          "unripe": 17
+          "ripe": 1,
+          "unripe": 15
         },
         "correct_by_label": {
-          "ripe": 2,
-          "unripe": 16
+          "ripe": 1,
+          "unripe": 15
         },
-        "accuracy": 0.9473684210526315,
-        "balanced_accuracy": 0.9705882352941176,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
         "recall": {
           "ripe": 1.0,
-          "unripe": 0.9411764705882353
+          "unripe": 1.0
         },
-        "changed_prediction": 5,
-        "changed_fraction": 0.2631578947368421,
-        "mean_actual_fraction": 0.15007176008185916,
+        "changed_prediction": 4,
+        "changed_fraction": 0.25,
+        "mean_actual_fraction": 0.15007198574809322,
         "largest_abs_target_error": 0.00037398373983740796
       },
       "0.3": {
-        "n_instances": 19,
-        "n_fruit_ids": 18,
+        "n_instances": 16,
+        "n_fruit_ids": 16,
         "labels": {
-          "ripe": 2,
-          "unripe": 17
+          "ripe": 1,
+          "unripe": 15
         },
         "correct_by_label": {
           "ripe": 0,
-          "unripe": 17
+          "unripe": 15
         },
-        "accuracy": 0.8947368421052632,
+        "accuracy": 0.9375,
         "balanced_accuracy": 0.5,
         "recall": {
           "ripe": 0.0,
           "unripe": 1.0
         },
-        "changed_prediction": 8,
-        "changed_fraction": 0.42105263157894735,
-        "mean_actual_fraction": 0.2999246237411999,
+        "changed_prediction": 5,
+        "changed_fraction": 0.3125,
+        "mean_actual_fraction": 0.2999039450835468,
         "largest_abs_target_error": 0.0006461822497692005
       },
       "0.5": {
-        "n_instances": 19,
-        "n_fruit_ids": 18,
+        "n_instances": 16,
+        "n_fruit_ids": 16,
         "labels": {
-          "ripe": 2,
-          "unripe": 17
+          "ripe": 1,
+          "unripe": 15
         },
         "correct_by_label": {
           "ripe": 0,
-          "unripe": 17
+          "unripe": 15
         },
-        "accuracy": 0.8947368421052632,
+        "accuracy": 0.9375,
         "balanced_accuracy": 0.5,
         "recall": {
           "ripe": 0.0,
           "unripe": 1.0
         },
-        "changed_prediction": 8,
-        "changed_fraction": 0.42105263157894735,
-        "mean_actual_fraction": 0.5000343037425631,
+        "changed_prediction": 5,
+        "changed_fraction": 0.3125,
+        "mean_actual_fraction": 0.5000280766454506,
         "largest_abs_target_error": 0.00046155874983511147
       }
     },
     "augmented_fit": {
       "0.0": {
-        "n_instances": 19,
-        "n_fruit_ids": 18,
+        "n_instances": 16,
+        "n_fruit_ids": 16,
         "labels": {
-          "ripe": 2,
-          "unripe": 17
+          "ripe": 1,
+          "unripe": 15
         },
         "correct_by_label": {
-          "ripe": 2,
+          "ripe": 1,
           "unripe": 11
         },
-        "accuracy": 0.6842105263157895,
-        "balanced_accuracy": 0.8235294117647058,
+        "accuracy": 0.75,
+        "balanced_accuracy": 0.8666666666666667,
         "recall": {
           "ripe": 1.0,
-          "unripe": 0.6470588235294118
+          "unripe": 0.7333333333333333
         },
         "changed_prediction": 0,
         "changed_fraction": 0.0,
@@ -303,69 +303,69 @@
         "largest_abs_target_error": 0.0
       },
       "0.15": {
-        "n_instances": 19,
-        "n_fruit_ids": 18,
+        "n_instances": 16,
+        "n_fruit_ids": 16,
         "labels": {
-          "ripe": 2,
-          "unripe": 17
+          "ripe": 1,
+          "unripe": 15
         },
         "correct_by_label": {
-          "ripe": 2,
-          "unripe": 16
+          "ripe": 1,
+          "unripe": 15
         },
-        "accuracy": 0.9473684210526315,
-        "balanced_accuracy": 0.9705882352941176,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
         "recall": {
           "ripe": 1.0,
-          "unripe": 0.9411764705882353
+          "unripe": 1.0
         },
-        "changed_prediction": 5,
-        "changed_fraction": 0.2631578947368421,
-        "mean_actual_fraction": 0.15007176008185916,
+        "changed_prediction": 4,
+        "changed_fraction": 0.25,
+        "mean_actual_fraction": 0.15007198574809322,
         "largest_abs_target_error": 0.00037398373983740796
       },
       "0.3": {
-        "n_instances": 19,
-        "n_fruit_ids": 18,
+        "n_instances": 16,
+        "n_fruit_ids": 16,
         "labels": {
-          "ripe": 2,
-          "unripe": 17
+          "ripe": 1,
+          "unripe": 15
         },
         "correct_by_label": {
           "ripe": 0,
-          "unripe": 17
+          "unripe": 15
         },
-        "accuracy": 0.8947368421052632,
+        "accuracy": 0.9375,
         "balanced_accuracy": 0.5,
         "recall": {
           "ripe": 0.0,
           "unripe": 1.0
         },
-        "changed_prediction": 8,
-        "changed_fraction": 0.42105263157894735,
-        "mean_actual_fraction": 0.2999246237411999,
+        "changed_prediction": 5,
+        "changed_fraction": 0.3125,
+        "mean_actual_fraction": 0.2999039450835468,
         "largest_abs_target_error": 0.0006461822497692005
       },
       "0.5": {
-        "n_instances": 19,
-        "n_fruit_ids": 18,
+        "n_instances": 16,
+        "n_fruit_ids": 16,
         "labels": {
-          "ripe": 2,
-          "unripe": 17
+          "ripe": 1,
+          "unripe": 15
         },
         "correct_by_label": {
           "ripe": 0,
-          "unripe": 17
+          "unripe": 15
         },
-        "accuracy": 0.8947368421052632,
+        "accuracy": 0.9375,
         "balanced_accuracy": 0.5,
         "recall": {
           "ripe": 0.0,
           "unripe": 1.0
         },
-        "changed_prediction": 8,
-        "changed_fraction": 0.42105263157894735,
-        "mean_actual_fraction": 0.5000343037425631,
+        "changed_prediction": 5,
+        "changed_fraction": 0.3125,
+        "mean_actual_fraction": 0.5000280766454506,
         "largest_abs_target_error": 0.00046155874983511147
       }
     }

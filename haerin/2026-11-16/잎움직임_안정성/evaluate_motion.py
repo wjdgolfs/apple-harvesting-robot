@@ -38,7 +38,7 @@ def write_csv(path, rows):
         writer.writerows(rows)
 
 
-def measure_mask(mask_image, depth, offset, source_shape, focal, settings, erosion):
+def measure_mask(mask_image, depth, offset, source_shape, focal, settings, erosion, touches_edge):
     """Binary equivalent of demo.diameter_of, retaining holes and disconnected fragments."""
     mask = np.asarray(mask_image) > 0
     ys, xs = np.nonzero(mask)
@@ -52,8 +52,7 @@ def measure_mask(mask_image, depth, offset, source_shape, focal, settings, erosi
     core = depth[ndimage.binary_erosion(mask, iterations=erosion)]
     core = core[core > 0]
     left, top = offset
-    edge = (left+xs.min() <= 100 or top+ys.min() <= 100 or
-            left+xs.max() >= source_shape[1]-101 or top+ys.max() >= source_shape[0]-101)
+    edge = touches_edge(left+xs.min(), top+ys.min(), left+xs.max(), top+ys.max(), source_shape)
     reason = ""
     if edge:
         reason = "화면 경계"
@@ -61,7 +60,7 @@ def measure_mask(mask_image, depth, offset, source_shape, focal, settings, erosi
         reason = "깊이 부족"
     elif fill < settings["fill_threshold"]:
         reason = "가림 의심"
-    estimate = float(1000 * side * np.median(core) / focal) if core.size else None
+    estimate = float(1000 * side * np.median(core) / focal) * settings["diameter_scale"] if core.size else None
     return dict(diameter_mm=estimate if not reason else None, diameter_estimate_mm=estimate,
                 fill_ratio=fill, depth_valid_fraction=fraction, hold_reason=reason)
 
@@ -138,7 +137,7 @@ def main():
                 mask = Image.new("L",crop.size)
                 ImageDraw.Draw(mask).polygon([(x-left,y-top) for x,y in poly],fill=255)
                 cropped_depth = depth[top:bottom,left:right]
-                check = measure_mask(mask,cropped_depth,(left,top),depth.shape,focal,settings,demo.measure.EROSION_PX)
+                check = measure_mask(mask,cropped_depth,(left,top),depth.shape,focal,settings,demo.measure.EROSION_PX,demo.touches_edge)
                 if abs(check["diameter_mm"]-original["diameter_mm"]) > 1e-8:
                     raise ValueError("Binary mask geometry differs from original demo")
                 original_box = mask.getbbox()
@@ -153,7 +152,7 @@ def main():
                 for frame,score in zip(frames,scores):
                     updated_depth = cropped_depth.copy()
                     updated_depth[np.asarray(frame["leaf_mask"]) > 0] = 0
-                    size = measure_mask(frame["visible_mask"],updated_depth,(left,top),depth.shape,focal,settings,demo.measure.EROSION_PX)
+                    size = measure_mask(frame["visible_mask"],updated_depth,(left,top),depth.shape,focal,settings,demo.measure.EROSION_PX,demo.touches_edge)
                     weight = settings["weight_a"]*size["diameter_mm"]**settings["weight_b"] if size["diameter_mm"] is not None else None
                     low,high = settings["weight_lab_range_mm"]
                     extrapolated = size["diameter_mm"] is not None and not low <= size["diameter_mm"] <= high
@@ -196,7 +195,7 @@ def main():
                               ripeness_hold_frames=sum(r["ripeness"]=="hold" for r in fr),
                               geometry_hold_frames=sum(r["diameter_mm"] is None for r in fr),
                               geometry_hold_transitions=sum(r["geometry_hold_transitions"] for r in seq))
-    report = dict(date="2026-11-17",case_count=len(summaries)//3,unique_apple_ids=len({r["apple_id"] for r in all_rows}),
+    report = dict(date="2026-11-23",case_count=len(summaries)//3,unique_apple_ids=len({r["apple_id"] for r in all_rows}),
                   selection="All held-out-test IDs with usable original geometry in five pre-existing demo images",
                   conditions=totals,settings=settings,
                   method="One initial 15% added leaf, fixed/5%/20% fruit-width displacement; updated RGB, visible binary mask, and depth under leaf; GT visible masks simulate ideal segmentation",

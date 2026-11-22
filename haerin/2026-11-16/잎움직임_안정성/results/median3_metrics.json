@@ -4,28 +4,28 @@
   "latency": "Uses only current and up to two previous frames; can delay a genuine change",
   "conditions": {
     "stationary": {
-      "sequences": 8,
-      "frames": 96,
+      "sequences": 5,
+      "frames": 60,
       "raw_transitions": 0,
       "median3_transitions": 0,
-      "raw_hold_frames": 72,
-      "median3_hold_frames": 72
+      "raw_hold_frames": 48,
+      "median3_hold_frames": 48
     },
     "weak": {
-      "sequences": 8,
-      "frames": 96,
-      "raw_transitions": 6,
-      "median3_transitions": 5,
-      "raw_hold_frames": 65,
-      "median3_hold_frames": 63
+      "sequences": 5,
+      "frames": 60,
+      "raw_transitions": 4,
+      "median3_transitions": 4,
+      "raw_hold_frames": 38,
+      "median3_hold_frames": 36
     },
     "strong": {
-      "sequences": 8,
-      "frames": 96,
-      "raw_transitions": 9,
-      "median3_transitions": 9,
-      "raw_hold_frames": 59,
-      "median3_hold_frames": 56
+      "sequences": 5,
+      "frames": 60,
+      "raw_transitions": 6,
+      "median3_transitions": 6,
+      "raw_hold_frames": 33,
+      "median3_hold_frames": 31
     }
   }
 }

@@ -1,0 +1,9 @@
+# Separate environment for YOLO detection (C:\apple-harvest-vision\.venv-yolo), kept apart from the training env.
+# Install torch first from the CUDA 13.0 index:
+#   python -m pip install torch==2.12.0 torchvision==0.27.0 --index-url https://download.pytorch.org/whl/cu130
+ultralytics==8.4.216
+numpy==2.4.6
+Pillow==12.3.0
+scipy==1.17.1
+matplotlib==3.11.1
+opencv-python==5.1.0.95

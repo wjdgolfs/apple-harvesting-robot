@@ -17,6 +17,7 @@ from collections import defaultdict
 from pathlib import Path
 
 import numpy as np
+from scipy.stats import rankdata
 
 HERE = Path(__file__).resolve().parent
 BASE = HERE.parent
@@ -74,7 +75,9 @@ def cross_validate(d, w, batch, folds, fitter):
 
 
 def rank_corr(x, y):
-    rx, ry = np.argsort(np.argsort(x)), np.argsort(np.argsort(y))
+    rx, ry = rankdata(x), rankdata(y)  # average ranks for ties
+    if np.ptp(rx) == 0 or np.ptp(ry) == 0:
+        return 0.0
     return float(np.corrcoef(rx, ry)[0, 1])
 
 

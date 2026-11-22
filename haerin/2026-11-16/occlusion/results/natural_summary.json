@@ -31,24 +31,24 @@
   "image_size_rng": "individual PNG headers checked",
   "apple_ids_overlap_train_test": 291,
   "apple_ids_overlap_val_test": 350,
-  "eligible_rule": "Amodal polygon strictly inside inner unpadded frame (100 px per side) and at most 10% of visible pixels outside amodal",
-  "edge_or_pad": 4162,
+  "eligible_rule": "Amodal polygon strictly inside 1024 px photo (pixels 137..1160 of the padded PNG) and at most 10% of visible pixels outside amodal",
+  "edge_or_pad": 5881,
   "coordinates_clipped_to_canvas": 60,
   "outside_visible_over_10pct": 0,
   "raw_negative": 69,
-  "eligible_pairs": 11173,
-  "eligible_unique_ids": 587,
-  "eligible_occlusion_median": 0.4592555831265509,
+  "eligible_pairs": 9454,
+  "eligible_unique_ids": 579,
+  "eligible_occlusion_median": 0.44935722166974557,
   "eligible_occlusion_quartiles": [
-    0.22016530797101452,
-    0.4592555831265509,
-    0.6668569797316586
+    0.20500618843474838,
+    0.44935722166974557,
+    0.6614679016677394
   ],
   "eligible_occlusion_bins": {
-    "0-.15": 1876,
-    ".15-.30": 1794,
-    ".30-.50": 2452,
-    ".50-1": 5051
+    "0-.15": 1740,
+    ".15-.30": 1473,
+    ".30-.50": 2074,
+    ".50-1": 4167
   },
   "seed": 20261116,
   "examples": [
