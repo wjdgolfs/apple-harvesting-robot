@@ -17,6 +17,8 @@ from scipy import ndimage
 
 from moving_leaf import generate_frames
 
+DEMO = None  # the integrated demo module, set in main()
+
 
 NAMES = ("_MG_2669_18.png", "_MG_2724_16.png", "_MG_2756_08.png",
          "_MG_2765_14.png", "_MG_2800_19.png")
@@ -40,6 +42,10 @@ def write_csv(path, rows):
 
 def measure_mask(mask_image, depth, offset, source_shape, focal, settings, erosion, touches_edge):
     """Binary equivalent of demo.diameter_of, retaining holes and disconnected fragments."""
+    return DEMO.measure_region(np.asarray(mask_image) > 0, offset[0], offset[1], depth, source_shape, focal, settings)
+
+
+def _unused_old_rule(mask_image, depth, offset, source_shape, focal, settings, erosion, touches_edge):
     mask = np.asarray(mask_image) > 0
     ys, xs = np.nonzero(mask)
     if not xs.size:
@@ -109,8 +115,11 @@ def main():
     torch.backends.cuda.matmul.allow_tf32 = False
     demo_path = args.project_root/"통합데모/demo.py"
     demo = load_module(demo_path)
-    scorer = demo.Ripeness("finetuned",args.device,None,None)
+    global DEMO
+    DEMO = demo
     settings = json.loads((args.project_root/"통합데모/results/_MG_2765_14_결과.json").read_bytes())["settings"]
+    scorer = demo.Ripeness(settings["ripeness_model"],args.device,args.project_root/"전이학습/weights/resnet18-f37072fd.pth",
+                           args.project_root/"전이학습/ripeness/results/head_aug.pt")
     if settings["ripeness_ripe_threshold"] != scorer.t_ripe or settings["ripeness_unripe_threshold"] != scorer.t_unripe:
         raise ValueError("Saved demo thresholds differ from the current model")
     all_rows, summaries, previews = [], [], {}
@@ -140,14 +149,10 @@ def main():
                 check = measure_mask(mask,cropped_depth,(left,top),depth.shape,focal,settings,demo.measure.EROSION_PX,demo.touches_edge)
                 if abs(check["diameter_mm"]-original["diameter_mm"]) > 1e-8:
                     raise ValueError("Binary mask geometry differs from original demo")
-                original_box = mask.getbbox()
-                original_logit = scorer.scores([demo.prepare.fit_square(crop.crop(original_box))])[0]
+                original_logit = scorer.region_scores([(crop,np.asarray(mask) > 0)])[0]
                 original_weight = settings["weight_a"]*original["diameter_mm"]**settings["weight_b"]
                 frames = list(generate_frames(crop,mask,f"{name}/{fruit}",frames=12,target_fraction=.15))
-                crops = [demo.prepare.fit_square(f["rgb"].crop(f["visible_mask"].getbbox())) for f in frames]
-                scores = []
-                for start in range(0,len(crops),32):
-                    scores.extend(scorer.scores(crops[start:start+32]))
+                scores = scorer.region_scores([(f["rgb"],np.asarray(f["visible_mask"]) > 0) for f in frames])
                 case_rows = []
                 for frame,score in zip(frames,scores):
                     updated_depth = cropped_depth.copy()
@@ -194,6 +199,10 @@ def main():
                               ripeness_transitions=sum(r["ripeness_transitions"] for r in seq),
                               ripeness_hold_frames=sum(r["ripeness"]=="hold" for r in fr),
                               geometry_hold_frames=sum(r["diameter_mm"] is None for r in fr),
+                              diameter_range_mm_median=float(np.median([r["diameter_range_mm"] for r in seq if r["diameter_range_mm"] is not None])) if any(r["diameter_range_mm"] is not None for r in seq) else None,
+                              weight_range_g_median=float(np.median([r["weight_range_g"] for r in seq if r["weight_range_g"] is not None])) if any(r["weight_range_g"] is not None for r in seq) else None,
+                              weight_range_g_max=max((r["weight_range_g"] for r in seq if r["weight_range_g"] is not None), default=None),
+                              confidence_changes=sum(a["confidence"]!=b["confidence"] for a,b in zip(fr,fr[1:]) if (a["filename"],a["apple_id"])==(b["filename"],b["apple_id"])),
                               geometry_hold_transitions=sum(r["geometry_hold_transitions"] for r in seq))
     report = dict(date="2026-11-23",case_count=len(summaries)//3,unique_apple_ids=len({r["apple_id"] for r in all_rows}),
                   selection="All held-out-test IDs with usable original geometry in five pre-existing demo images",
@@ -203,8 +212,12 @@ def main():
                   weight_interpretation="Changes in diameter-based expected grams; orchard ground-truth grams unavailable",
                   source_files={str(p.relative_to(args.project_root)):hashlib.sha256(p.read_bytes()).hexdigest()
                                 for p in (demo_path,args.project_root/"익음도보강/weights/ripeness_finetuned.pt",
+                                          args.project_root/"익음도보강/weights/ripeness_color_boosting.pkl",
+                                          args.project_root/"익음도보강/results/model_selection.json",
                                           args.project_root/"익음도보강/results/apple_splits.csv",
                                           args.project_root/"지름추정/measure_instances.py",
+                                          args.project_root/"지름추정/weights/shape_model.pkl",
+                                          args.project_root/"지름추정/shape_features.py",
                                           args.project_root/"지름추정/results/metrics.json",
                                           args.project_root/"무게추정/results/metrics.json")},
                   decision_counts=dict(Counter(r["ripeness"] for r in all_rows)))

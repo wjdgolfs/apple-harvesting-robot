@@ -58,13 +58,13 @@
     "recall": 0.3888888888888889,
     "precision": 1.0,
     "matched_mean_iou": 0.8405367965784035,
-    "ripeness_decision_changed": 3,
-    "diameter_used_with_gt_mask": 6,
-    "diameter_used_with_detector_mask": 7,
+    "ripeness_decision_changed": 2,
+    "diameter_used_with_gt_mask": 14,
+    "diameter_used_with_detector_mask": 14,
     "diameter_change_mm": {
-      "n": 6,
-      "mean_abs": 4.438346581331001,
-      "mean": 3.5471692846359724
+      "n": 14,
+      "mean_abs": 2.4868543213257115,
+      "mean": 1.9817732075113494
     }
   },
   "apples": [
@@ -75,12 +75,12 @@
       "iou": 0.9338418262468895,
       "truth_label": "ripe",
       "ripeness_split_of_apple": "test",
-      "gt_ripeness": "hold",
-      "det_ripeness": "hold",
-      "gt_diameter_mm": null,
-      "det_diameter_mm": null,
-      "gt_hold": "화면 경계",
-      "det_hold": "화면 경계"
+      "gt_ripeness": "ripe",
+      "det_ripeness": "ripe",
+      "gt_diameter_mm": 80.18722716006738,
+      "det_diameter_mm": 85.01966190604098,
+      "gt_hold": "",
+      "det_hold": ""
     },
     {
       "image": "_MG_2669_18.png",
@@ -91,8 +91,8 @@
       "ripeness_split_of_apple": "val",
       "gt_ripeness": "ripe",
       "det_ripeness": "ripe",
-      "gt_diameter_mm": 81.6040524236257,
-      "det_diameter_mm": 83.26034657944511,
+      "gt_diameter_mm": 77.88028675811991,
+      "det_diameter_mm": 78.02291723934918,
       "gt_hold": "",
       "det_hold": ""
     },
@@ -103,12 +103,12 @@
       "iou": 0.916837182110494,
       "truth_label": "ripe",
       "ripeness_split_of_apple": "test",
-      "gt_ripeness": "ripe",
-      "det_ripeness": "ripe",
-      "gt_diameter_mm": null,
-      "det_diameter_mm": null,
-      "gt_hold": "화면 경계",
-      "det_hold": "화면 경계"
+      "gt_ripeness": "hold",
+      "det_ripeness": "hold",
+      "gt_diameter_mm": 83.58702287342453,
+      "det_diameter_mm": 85.88525986079027,
+      "gt_hold": "",
+      "det_hold": ""
     },
     {
       "image": "_MG_2669_18.png",
@@ -119,10 +119,10 @@
       "ripeness_split_of_apple": "test",
       "gt_ripeness": "ripe",
       "det_ripeness": "ripe",
-      "gt_diameter_mm": null,
-      "det_diameter_mm": null,
-      "gt_hold": "화면 경계",
-      "det_hold": "화면 경계"
+      "gt_diameter_mm": 79.81435478362899,
+      "det_diameter_mm": 81.74293705887786,
+      "gt_hold": "",
+      "det_hold": ""
     },
     {
       "image": "_MG_2669_18.png",
@@ -131,10 +131,10 @@
       "iou": 0.8964834702042536,
       "truth_label": "unripe",
       "ripeness_split_of_apple": "test",
-      "gt_ripeness": "ripe",
-      "det_ripeness": "ripe",
-      "gt_diameter_mm": 97.08661494460453,
-      "det_diameter_mm": 98.1041947242483,
+      "gt_ripeness": "hold",
+      "det_ripeness": "hold",
+      "gt_diameter_mm": 88.49511557882704,
+      "det_diameter_mm": 89.03694339233567,
       "gt_hold": "",
       "det_hold": ""
     },
@@ -145,10 +145,10 @@
       "iou": 0.9016290398617149,
       "truth_label": "unripe",
       "ripeness_split_of_apple": "test",
-      "gt_ripeness": "unripe",
-      "det_ripeness": "unripe",
-      "gt_diameter_mm": 82.89919368395744,
-      "det_diameter_mm": 89.1977571916779,
+      "gt_ripeness": "hold",
+      "det_ripeness": "hold",
+      "gt_diameter_mm": 81.75376413589771,
+      "det_diameter_mm": 84.75658706455783,
       "gt_hold": "",
       "det_hold": ""
     },
@@ -159,10 +159,10 @@
       "iou": 0.8188420281164634,
       "truth_label": "ripe",
       "ripeness_split_of_apple": "test",
-      "gt_ripeness": "hold",
+      "gt_ripeness": "ripe",
       "det_ripeness": "ripe",
-      "gt_diameter_mm": 78.23080261663439,
-      "det_diameter_mm": 75.5572707265493,
+      "gt_diameter_mm": 80.00955865340038,
+      "det_diameter_mm": 77.87261180284182,
       "gt_hold": "",
       "det_hold": ""
     },
@@ -173,12 +173,12 @@
       "iou": 0.8781126331811263,
       "truth_label": "ripe",
       "ripeness_split_of_apple": "test",
-      "gt_ripeness": "unripe",
+      "gt_ripeness": "hold",
       "det_ripeness": "unripe",
-      "gt_diameter_mm": null,
-      "det_diameter_mm": null,
-      "gt_hold": "화면 경계",
-      "det_hold": "화면 경계"
+      "gt_diameter_mm": 80.06136298624298,
+      "det_diameter_mm": 83.91383244679298,
+      "gt_hold": "",
+      "det_hold": ""
     },
     {
       "image": "_MG_2756_08.png",
@@ -189,10 +189,10 @@
       "ripeness_split_of_apple": "train",
       "gt_ripeness": "hold",
       "det_ripeness": "hold",
-      "gt_diameter_mm": null,
-      "det_diameter_mm": null,
-      "gt_hold": "화면 경계",
-      "det_hold": "화면 경계"
+      "gt_diameter_mm": 79.6991002666425,
+      "det_diameter_mm": 80.73161977640852,
+      "gt_hold": "",
+      "det_hold": ""
     },
     {
       "image": "_MG_2756_08.png",
@@ -202,11 +202,11 @@
       "truth_label": "ripe",
       "ripeness_split_of_apple": "test",
       "gt_ripeness": "hold",
-      "det_ripeness": "hold",
-      "gt_diameter_mm": null,
-      "det_diameter_mm": null,
-      "gt_hold": "가림 의심 (채움 0.73)",
-      "det_hold": "가림 의심 (채움 0.73)"
+      "det_ripeness": "unripe",
+      "gt_diameter_mm": 83.33228444805239,
+      "det_diameter_mm": 81.93366350191042,
+      "gt_hold": "",
+      "det_hold": ""
     },
     {
       "image": "_MG_2756_08.png",
@@ -215,11 +215,11 @@
       "iou": 0.6304456231016818,
       "truth_label": "ripe",
       "ripeness_split_of_apple": "test",
-      "gt_ripeness": "hold",
-      "det_ripeness": "hold",
-      "gt_diameter_mm": null,
-      "det_diameter_mm": 86.50105217650024,
-      "gt_hold": "가림 의심 (채움 0.70)",
+      "gt_ripeness": "unripe",
+      "det_ripeness": "unripe",
+      "gt_diameter_mm": 83.13133803659653,
+      "det_diameter_mm": 86.69401857015781,
+      "gt_hold": "",
       "det_hold": ""
     },
     {
@@ -230,9 +230,9 @@
       "truth_label": "ripe",
       "ripeness_split_of_apple": "test",
       "gt_ripeness": "hold",
-      "det_ripeness": "ripe",
-      "gt_diameter_mm": 76.6889704764977,
-      "det_diameter_mm": 79.06782565229923,
+      "det_ripeness": "hold",
+      "gt_diameter_mm": 76.9329591192498,
+      "det_diameter_mm": 82.66424931303519,
       "gt_hold": "",
       "det_hold": ""
     },
@@ -243,12 +243,12 @@
       "iou": 0.8571276821754833,
       "truth_label": "ripe",
       "ripeness_split_of_apple": "test",
-      "gt_ripeness": "unripe",
+      "gt_ripeness": "hold",
       "det_ripeness": "hold",
-      "gt_diameter_mm": null,
-      "det_diameter_mm": null,
-      "gt_hold": "화면 경계",
-      "det_hold": "화면 경계"
+      "gt_diameter_mm": 84.65530383968367,
+      "det_diameter_mm": 85.3939266807533,
+      "gt_hold": "",
+      "det_hold": ""
     },
     {
       "image": "_MG_2800_19.png",
@@ -259,8 +259,8 @@
       "ripeness_split_of_apple": "train",
       "gt_ripeness": "unripe",
       "det_ripeness": "unripe",
-      "gt_diameter_mm": 89.84176253148507,
-      "det_diameter_mm": 102.44701751040083,
+      "gt_diameter_mm": 85.22986097530485,
+      "det_diameter_mm": 88.84613590644572,
       "gt_hold": "",
       "det_hold": ""
     }

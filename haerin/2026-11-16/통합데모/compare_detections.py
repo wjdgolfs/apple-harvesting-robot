@@ -115,7 +115,7 @@ def case_sheet(rows, crops, path):
                                   f"검출 윤곽 → {demo.KO[r['det_ripeness']]}", f"IoU {r['iou']:.2f}",
                                   f"{r['image'].replace('.png', '')}", f"사과 {r['gt_id']}")):
             d.text((tx, y + 2 + 19 * m), text, font=small, fill="#0b0b0b" if m < 4 else "#52514e")
-    d.text((20, sheet.height - 30), "테두리 색 = 미세조정 모델 예측(빨강 익음, 초록 미숙, 회색 보류) · 이미지 Gené-Mola et al., AmodalAppleSize_RGB-D (CC BY 4.0) · 라벨 Zhu et al.",
+    d.text((20, sheet.height - 30), "테두리 색 = 데모 익음도 모델 예측(빨강 익음, 초록 미숙, 회색 보류) · 이미지 Gené-Mola et al., AmodalAppleSize_RGB-D (CC BY 4.0) · 라벨 Zhu et al.",
            font=small, fill="#52514e")
     sheet.save(path, optimize=True)
 
@@ -133,11 +133,13 @@ def main():
     parser.add_argument("--data-root", type=Path, default=Path("D:/Apple-harvest-data"))
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--iou", type=float, default=0.5)
+    parser.add_argument("--ripeness-model", choices=("color", "finetuned", "linear"), default="color")
     parser.add_argument("--device", default="cuda" if demo.torch.cuda.is_available() else "cpu")
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
     settings = demo.load_settings()
-    ripeness = demo.Ripeness("finetuned", args.device, None, None)
+    ripeness = demo.Ripeness(args.ripeness_model, args.device, demo.BASE / "전이학습/weights/resnet18-f37072fd.pth",
+                             demo.BASE / "전이학습/ripeness/results/head_aug.pt")
     rows, per_image, crops = [], [], {}
     with ZipFile(args.data_root / "02-annotated_data_fuji.zip") as archive:
         focal_table = demo.measure.table(archive, "focal_length.txt")
@@ -161,7 +163,8 @@ def main():
                 continue
             gt_crops = [crop_of(rgb, gt[i]["polygon"]) for i, _, _ in matches]
             det_crops = [crop_of(rgb, det[j]["polygon"]) for _, j, _ in matches]
-            scores = ripeness.scores(gt_crops + det_crops)
+            scores = ripeness.region_scores([demo.region_of(rgb, gt[i]["polygon"]) for i, _, _ in matches] +
+                                            [demo.region_of(rgb, det[j]["polygon"]) for _, j, _ in matches])
             half = len(matches)
             for k, (i, j, iou) in enumerate(matches):
                 a = demo.diameter_of(gt[i]["polygon"], depth, focal_table[name], settings)

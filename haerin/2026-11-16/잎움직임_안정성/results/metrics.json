@@ -1,37 +1,61 @@
 {
   "date": "2026-11-23",
-  "case_count": 5,
-  "unique_apple_ids": 5,
+  "case_count": 26,
+  "unique_apple_ids": 15,
   "selection": "All held-out-test IDs with usable original geometry in five pre-existing demo images",
   "conditions": {
     "stationary": {
-      "apples": 5,
-      "frames": 60,
+      "apples": 26,
+      "frames": 312,
       "ripeness_transitions": 0,
-      "ripeness_hold_frames": 48,
-      "geometry_hold_frames": 48,
+      "ripeness_hold_frames": 132,
+      "geometry_hold_frames": 0,
+      "diameter_range_mm_median": 0.0,
+      "weight_range_g_median": 0.0,
+      "weight_range_g_max": 0.0,
+      "confidence_changes": 0,
       "geometry_hold_transitions": 0
     },
     "weak": {
-      "apples": 5,
-      "frames": 60,
+      "apples": 26,
+      "frames": 312,
       "ripeness_transitions": 4,
-      "ripeness_hold_frames": 38,
-      "geometry_hold_frames": 43,
-      "geometry_hold_transitions": 2
+      "ripeness_hold_frames": 135,
+      "geometry_hold_frames": 0,
+      "diameter_range_mm_median": 0.16593806413070666,
+      "weight_range_g_median": 1.1525732360256598,
+      "weight_range_g_max": 11.162556628096752,
+      "confidence_changes": 2,
+      "geometry_hold_transitions": 0
     },
     "strong": {
-      "apples": 5,
-      "frames": 60,
-      "ripeness_transitions": 6,
-      "ripeness_hold_frames": 33,
-      "geometry_hold_frames": 43,
-      "geometry_hold_transitions": 2
+      "apples": 26,
+      "frames": 312,
+      "ripeness_transitions": 23,
+      "ripeness_hold_frames": 143,
+      "geometry_hold_frames": 0,
+      "diameter_range_mm_median": 0.49018355051590845,
+      "weight_range_g_median": 3.681831239235045,
+      "weight_range_g_max": 20.452437476344954,
+      "confidence_changes": 14,
+      "geometry_hold_transitions": 0
     }
   },
   "settings": {
     "fill_threshold": 0.75,
     "min_depth_valid": 0.5,
+    "diameter_method": "shape",
+    "shape_range_mm": {
+      "높음": 7.103472896005794,
+      "중간": 12.764142411583578,
+      "낮음": 14.772773440273431
+    },
+    "supplement": true,
+    "supplement_range_mm": {
+      "경계": 15.853015917477165,
+      "깊이": 18.89545533265979
+    },
+    "shape_cv_mae_mm": 4.985480077903781,
     "diameter_scale": 1.0418546803661064,
     "weight_a": 0.0036986932463824425,
     "weight_b": 2.5245038454742397,
@@ -40,26 +64,30 @@
       93.28264134617092
     ],
     "weight_cv_mae_g": 14.19873490449341,
-    "ripeness_model": "finetuned",
-    "ripeness_label": "익음도: ResNet18 미세조정, 익음 ≥ 1.27 · 미숙 < -3.20 · 사이는 보류",
-    "ripeness_ripe_threshold": 1.265625,
-    "ripeness_unripe_threshold": -3.203125,
+    "ripeness_model": "color",
+    "ripeness_label": "익음도: 색 특징 부스팅(검증으로 재선정), 익음 ≥ 0.77 · 미숙 < 0.28 · 사이는 보류",
+    "ripeness_ripe_threshold": 0.7735643401176059,
+    "ripeness_unripe_threshold": 0.28467687631113414,
     "mask_source": "데이터셋의 보이는 사과 윤곽(검출기 대신)"
   },
   "method": "One initial 15% added leaf, fixed/5%/20% fruit-width displacement; updated RGB, visible binary mask, and depth under leaf; GT visible masks simulate ideal segmentation",
   "numeric_settings": "cuDNN deterministic, benchmark false, TF32 false",
   "weight_interpretation": "Changes in diameter-based expected grams; orchard ground-truth grams unavailable",
   "source_files": {
-    "통합데모\\demo.py": "28f878a63efafe132b186f0aeccbd8bce759162b600e93efb2d2333fa1d77595",
+    "통합데모\\demo.py": "f79692049f9c02bf612af673cd75239425ae48839ed96e634029c14d9ac48eb0",
     "익음도보강\\weights\\ripeness_finetuned.pt": "20162b7c3cdc6cf398fef3fb8f710671b07725f439fa72848c6a499672269369",
+    "익음도보강\\weights\\ripeness_color_boosting.pkl": "7ebbdea6e3eaabe303dc70fe9596aeb58d5767a9c35f948492cd2992124416e3",
+    "익음도보강\\results\\model_selection.json": "68d9a35eefcf32d67a7c8cdcf74e9f7a93b674e4ef2f30b4850249f3a8d7d026",
     "익음도보강\\results\\apple_splits.csv": "78237fc09068a014f75cc33f40db6c98bc46da9bb6982f50c462aa316fa9f470",
     "지름추정\\measure_instances.py": "505fae65430c2dba85c0bc1b2048b84aa7a7a817cf00b0ab80242f162fbc3204",
+    "지름추정\\weights\\shape_model.pkl": "2452ea838f41af910143b881cc30d7902306e3b2ef7a39e61b846e0f778e9f44",
+    "지름추정\\shape_features.py": "110295929adc1e4a3e4d9e6482d58f9e939d2a7185b23d0495b19284576f5658",
     "지름추정\\results\\metrics.json": "f9c675b445f0e8213340b860571e7b52fd4a6fc92a23f22c6526dfa6416afd37",
     "무게추정\\results\\metrics.json": "3d96741bb5deb63ac5785135200e5ea8ec0a583e26ebd0c70b6beacfa627090b"
   },
   "decision_counts": {
-    "ripe": 51,
-    "hold": 119,
-    "unripe": 10
+    "ripe": 200,
+    "hold": 410,
+    "unripe": 326
   }
 }
