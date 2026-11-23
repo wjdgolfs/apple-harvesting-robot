@@ -6,9 +6,11 @@ named <image stem>.json. Without them, the demo uses the dataset's own visible-a
     <stem>.json = {"image": "<file name>", "instances": [{"id": "<str>", "polygon": [[x, y], ...], "score": <float>}]}
 
 Coordinates are pixels of the original PNG (1300 x 1300; the 1024 x 1024 photo occupies pixels 137..1160).
-Ripeness uses the fine-tuned ResNet18 of 익음도보강 with a three-way decision (ripe / unripe / hold), or the
-earlier frozen-feature head with --ripeness-model linear. Diameter uses the pinhole rule and hold settings
-chosen in 지름추정; weight uses the diameter formula of 무게추정.
+Ripeness uses the colour-feature model chosen again on validation in 익음도보강 (select_model.py) with a
+three-way decision (ripe / unripe / hold); --ripeness-model finetuned or linear selects the earlier ResNet18 models. Diameter uses the pinhole rule and hold settings
+chosen in 지름추정; by default every apple inside the photo with depth gets a diameter from the shape model of
+지름추정/shape_model.py with a 90 % error range and a confidence (--diameter-method hold: the earlier hold rule).
+Weight uses the diameter formula of 무게추정, with the range carried through.
 """
 
 import argparse
@@ -16,6 +18,7 @@ import csv
 import importlib.util
 import io
 import json
+import pickle
 import sys
 import time
 from pathlib import Path
@@ -52,6 +55,8 @@ def module_from_file(name, path):
 
 
 prepare = module_from_file("prepare_ripeness", BASE / "전이학습/ripeness/prepare_ripeness.py")
+color = module_from_file("color_features", BASE / "익음도보강/color_features.py")
+shape = module_from_file("shape_features", BASE / "지름추정/shape_features.py")
 measure = module_from_file("measure_instances", BASE / "지름추정/measure_instances.py")
 
 
@@ -69,7 +74,21 @@ class Ripeness:
     def __init__(self, kind, device, weights, head_path):
         self.device = device
         splits = {}
-        if kind == "finetuned":
+        self.kind = kind
+        if kind == "color":
+            sel = json.loads((BASE / "익음도보강/results/model_selection.json").read_text(encoding="utf-8"))
+            strict = json.loads((BASE / "익음도보강/results/error_types.json").read_text(encoding="utf-8"))["strict_ripe_threshold"]
+            if sel["chosen"] != "color_boosting":
+                raise ValueError(f"Demo implements the colour boosting model, selection chose {sel['chosen']}")
+            self.t_ripe, self.t_unripe = strict["color_boosting"], sel["thresholds"]["color_boosting"][1]
+            with (BASE / "익음도보강/weights/ripeness_color_boosting.pkl").open("rb") as stream:
+                saved = pickle.load(stream)
+            if saved["version"] != color.VERSION:
+                raise ValueError("Colour feature version differs from the saved model")
+            self.model, self.head = saved["model"], None
+            split_file = BASE / "익음도보강/results/apple_splits.csv"
+            self.label = (f"익음도: 색 특징 부스팅(검증으로 재선정), 익음 ≥ {self.t_ripe:.2f} · 미숙 < {self.t_unripe:.2f} · 사이는 보류")
+        elif kind == "finetuned":
             meta = json.loads((BASE / "익음도보강/results/metrics.json").read_text(encoding="utf-8"))
             th = meta["models"][meta["kept_finetune"]]["thresholds"]
             self.t_ripe, self.t_unripe = th["ripe"], th["unripe"]
@@ -90,8 +109,22 @@ class Ripeness:
             for r in csv.DictReader(stream):
                 splits.setdefault(r["apple_id"], set()).add(r["split"])
         self.splits = splits
-        for n in (1, 4, 8, 12, 16):  # warm-up for typical batch sizes, excluded from timing
-            encode_batch(self.model, [Image.new("RGB", (160, 160))] * n, device)
+        if kind == "color":  # first call of the colour features and the boosting model, excluded from timing
+            self.region_scores([(Image.new("RGB", (40, 40), (200, 40, 40)), np.ones((40, 40), bool))] * 4)
+        else:
+            for n in (1, 4, 8, 12, 16):  # warm-up for typical batch sizes, excluded from timing
+                encode_batch(self.model, [Image.new("RGB", (160, 160))] * n, device)
+
+    def region_scores(self, regions):
+        """Scores for (image, visible mask) pairs; the mask is a boolean array of the image size."""
+        if self.kind == "color":
+            x = np.stack([color.features(np.asarray(image.convert("RGB"))[mask]) for image, mask in regions])
+            return self.model.predict_proba(x)[:, 1].tolist() if len(x) else []
+        crops = []
+        for image, mask in regions:
+            ys, xs = np.nonzero(mask)
+            crops.append(prepare.fit_square(image.crop((xs.min(), ys.min(), xs.max() + 1, ys.max() + 1))))
+        return self.scores(crops)
 
     def scores(self, crops):
         out = encode_batch(self.model, crops, self.device).double()
@@ -131,33 +164,85 @@ def touches_edge(left, top, right, bottom, shape):
     return bool(left <= low + m or top <= low + m or right >= high_x - m or bottom >= high_y - m)
 
 
+_SHAPE = {}
+
+
+def shape_model():
+    """The shape model of 지름추정/shape_model.py (loaded once)."""
+    if not _SHAPE:
+        with (BASE / "지름추정/weights/shape_model.pkl").open("rb") as stream:
+            saved = pickle.load(stream)
+        if saved["version"] != shape.VERSION or tuple(saved["names"]) != shape.NAMES:
+            raise ValueError("Shape features differ from the saved diameter model")
+        _SHAPE.update(saved)
+    return _SHAPE
+
+
 def diameter_of(polygon, depth, focal, settings):
-    """Same measurement and hold rule as 지름추정, from one visible mask."""
+    """Diameter of one visible outline given as a polygon in photo pixels."""
     mask, (left, top) = measure.rasterize([tuple(p) for p in polygon], depth.shape)
+    window = depth[top:top + mask.shape[0], left:left + mask.shape[1]]
+    return measure_region(mask, left, top, window, depth.shape, focal, settings)
+
+
+def measure_region(mask, left, top, depth_window, photo_shape, focal, settings):
+    """Diameter of one visible mask (boolean, depth_window aligned with it; left/top = its place in the photo).
+
+    shape (default): every apple inside the photo with depth gets the shape-model diameter, a 90 % error range and a
+    confidence; an apple cut by the photo edge or with under half of its depth valid gets a reference estimate
+    (confidence '참고', wider range; --no-supplement holds it instead, as in video another frame is better);
+    hold: the earlier rule, longer side x depth / focal x scale, held at the photo edge or below the fill threshold.
+    """
     ys, xs = np.nonzero(mask)
-    width, height = xs.max() - xs.min() + 1, ys.max() - ys.min() + 1
-    side = max(width, height)
+    if not xs.size:
+        return dict(longer_side_px=0, fill_ratio=0.0, depth_valid_fraction=0.0, edge=False, depth_m=None, diameter_mm=None,
+                    diameter_range_mm=None, confidence="", hold_reason="보이는 영역 없음", diameter_uncorrected_mm=None,
+                    diameter_estimate_mm=None, diameter_rule_mm=None, estimate_note="")
+    side = max(xs.max() - xs.min() + 1, ys.max() - ys.min() + 1)
     fill = mask.sum() / (np.pi / 4 * side ** 2)
-    z = depth[top:top + mask.shape[0], left:left + mask.shape[1]]
-    inside = z[mask]
+    inside = depth_window[mask]
     valid_fraction = float((inside > 0).mean())
-    core = z[ndimage.binary_erosion(mask, iterations=measure.EROSION_PX)]
+    core = depth_window[ndimage.binary_erosion(mask, iterations=measure.EROSION_PX)]
     core = core[core > 0]
-    touches = touches_edge(left + xs.min(), top + ys.min(), left + xs.max(), top + ys.max(), depth.shape)
-    out = dict(longer_side_px=int(side), fill_ratio=float(fill), depth_valid_fraction=valid_fraction,
-               depth_m=float(np.median(core)) if core.size else None, diameter_mm=None, hold_reason="")
-    if touches:
-        out["hold_reason"] = "화면 경계"
-    elif valid_fraction < settings["min_depth_valid"] or not core.size:
+    touches = touches_edge(left + xs.min(), top + ys.min(), left + xs.max(), top + ys.max(), photo_shape)
+    out = dict(longer_side_px=int(side), fill_ratio=float(fill), depth_valid_fraction=valid_fraction, edge=bool(touches),
+               depth_m=float(np.median(core)) if core.size else None, diameter_mm=None, diameter_range_mm=None,
+               confidence="", hold_reason="", diameter_uncorrected_mm=None, diameter_estimate_mm=None, diameter_rule_mm=None,
+               estimate_note="")
+    if not core.size:
         out["hold_reason"] = "깊이 부족"
-    elif fill < settings["fill_threshold"]:
-        out["hold_reason"] = f"가림 의심 (채움 {fill:.2f})"
-    if out["depth_m"] is not None:
-        out["diameter_uncorrected_mm"] = float(1000 * side * out["depth_m"] / focal)
-        out["diameter_estimate_mm"] = out["diameter_uncorrected_mm"] * settings["diameter_scale"]
+        return out
+    out["diameter_uncorrected_mm"] = float(1000 * side * out["depth_m"] / focal)
+    out["diameter_estimate_mm"] = out["diameter_uncorrected_mm"] * settings["diameter_scale"]
+    # cut by the photo edge or under half of the depth valid: in video another frame is better
+    gap = "화면 경계" if touches else "깊이 부족" if valid_fraction < settings["min_depth_valid"] else ""
+    rule_ok = not gap and fill >= settings["fill_threshold"]
+    out["diameter_rule_mm"] = out["diameter_estimate_mm"] if rule_ok else None
+    if settings["diameter_method"] == "hold":
+        out["hold_reason"] = gap or ("" if rule_ok else f"가림 의심 (채움 {fill:.2f})")
         if not out["hold_reason"]:
             out["diameter_mm"] = out["diameter_estimate_mm"]
+        return out
+    if gap and not settings["supplement"]:
+        out["hold_reason"] = gap
+        return out
+    model = shape_model()
+    f = shape.features(mask, out["depth_m"], focal)
+    if touches:  # reference estimate from the model trained with an edge flag
+        out["diameter_mm"] = float(model["edge_model"].predict(np.array([f + [1.0]]))[0])
+        out["diameter_range_mm"] = float(model["supplement_range_mm"]["경계"])
+    else:
+        out["diameter_mm"] = float(model["model"].predict(np.array([f]))[0])
+        out["diameter_range_mm"] = float(model["supplement_range_mm"]["깊이"] if gap else model["range_mm"][shape.confidence(fill)])
+    out["confidence"] = "참고" if gap else shape.confidence(fill)
+    out["estimate_note"] = f"{gap} 보완" if gap else ""
     return out
+
+
+def region_of(rgb, polygon):
+    """The polygon's bounding box of the photo and its filled visible mask."""
+    mask, (left, top) = measure.rasterize([tuple(p) for p in polygon], (rgb.height, rgb.width))
+    return rgb.crop((left, top, left + mask.shape[1], top + mask.shape[0])), mask
 
 
 def draw_input(rgb, name, path):
@@ -208,10 +293,16 @@ def draw_screen(rgb, results, settings, timing, path):
         draw.ellipse((cols[0], y + 5, cols[0] + 14, y + 19), fill=color)
         draw.text((cols[0] + 22, y), str(r["number"]), font=body, fill="#0b0b0b")
         draw.text((cols[1], y), KO[r["ripeness"]], font=body, fill="#0b0b0b")
-        draw.text((cols[2], y), f"{r['diameter_mm']:.0f} mm" if r["diameter_mm"] else "—", font=body, fill="#0b0b0b")
+        if r["diameter_mm"] and r.get("diameter_range_mm"):
+            dtext = f"{r['diameter_mm']:.0f}±{r['diameter_range_mm']:.0f}"
+        else:
+            dtext = f"{r['diameter_mm']:.0f} mm" if r["diameter_mm"] else "—"
+        draw.text((cols[2], y), dtext, font=body, fill="#0b0b0b")
         weight = f"{r['weight_g']:.0f} g" + ("*" if r["weight_note"] else "") if r["weight_g"] else "—"
         draw.text((cols[3], y), weight, font=body, fill="#0b0b0b")
-        draw.text((cols[4], y), r["hold_reason"] or "사용", font=body, fill=HOLD if r["hold_reason"] else "#0b0b0b")
+        judge = r["hold_reason"] or (f"참고·{r['estimate_note'][:2]}" if r.get("estimate_note") else
+                                     f"신뢰도 {r['confidence']}" if r.get("confidence") else "사용")
+        draw.text((cols[4], y), judge, font=body, fill=HOLD if r["hold_reason"] or r.get("confidence") in ("낮음", "참고") else "#0b0b0b")
         y += 32
         if r.get("truth_ripeness") or r.get("truth_diameter_mm"):
             truth = f"정답 {KO.get(r.get('truth_ripeness'), '라벨 없음')}"
@@ -225,9 +316,17 @@ def draw_screen(rgb, results, settings, timing, path):
             draw.text((cols[1], y - 4), truth, font=small, fill="#52514e")
             y += 26
     y += 18
-    notes = [settings["ripeness_label"],
-             f"지름: 긴 변 × 깊이 ÷ 초점거리 × {settings['diameter_scale']:.3f}(편향 보정), 채움 비율 < "
-             f"{settings['fill_threshold']:.2f} 이면 보류",
+    if settings["diameter_method"] == "hold":
+        dnote = [f"지름: 긴 변 × 깊이 ÷ 초점거리 × {settings['diameter_scale']:.3f}(편향 보정), 채움 비율 < "
+                 f"{settings['fill_threshold']:.2f} 이면 보류"]
+    else:
+        r_mm = settings["shape_range_mm"]
+        dnote = [f"지름: 보이는 모양 특징으로 학습한 모델 (사과 단위 교차검증 {settings['shape_cv_mae_mm']:.1f} mm)",
+                 f"±: 90% 오차 범위 · 신뢰도 높음 ±{r_mm['높음']:.0f}, 중간 ±{r_mm['중간']:.0f}, 낮음 ±{r_mm['낮음']:.0f} mm",
+                 "낮음 = 절반 넘게 가림",
+                 f"참고 = 사진 경계에서 잘림 ±{settings['supplement_range_mm']['경계']:.0f}, "
+                 f"깊이 부족 ±{settings['supplement_range_mm']['깊이']:.0f} mm 보완 추정"]
+    notes = [settings["ripeness_label"], *dnote,
              f"무게: {settings['weight_a']:.4f} × 지름^{settings['weight_b']:.2f} (실험실 후지 60개, 교차검증 오차 "
              f"{settings['weight_cv_mae_g']:.0f} g)",
              f"* 지름이 식을 맞춘 범위({settings['weight_lab_range_mm'][0]:.0f}~{settings['weight_lab_range_mm'][1]:.0f} mm) 밖",
@@ -252,7 +351,11 @@ def load_settings():
         raise ValueError(f"Demo implements the constant-scale correction, calibration chose {calibration['chosen']}")
     weight_metrics = json.loads((BASE / "무게추정/results/metrics.json").read_text(encoding="utf-8"))
     power = weight_metrics["formula_all_60"]["power"]
+    shape_report = json.loads((BASE / "지름추정/results/shape_model.json").read_text(encoding="utf-8"))
     return dict(fill_threshold=diameter_metrics["hold_rule"]["chosen_threshold"], min_depth_valid=0.5,
+                diameter_method="shape", shape_range_mm=shape_report["range_mm"], supplement=True,
+                supplement_range_mm=shape_report["supplement_range_mm"],
+                shape_cv_mae_mm=shape_report["model"]["all"]["mae_mm"],
                 diameter_scale=calibration["params_train_val"]["s"],
                 weight_a=power["a"], weight_b=power["b"],
                 weight_lab_range_mm=weight_metrics["measurement"]["diameter_range_mm"],
@@ -268,7 +371,11 @@ def main():
     parser.add_argument("--weights", type=Path, default=BASE / "전이학습/weights/resnet18-f37072fd.pth")
     parser.add_argument("--head", type=Path, default=BASE / "전이학습/ripeness/results/head_aug.pt",
                         help="Frozen-feature head, used only with --ripeness-model linear")
-    parser.add_argument("--ripeness-model", choices=("finetuned", "linear"), default="finetuned")
+    parser.add_argument("--ripeness-model", choices=("color", "finetuned", "linear"), default="color")
+    parser.add_argument("--diameter-method", choices=("shape", "hold"), default="shape",
+                        help="shape: every apple with depth gets a diameter with a range; hold: the earlier hold rule")
+    parser.add_argument("--no-supplement", action="store_true",
+                        help="hold apples cut by the photo edge or with little depth instead of a reference estimate")
     parser.add_argument("--out", type=Path, default=HERE / "results")
     parser.add_argument("--no-truth", action="store_true", help="Leave out the ground-truth comparison columns")
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
@@ -277,7 +384,8 @@ def main():
     torch.set_num_threads(2)
 
     ripeness = Ripeness(args.ripeness_model, args.device, args.weights, args.head)
-    settings = dict(load_settings(), ripeness_model=args.ripeness_model, ripeness_label=ripeness.label,
+    settings = dict(load_settings(), ripeness_model=args.ripeness_model, diameter_method=args.diameter_method,
+                    supplement=not args.no_supplement, ripeness_label=ripeness.label,
                     ripeness_ripe_threshold=ripeness.t_ripe, ripeness_unripe_threshold=ripeness.t_unripe,
                     mask_source="검출 JSON" if args.detections_dir else "데이터셋의 보이는 사과 윤곽(검출기 대신)")
 
@@ -307,24 +415,22 @@ def run_one(args, archive, focal_table, name, ripeness, settings):
         raise ValueError("RGB and depth sizes differ")
 
     start = time.perf_counter()
-    crops = []
-    for det in detections:
-        xs, ys = [p[0] for p in det["polygon"]], [p[1] for p in det["polygon"]]
-        crop_box = (max(0, min(xs)), max(0, min(ys)), min(rgb.width, max(xs) + 1), min(rgb.height, max(ys) + 1))
-        crops.append(prepare.fit_square(rgb.crop(crop_box)))
-    logits = ripeness.scores(crops)
+    logits = ripeness.region_scores([region_of(rgb, det["polygon"]) for det in detections])
     results = []
     for det, logit in zip(detections, logits):
         size = diameter_of(det["polygon"], depth, focal, settings)
-        weight, weight_note = None, ""
+        weight, weight_note, weight_range = None, "", None
         if size["diameter_mm"]:
             weight = settings["weight_a"] * size["diameter_mm"] ** settings["weight_b"]
+            if size.get("diameter_range_mm"):
+                d, r = size["diameter_mm"], size["diameter_range_mm"]
+                weight_range = [settings["weight_a"] * max(d - r, 1) ** settings["weight_b"], settings["weight_a"] * (d + r) ** settings["weight_b"]]
             low, high = settings["weight_lab_range_mm"]
             if not low <= size["diameter_mm"] <= high:
                 weight_note = "식 범위 밖"
         results.append(dict(id=str(det["id"]), score=det.get("score"), polygon=det["polygon"],
                             ripeness=ripeness.decide(logit),
-                            ripeness_logit=logit, **size, weight_g=weight, weight_note=weight_note))
+                            ripeness_logit=logit, **size, weight_g=weight, weight_range_g=weight_range, weight_note=weight_note))
     if args.device == "cuda":
         torch.cuda.synchronize()
     elapsed = time.perf_counter() - start
