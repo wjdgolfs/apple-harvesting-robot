@@ -3,9 +3,11 @@ import csv
 import hashlib
 import json
 import math
+import os
 import re
 import sys
 from collections import Counter, defaultdict
+from pathlib import Path
 
 import numpy as np
 from scipy.stats import spearmanr
@@ -39,7 +41,18 @@ B = "익음도보강/"
 M = ["earlier_aug", "expanded_probe_aug", "finetune_seed0", "finetune_seed1", "finetune_seed2"]
 
 # ---------- detector training
-R = [{k.strip(): v.strip() for k, v in r.items()} for r in L("../../output/pdf/MinneApple_기본학습_20261116/results.csv")]
+repo = Path(__file__).resolve().parents[3]
+baseline_dir = Path(os.environ.get(
+    "MINNEAPPLE_BASELINE_RESULTS_DIR",
+    repo / "output" / "pdf" / "MinneApple_기본학습_20261116",
+))
+baseline_csv = baseline_dir / "results.csv"
+if not baseline_csv.is_file():
+    raise SystemExit(
+        f"Missing MinneApple training results: {baseline_csv}. "
+        "Set MINNEAPPLE_BASELINE_RESULTS_DIR to the folder containing results.csv."
+    )
+R = [{k.strip(): v.strip() for k, v in r.items()} for r in L(baseline_csv)]
 F = lambda r, k: float(r["metrics/" + k])
 fit = [.1 * (F(r, "mAP50(B)") + F(r, "mAP50(M)")) + .9 * (F(r, "mAP50-95(B)") + F(r, "mAP50-95(M)")) for r in R]
 show("yolo_train", dict(rows=len(R), best=int(np.argmax(fit)) + 1,

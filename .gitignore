@@ -3,6 +3,10 @@
 venv/
 __pycache__/
 *.py[cod]
+
+# Locally installed presentation build dependencies
+node_modules/
+
 # Downloaded datasets and archives
 data/
 datasets/
@@ -24,3 +28,11 @@ outputs/data_audit/
 
 # Local Colab transfer bundles and manifests
 outputs/colab_transfer*/
+
+# Archived presentations and team reports retained locally as build inputs
+/artifacts/2026-11-16/output/*.pptx
+/artifacts/2026-11-16/output/*.docx
+
+# Report exports and scratch work are archived outside the repository
+/output/
+/tmp/
